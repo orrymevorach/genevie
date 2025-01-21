@@ -1,0 +1,46 @@
+@use '@variables' as variables;
+
+@mixin fontPrimary {
+  font-family: 'Adieu Bold';
+  text-transform: uppercase;
+}
+
+@mixin fontSecondaryLight {
+  font-family: 'Inter Light';
+}
+
+@mixin fontSecondary {
+  font-family: 'Inter Regular';
+  letter-spacing: 0.5px;
+}
+
+@mixin fontSecondaryMedium {
+  font-family: 'Inter Medium';
+  letter-spacing: 0.5px;
+}
+
+@mixin fontSecondaryBold {
+  font-family: 'Inter Bold';
+  letter-spacing: 0.5px;
+}
+
+@mixin Natural {
+  font-family: 'Natural';
+}
+
+@mixin pulseShadow($color: #fff, $size: 15px, $opacity: 1) {
+  animation: infinite 2s pulseShadow ease-in-out;
+  box-shadow: 0 0 $size $color;
+
+  @keyframes pulseShadow {
+    0% {
+      box-shadow: none;
+    }
+    50% {
+      box-shadow: 0 0 $size rgba($color, $opacity);
+    }
+    100% {
+      box-shadow: none;
+    }
+  }
+}

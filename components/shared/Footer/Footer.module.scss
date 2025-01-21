@@ -1,0 +1,63 @@
+@use '@variables' as variables;
+@use '@mixins' as mixins;
+
+.footer {
+  background-color: variables.$lightGrey;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 80px;
+  &.hideMarginTop {
+    margin-top: 0;
+  }
+}
+
+.innerContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 30px 15px;
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.column {
+  @include mixins.fontSecondary;
+  .contactUs {
+    margin-left: 80px;
+  }
+  &:nth-child(2) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.text {
+  font-size: 14px;
+}
+
+@media screen and (max-width: variables.$mobile) {
+  .footer {
+    margin-top: 30px;
+  }
+  .innerContainer {
+    padding: 0;
+    flex-direction: column;
+    padding: 15px;
+  }
+  .column {
+    text-align: center;
+    .contactUs {
+      margin-left: 0px;
+    }
+    &:nth-child(2) {
+      flex-direction: column;
+    }
+
+    .text {
+      margin: 5px 0;
+    }
+  }
+}

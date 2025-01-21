@@ -1,0 +1,122 @@
+@use '@mixins' as mixins;
+@use '@variables' as variables;
+
+.button {
+  @include mixins.fontSecondary;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: variables.$borderRadius;
+  min-width: 150px;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 1px solid white;
+  background-color: variables.$black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .spinnerIcon {
+    animation: rotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+  &:hover {
+    color: variables.$black;
+    background-color: white;
+    transition: 0.2s;
+    svg,
+    p {
+      color: variables.$black;
+    }
+  }
+  &.light {
+    background-color: white;
+    color: variables.$black;
+    border: 2px solid variables.$black;
+    &:hover {
+      background-color: variables.$black;
+      color: white;
+    }
+  }
+  &.small {
+    padding: 12px 10px 10px 10px;
+    min-width: 80px;
+    @include mixins.fontSecondaryLight;
+    margin-top: 10px;
+    &:hover {
+      @include mixins.fontSecondary;
+    }
+  }
+  svg {
+    position: relative;
+    top: -2px;
+  }
+  &.secondary {
+    background-color: variables.$green;
+    border: none;
+    color: variables.$black;
+    border: 1px solid variables.$green;
+    &:hover {
+      background-color: #474747;
+      color: white;
+    }
+  }
+  &.secondary.inverted {
+    background-color: variables.$black;
+    border: 1px solid variables.$green;
+    color: white;
+    &:hover {
+      background-color: rgba(white, 0.2);
+    }
+  }
+  &.yellow {
+    background-color: variables.$black;
+    color: white;
+    border: 1px solid variables.$yellow;
+    &:hover {
+      background-color: rgba(white, 0.2);
+    }
+    &:hover p,
+    &:hover svg {
+      color: white;
+    }
+  }
+  &.peach {
+    background-color: variables.$black;
+    color: white;
+    border: 1px solid variables.$peach;
+    &:hover {
+      background-color: rgba(white, 0.2);
+    }
+    &:hover p,
+    &:hover svg {
+      color: white;
+    }
+  }
+
+  &.naked {
+    background: none;
+    border: none;
+    padding: 0;
+    min-width: auto;
+  }
+  &.round {
+    border-radius: 20px;
+  }
+}
+
+@media screen and (max-width: variables.$mobile) {
+  .button {
+    font-size: 14px;
+    padding: 10px 20px;
+    min-width: auto;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
