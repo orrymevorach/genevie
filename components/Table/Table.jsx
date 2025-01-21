@@ -30,7 +30,6 @@ export default function Table({ tableId }) {
       console.error('Error deleting document:', error.message);
     }
   };
-  // Handle column header click to toggle sorting
   const handleSort = key => {
     setSortConfig(prevConfig => ({
       key,
