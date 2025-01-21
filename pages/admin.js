@@ -1,9 +1,10 @@
 import Meta from '@/components/shared/Head/Head';
-import { TABLES } from '@/utils/constants';
+import { COOKIES, TABLES } from '@/utils/constants';
 import React, { useState } from 'react';
 import Table from '@/components/Table/Table';
 import TableNav from '@/components/Table/TableNav/TableNav';
 import Layout from '@/components/shared/Layout/Layout';
+import Cookies from 'cookies';
 
 export const mapTableToCustomerOrder = {
   [TABLES.MEMBERS]: [
@@ -51,4 +52,20 @@ export default function Admin() {
       </Layout>
     </>
   );
+}
+
+export function getServerSideProps({ req, res }) {
+  const cookies = new Cookies(req, res);
+  const uid = cookies.get(COOKIES.UID);
+  if (!uid)
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+
+  return {
+    props: {},
+  };
 }
