@@ -6,17 +6,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'v5.airtableusercontent.com',
-        port: '',
-      },
-      {
-        protocol: 'https',
         hostname: 'images.ctfassets.net',
-        port: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'storage.googleapis.com',
         port: '',
       },
     ],

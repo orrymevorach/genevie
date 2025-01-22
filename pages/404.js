@@ -7,17 +7,9 @@ export default function PageNotFound() {
     <>
       <Meta title="Page Not Found" />
       <div className={styles.pageNotFoundContainer}>
-        {/* <Image
-        src={Rainbow}
-        alt="Highlands Music Festival logo"
-        className={styles.logo}
-        priority
-        quality={10}
-      /> */}
         <h2 className={styles.title}>Oh no! Something went wrong.</h2>
         <p className={styles.text}>
-          Try <a href="/">logging in</a> again, or{' '}
-          <a href="/contact">contact us</a> for support.
+          Please <a href="/contact">contact us</a> for support.
         </p>
       </div>
     </>

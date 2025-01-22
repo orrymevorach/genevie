@@ -1,13 +1,13 @@
 import Head from 'next/head';
 
 export default function Meta() {
-  const tabTitle = `TBC - Admin`;
+  const tabTitle = `Genevie`;
   return (
     <Head>
       <meta charSet="utf-8" />
-      <meta name="description" content="TBC Admin" />
+      <meta name="description" content="Genevie" />
       <title>{tabTitle}</title>
-      <link rel="icon" href="/logo-bracket.png" />
+      <link rel="icon" href="" />
     </Head>
   );
 }

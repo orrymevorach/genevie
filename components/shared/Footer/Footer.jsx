@@ -8,7 +8,7 @@ export default function Footer({ hideMarginTop = false }) {
     >
       <div className={styles.innerContainer}>
         <div className={styles.column}>
-          <p className={styles.text}>TBC Admin</p>
+          <p className={styles.text}>Genevie</p>
         </div>
       </div>
     </footer>

@@ -27,8 +27,7 @@ h5,
 h6,
 p {
   margin: 0;
-  color: white;
-  font-family: 'Aktiv Grotesk Regular';
+  font-family: '';
 }
 
 a {
@@ -48,5 +47,4 @@ button {
 
 html {
   scroll-behavior: smooth;
-  background-color: #191919;
 }

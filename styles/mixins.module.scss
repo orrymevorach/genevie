@@ -1,31 +1,27 @@
 @use '@variables' as variables;
 
 @mixin fontPrimary {
-  font-family: 'Adieu Bold';
-  text-transform: uppercase;
+  font-family: '';
 }
 
 @mixin fontSecondaryLight {
-  font-family: 'Inter Light';
+  font-family: '';
 }
 
 @mixin fontSecondary {
-  font-family: 'Inter Regular';
-  letter-spacing: 0.5px;
+  font-family: '';
 }
 
 @mixin fontSecondaryMedium {
-  font-family: 'Inter Medium';
-  letter-spacing: 0.5px;
+  font-family: '';
 }
 
 @mixin fontSecondaryBold {
-  font-family: 'Inter Bold';
-  letter-spacing: 0.5px;
+  font-family: '';
 }
 
 @mixin Natural {
-  font-family: 'Natural';
+  font-family: '';
 }
 
 @mixin pulseShadow($color: #fff, $size: 15px, $opacity: 1) {

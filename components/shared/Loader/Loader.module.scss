@@ -93,21 +93,6 @@
   align-items: center;
 }
 
-.bracketsContainer {
-  display: flex;
-  position: relative;
-}
-.bracketLeft {
-  width: 50px;
-  animation: slideLeft 2s ease-in-out infinite;
-}
-
-.bracketRight {
-  width: 50px;
-  animation: slideRight 2s ease-in-out infinite;
-  transform: scaleX(-1);
-}
-
 .text {
   @include mixins.fontPrimary;
   animation: fade 2s ease-in-out infinite;

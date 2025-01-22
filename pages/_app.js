@@ -8,7 +8,7 @@ config.autoAddCss = false;
 
 export default function App({ Component, pageProps }) {
   const isRouteChanging = useRouteChange();
-  if (isRouteChanging) return <Loader isBrackets isFullPage />;
+  if (isRouteChanging) return <Loader isFullPage />;
   return (
     <>
       <WindowSizeProvider>

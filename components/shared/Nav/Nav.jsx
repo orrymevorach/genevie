@@ -3,10 +3,6 @@ import styles from './Nav.module.scss';
 import Button from '@/components/shared/Button/Button';
 import { COOKIES, ROUTES } from '@/utils/constants';
 import Image from 'next/image';
-import desktopDarkLogo from '@/public/logo-center.png';
-import desktopLightLogo from '@/public/logo-center-white.png';
-import mobileDarkLogo from '@/public/logo-bracket.png';
-import mobileLightLogo from '@/public/logo-bracket-white.png';
 import clsx from 'clsx';
 import useWindowSize from '@/hooks/useWindowSize';
 import { signOutOfFirebase } from '@/lib/firebase-auth';
@@ -16,12 +12,12 @@ import Wrapper from '../Wrapper/Wrapper';
 
 const mapDeviceToLogo = {
   mobile: {
-    light: mobileLightLogo,
-    dark: mobileDarkLogo,
+    light: '',
+    dark: '',
   },
   desktop: {
-    light: desktopLightLogo,
-    dark: desktopDarkLogo,
+    light: '',
+    dark: '',
   },
 };
 
