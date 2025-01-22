@@ -47,7 +47,7 @@ export default function Nav({ isDark, isFixed }) {
             </Link>
             <p className={styles.admin}>Admin Console</p>
           </div>
-          {isMobile && !isHomePage ? (
+          {isMobile ? (
             <MobileNav handleSignOut={handleSignOut} />
           ) : (
             <div className={styles.buttonsContainer}>
