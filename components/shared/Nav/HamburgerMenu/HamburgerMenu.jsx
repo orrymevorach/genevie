@@ -16,7 +16,7 @@ export default function HamburgerMenu({
       <span style={{ backgroundColor }}></span>
       <span style={{ backgroundColor }}></span>
       <span style={{ backgroundColor }}></span>
-      <span style={{ backgroundColor }}></span>
+      {/* <span style={{ backgroundColor }}></span> */}
     </button>
   );
 }

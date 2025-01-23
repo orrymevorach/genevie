@@ -3,7 +3,7 @@
 
 .button {
   @include mixins.fontSecondary;
-  color: white;
+  color: black;
   border: none;
   padding: 12px 25px;
   font-size: 16px;
@@ -11,8 +11,8 @@
   min-width: 150px;
   cursor: pointer;
   transition: 0.2s;
-  border: 1px solid white;
-  background-color: variables.$black;
+  border: 1px solid variables.$grey;
+  background-color: variables.$grey;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,44 +51,12 @@
     top: -2px;
   }
   &.secondary {
-    background-color: variables.$green;
+    background-color: rgba(0, 0, 0, 0);
     border: none;
-    color: variables.$black;
-    border: 1px solid variables.$green;
+    color: variables.$grey;
+    border: 1px solid variables.$grey;
     &:hover {
       background-color: #474747;
-      color: white;
-    }
-  }
-  &.secondary.inverted {
-    background-color: variables.$black;
-    border: 1px solid variables.$green;
-    color: white;
-    &:hover {
-      background-color: rgba(white, 0.2);
-    }
-  }
-  &.yellow {
-    background-color: variables.$black;
-    color: white;
-    border: 1px solid variables.$yellow;
-    &:hover {
-      background-color: rgba(white, 0.2);
-    }
-    &:hover p,
-    &:hover svg {
-      color: white;
-    }
-  }
-  &.peach {
-    background-color: variables.$black;
-    color: white;
-    border: 1px solid variables.$peach;
-    &:hover {
-      background-color: rgba(white, 0.2);
-    }
-    &:hover p,
-    &:hover svg {
       color: white;
     }
   }

@@ -2,7 +2,6 @@
 
 .hamburgerMenu {
   z-index: 10;
-  display: none;
   width: 30px;
   height: 20px;
   -webkit-transform: rotate(0deg);
@@ -21,9 +20,9 @@
 .hamburgerMenu span {
   display: block;
   position: absolute;
-  height: 2px;
-  width: 30px;
-  background: white;
+  height: 1px;
+  width: 70px;
+  background: black;
   border-radius: 9px;
   opacity: 1;
   left: 0;

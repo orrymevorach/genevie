@@ -10,7 +10,7 @@ export default function MobileNav({ handleSignOut }) {
     <>
       <div className={styles.hamburger}>
         <HamburgerMenu
-          hamburgerMenuColor="white"
+          hamburgerMenuColor="black"
           setIsOpen={setIsMobileNavOpen}
         />
       </div>

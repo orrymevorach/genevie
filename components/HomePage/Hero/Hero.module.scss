@@ -1,0 +1,30 @@
+.container {
+  background-image: url(../../../public/home-hero.png);
+  width: 100vw;
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  position: relative;
+}
+
+.textContainer {
+  color: white;
+  position: absolute;
+  bottom: 100px;
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.bookButton {
+  margin-right: 15px;
+}

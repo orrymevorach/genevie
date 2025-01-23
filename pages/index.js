@@ -1,11 +1,13 @@
+import HomePage from '@/components/HomePage/HomePage';
 import Meta from '@/components/shared/Head/Head';
-import useAuth from '@/hooks/useAuth';
+import Nav from '@/components/shared/Nav/Nav';
 
-export default function LoginPage() {
-  useAuth();
+export default function Index() {
   return (
     <>
       <Meta />
+      <Nav />
+      <HomePage />
     </>
   );
 }
