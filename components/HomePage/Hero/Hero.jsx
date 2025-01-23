@@ -7,7 +7,7 @@ export default function Hero() {
     <div className={styles.container}>
       <Wrapper classNames={styles.wrapper}>
         <div className={styles.textContainer}>
-          <p>
+          <p className={styles.title}>
             The Next Generation of <br />
             Reproductive Healthcare
           </p>

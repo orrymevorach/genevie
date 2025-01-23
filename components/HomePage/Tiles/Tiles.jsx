@@ -16,7 +16,6 @@ export default function Tiles({ data = [] }) {
     <Wrapper>
       <div className={styles.container}>
         {data.map((tile, index) => {
-          console.log('tile', tile);
           return <Tile key={tile.title} {...tile} index={index} />;
         })}
       </div>

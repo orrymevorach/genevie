@@ -1,4 +1,5 @@
 @use '@variables' as variables;
+@use '@mixins' as mixins;
 
 .container {
   display: grid;
@@ -21,6 +22,7 @@
   justify-content: center;
   margin: 0 auto;
   font-size: 25px;
+  @include mixins.fontPrimary;
 }
 
 .title {
@@ -28,15 +30,19 @@
   text-align: center;
   font-size: 25px;
   text-transform: uppercase;
+  @include mixins.fontPrimary;
 }
 
 .description {
   text-align: center;
   font-size: 15px;
+  @include mixins.fontSecondary;
 }
 
 .button {
   width: 100%;
   font-size: 35px;
   margin: 80px 0 120px;
+  @include mixins.fontPrimary;
+  padding: 15px 0;
 }

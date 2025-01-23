@@ -1,44 +1,13 @@
 import styles from './Layout.module.scss';
 import Nav from '@/components/shared/Nav/Nav';
-import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
-import { useWindowSize } from '@/context/window-size-context/window-size-context';
-import Wrapper from '../Wrapper/Wrapper';
+import Footer from '../Footer/Footer';
 
-export default function Layout({
-  children,
-  backButtonHref = '',
-  backButtonText = '',
-  isDark = false,
-  isFixed = false,
-  removeWrapper = false,
-  NavChildren = null,
-}) {
-  const { isMobile } = useWindowSize();
-
-  const WrapperComponent = removeWrapper ? 'div' : Wrapper;
-
+export default function Layout({ children }) {
   return (
-    <div className={styles.layout}>
-      <Nav isDark={isDark} isFixed={isFixed}>
-        {NavChildren && <NavChildren />}
-      </Nav>
-      <WrapperComponent>
-        {backButtonText && (
-          <Link href={backButtonHref} className={styles.backButton}>
-            <FontAwesomeIcon
-              icon={faChevronCircleLeft}
-              color="#fff"
-              className={styles.chevron}
-              size={isMobile ? 'xl' : 'lg'}
-            />
-            {!isMobile && <p>{backButtonText}</p>}
-          </Link>
-        )}
-
-        {children}
-      </WrapperComponent>
+    <div>
+      <Nav />
+      {children}
+      <Footer />
     </div>
   );
 }

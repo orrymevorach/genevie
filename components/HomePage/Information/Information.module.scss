@@ -1,3 +1,5 @@
+@use '@mixins' as mixins;
+
 .container {
   text-align: center;
   display: flex;
@@ -15,12 +17,14 @@
   width: 700px;
   margin: 0 auto;
   text-transform: uppercase;
+  @include mixins.fontPrimary;
 }
 
 .description {
   width: 510px;
   margin: 25px auto;
   font-size: 15px;
+  @include mixins.fontSecondary;
 }
 
 .button {

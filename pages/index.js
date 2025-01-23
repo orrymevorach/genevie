@@ -7,7 +7,6 @@ export default function Index({ tiles }) {
   return (
     <>
       <Meta />
-      <Nav />
       <HomePage tiles={tiles} />
     </>
   );
