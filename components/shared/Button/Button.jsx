@@ -22,14 +22,13 @@ export default function Button({
   isDisabled = false,
   href = null,
   handleClick = null,
-  classNames = '',
+  classNames = {},
   isLight = false,
   isAnchor = false,
   isSmall = false,
   isInverted = false,
   isSecondary = false,
-  isYellow = false,
-  isPeach = false,
+  isTertiary = false,
   isNaked = false,
   isRound = false,
   style = {},
@@ -41,10 +40,9 @@ export default function Button({
     isSmall && styles.small,
     isInverted && styles.inverted,
     isSecondary && styles.secondary,
-    isYellow && styles.yellow,
-    isPeach && styles.peach,
     isNaked && styles.naked,
-    isRound && styles.round
+    isRound && styles.round,
+    isTertiary && styles.tertiary
   );
 
   if (isAnchor) {

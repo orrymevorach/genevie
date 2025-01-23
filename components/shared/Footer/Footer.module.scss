@@ -2,62 +2,78 @@
 @use '@mixins' as mixins;
 
 .footer {
-  background-color: variables.$lightGrey;
+  background-color: variables.$darkerGrey;
   width: 100%;
   margin: 0 auto;
-  margin-top: 80px;
+  padding: 35px 0;
   &.hideMarginTop {
     margin-top: 0;
   }
 }
 
-.innerContainer {
+.topRow {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin: 0 auto;
-  max-width: 1400px;
-  padding: 30px 15px;
+  margin-bottom: 60px;
 }
 
-.link {
-  text-decoration: underline;
+.logo {
+  width: 200px;
+}
+
+.logoIcon {
+  width: 35px;
+}
+
+.columns {
+  display: flex;
 }
 
 .column {
-  @include mixins.fontSecondary;
-  .contactUs {
-    margin-left: 80px;
-  }
-  &:nth-child(2) {
-    display: flex;
-    align-items: center;
+  margin-right: 95px;
+  max-width: 285px;
+}
+
+.link {
+  text-transform: uppercase;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.bottomRow {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  p:first-child {
+    margin-right: 10px;
   }
 }
 
-.text {
-  font-size: 14px;
+.emailContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
 }
-
-@media screen and (max-width: variables.$mobile) {
-  .footer {
-    margin-top: 30px;
+.emailInput {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+  margin-top: 10px;
+  padding-bottom: 5px;
+  color: black;
+  &::placeholder {
+    color: black;
   }
-  .innerContainer {
-    padding: 0;
-    flex-direction: column;
-    padding: 15px;
-  }
-  .column {
-    text-align: center;
-    .contactUs {
-      margin-left: 0px;
-    }
-    &:nth-child(2) {
-      flex-direction: column;
-    }
-
-    .text {
-      margin: 5px 0;
-    }
-  }
+}
+.chevron {
+  position: absolute;
+  right: 0;
 }

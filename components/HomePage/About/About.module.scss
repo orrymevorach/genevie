@@ -1,0 +1,20 @@
+@use '@variables' as variables;
+
+.container {
+  background-color: variables.$cream;
+}
+
+.wrapper {
+  display: flex;
+  padding: 120px 20px;
+  gap: 95px;
+}
+
+.title {
+  font-size: 35px;
+}
+
+.description {
+  font-size: 15px;
+  margin: 30px 0;
+}

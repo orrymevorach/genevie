@@ -1,0 +1,42 @@
+@use '@variables' as variables;
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.tile {
+  background-color: variables.$darkGrey;
+  padding: 45px 30px;
+}
+
+.number {
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 25px;
+}
+
+.title {
+  margin: 12px 0;
+  text-align: center;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.description {
+  text-align: center;
+  font-size: 15px;
+}
+
+.button {
+  width: 100%;
+  font-size: 35px;
+  margin: 80px 0 120px;
+}

@@ -16,6 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-transform: uppercase;
   .spinnerIcon {
     animation: rotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   }
@@ -57,6 +58,16 @@
     border: 1px solid variables.$grey;
     &:hover {
       background-color: #474747;
+      color: white;
+    }
+  }
+  &.tertiary {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: variables.$black;
+    border: 1px solid variables.$black;
+    &:hover {
+      background-color: black;
       color: white;
     }
   }
