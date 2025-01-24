@@ -20,8 +20,19 @@
   font-family: '';
 }
 
-@mixin Natural {
-  font-family: '';
+@mixin heading {
+  @include fontPrimary;
+  font-size: 50px;
+}
+
+@mixin headingSmall {
+  @include fontPrimary;
+  font-size: 35px;
+}
+
+@mixin paragraph {
+  @include fontSecondary;
+  font-size: 15px;
 }
 
 @mixin pulseShadow($color: #fff, $size: 15px, $opacity: 1) {

@@ -1,22 +1,18 @@
-import Wrapper from '@/components/shared/Wrapper/Wrapper';
 import styles from './Hero.module.scss';
-import Button from '@/components/shared/Button/Button';
+import clsx from 'clsx';
 
-export default function Hero() {
+export default function Hero({
+  imageUrl = '',
+  children,
+  classNames = {},
+  isCenter = false,
+}) {
   return (
-    <div className={styles.container}>
-      <Wrapper classNames={styles.wrapper}>
-        <div className={styles.textContainer}>
-          <p className={styles.title}>
-            The Next Generation of <br />
-            Reproductive Healthcare
-          </p>
-          <div className={styles.buttonsContainer}>
-            <Button classNames={styles.bookButton}>Book A Consultation</Button>
-            <Button isSecondary>Services</Button>
-          </div>
-        </div>
-      </Wrapper>
+    <div
+      className={clsx(styles.container, classNames, isCenter && styles.center)}
+      style={{ backgroundImage: `url(${imageUrl})` }}
+    >
+      {children}
     </div>
   );
 }

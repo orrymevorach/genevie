@@ -13,18 +13,16 @@
 }
 
 .title {
-  font-size: 35px;
+  @include mixins.headingSmall;
   width: 700px;
   margin: 0 auto;
   text-transform: uppercase;
-  @include mixins.fontPrimary;
 }
 
 .description {
   width: 510px;
   margin: 25px auto;
-  font-size: 15px;
-  @include mixins.fontSecondary;
+  @include mixins.paragraph;
 }
 
 .button {

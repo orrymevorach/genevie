@@ -35,14 +35,12 @@
 
 .description {
   text-align: center;
-  font-size: 15px;
-  @include mixins.fontSecondary;
+  @include mixins.paragraph;
 }
 
 .button {
+  @include mixins.headingSmall;
   width: 100%;
-  font-size: 35px;
   margin: 80px 0 120px;
-  @include mixins.fontPrimary;
   padding: 15px 0;
 }

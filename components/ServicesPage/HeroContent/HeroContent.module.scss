@@ -1,0 +1,19 @@
+@use '@mixins' as mixins;
+
+.heroContent {
+  color: white;
+}
+
+.title {
+  @include mixins.heading;
+}
+
+.description {
+  @include mixins.paragraph;
+  margin-top: 12px;
+}
+
+.button {
+  display: block;
+  margin: 25px auto 0;
+}
