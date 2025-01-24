@@ -1,0 +1,6 @@
+@use '@mixins' as mixins;
+
+.title {
+  @include mixins.heading;
+  color: white;
+}
