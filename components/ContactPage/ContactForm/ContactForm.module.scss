@@ -1,0 +1,15 @@
+@use '@mixins' as mixins;
+
+.textContainer {
+  text-align: center;
+  width: 470px;
+  margin: 0 auto 40px;
+}
+
+.title {
+  @include mixins.headingSmall;
+}
+
+.description {
+  @include mixins.paragraph;
+}

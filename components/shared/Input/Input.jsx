@@ -30,6 +30,17 @@ export default function Input({
         size="small"
         placeholder={placeholder}
         required={required}
+        sx={{
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              border: 'none',
+            },
+          },
+          '& .MuiInputBase-input::placeholder': {
+            color: 'black', // Change this to your desired color
+            opacity: 1, // Ensure the placeholder is fully visible
+          },
+        }}
       />
     </div>
   );
