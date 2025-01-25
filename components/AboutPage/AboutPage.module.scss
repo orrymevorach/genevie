@@ -1,0 +1,30 @@
+@use '@mixins' as mixins;
+
+.textContainer {
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+.container {
+  display: flex;
+  margin-bottom: 100px;
+  gap: 80px;
+}
+
+.left,
+.right {
+  width: 50%;
+}
+
+.title {
+  @include mixins.heading;
+  text-align: center;
+  margin-bottom: 40px;
+  span {
+    font-size: 28px;
+  }
+}
+
+.about {
+  @include mixins.paragraph;
+  margin-bottom: 20px;
+}

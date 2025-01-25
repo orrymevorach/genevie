@@ -1,0 +1,16 @@
+@use '@mixins' as mixins;
+
+.title {
+  font-size: 28px;
+  @include mixins.fontPrimary;
+  margin-bottom: 20px;
+}
+
+.name {
+  @include mixins.fontSecondaryBold;
+  font-size: 15px;
+}
+
+.publication {
+  margin-bottom: 30px;
+}

@@ -1,0 +1,20 @@
+@use '@mixins' as mixins;
+
+.container {
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: 28px;
+  @include mixins.fontPrimary;
+  margin-bottom: 20px;
+}
+
+.degree {
+  @include mixins.fontSecondaryBold;
+}
+
+.school {
+  @include mixins.fontSecondary;
+  margin-bottom: 30px;
+}

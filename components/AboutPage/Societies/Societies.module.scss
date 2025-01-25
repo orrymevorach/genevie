@@ -1,0 +1,12 @@
+@use '@mixins' as mixins;
+
+.title {
+  font-size: 28px;
+  @include mixins.fontPrimary;
+  margin-bottom: 20px;
+}
+
+.society {
+  @include mixins.fontSecondary;
+  margin-bottom: 10px;
+}

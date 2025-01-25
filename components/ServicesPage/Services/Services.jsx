@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import styles from './Services.module.scss';
 import RichText from '@/components/shared/RichText/RichText';
+import Wrapper from '@/components/shared/Wrapper/Wrapper';
 
 export default function Services({ services }) {
   return (
-    <div className={styles.container}>
+    <Wrapper classNames={styles.container}>
       <div className={styles.intro}>
         <p>
           Included in Your <br />
@@ -27,6 +28,6 @@ export default function Services({ services }) {
           </div>
         );
       })}
-    </div>
+    </Wrapper>
   );
 }

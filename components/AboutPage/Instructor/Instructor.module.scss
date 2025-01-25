@@ -1,0 +1,16 @@
+@use '@mixins' as mixins;
+
+.container {
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: 28px;
+  @include mixins.fontPrimary;
+  margin-bottom: 20px;
+}
+
+.school {
+  @include mixins.fontSecondary;
+  margin-bottom: 10px;
+}

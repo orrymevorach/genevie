@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Button from '../Button/Button';
 import styles from './RichText.module.scss';
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
@@ -8,7 +9,7 @@ export const sharedRichTextConfig = {
       return <p className={styles.richText}>{children}</p>;
     },
     [INLINES.HYPERLINK]: (node, children) => (
-      <Button
+      <Link
         href={node.data.uri}
         classNames={styles.link}
         target="_blank"
@@ -17,7 +18,7 @@ export const sharedRichTextConfig = {
         isRound
       >
         {children}
-      </Button>
+      </Link>
     ),
     [BLOCKS.UL_LIST]: (node, children) => (
       <ul className={styles.unorderedList}>{children}</ul>
