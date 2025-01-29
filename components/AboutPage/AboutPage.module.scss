@@ -16,7 +16,7 @@
 }
 
 .title {
-  @include mixins.heading;
+  @include mixins.headingSmall;
   text-align: center;
   margin-bottom: 40px;
   span {

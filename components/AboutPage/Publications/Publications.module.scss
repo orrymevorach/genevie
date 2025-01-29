@@ -9,6 +9,8 @@
 .name {
   @include mixins.fontSecondaryBold;
   font-size: 15px;
+  line-height: 21px;
+  margin-bottom: 7px;
 }
 
 .publication {

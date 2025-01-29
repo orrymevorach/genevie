@@ -16,7 +16,7 @@ export default function AboutPage({
   return (
     <Layout>
       <Hero imageUrl="./about-hero.png" />
-      <Wrapper>
+      <Wrapper isSmall>
         <div className={styles.textContainer}>
           <p className={styles.title}>
             Lila Dayani <span>MS, MS, LCGC</span>

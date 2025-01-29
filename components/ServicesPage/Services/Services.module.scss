@@ -7,7 +7,7 @@
 .intro {
   margin: 120px 0 130px;
   text-align: center;
-  @include mixins.heading;
+  @include mixins.headingSmall;
 }
 
 .service {
@@ -19,6 +19,7 @@
 .icon {
   width: 38px;
   margin-right: 30px;
+  margin-top: 5px;
 }
 
 .title {

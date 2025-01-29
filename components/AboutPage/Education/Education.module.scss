@@ -12,9 +12,10 @@
 
 .degree {
   @include mixins.fontSecondaryBold;
+  margin-bottom: 5px;
 }
 
 .school {
-  @include mixins.fontSecondary;
+  @include mixins.paragraph;
   margin-bottom: 30px;
 }

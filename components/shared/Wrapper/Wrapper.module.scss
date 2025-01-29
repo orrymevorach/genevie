@@ -12,6 +12,22 @@
   }
 }
 
+@mixin wrapperSmall {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: block;
+  position: relative;
+  @media screen and (max-width: variables.$tablet) {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
 .wrapper {
   @include wrapper;
+}
+
+.wrapperSmall {
+  @include wrapperSmall;
 }
