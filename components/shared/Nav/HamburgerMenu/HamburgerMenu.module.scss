@@ -1,9 +1,9 @@
 @use '@variables' as variables;
 
 .hamburgerMenu {
-  z-index: 10;
-  width: 30px;
-  height: 20px;
+  z-index: 11;
+  width: 60px;
+  height: 10px;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -34,6 +34,7 @@
   -moz-transition: 0.25s ease-in-out;
   -o-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
+  cursor: pointer;
 }
 
 .hamburgerMenu span:nth-child(1) {
@@ -42,7 +43,7 @@
 
 .hamburgerMenu span:nth-child(2),
 .hamburgerMenu span:nth-child(3) {
-  top: 7px;
+  top: 8px;
 }
 
 .hamburgerMenu span:nth-child(4) {

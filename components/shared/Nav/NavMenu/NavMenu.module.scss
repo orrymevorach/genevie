@@ -1,0 +1,58 @@
+@use '@variables' as variables;
+@use '@mixins' as mixins;
+
+.navMenu {
+  opacity: 0;
+  animation: fadeIn linear 0.3s forwards;
+  background-color: variables.$primaryColor;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  z-index: 10;
+  width: 100%;
+  padding-top: 100px;
+}
+
+.overlay {
+  background-color: rgba(variables.$black, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  border: none;
+}
+
+div.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.logoLink {
+  display: block;
+  width: 200px;
+}
+.logo {
+  width: 200px;
+  height: auto;
+}
+.listItems {
+  padding-right: 100px;
+  li {
+    @include mixins.fontPrimary;
+    font-size: 25px;
+    margin-bottom: 7px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

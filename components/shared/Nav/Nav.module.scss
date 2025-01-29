@@ -26,10 +26,10 @@ div.wrapper {
 
 .logoLink {
   display: block;
-  width: 150px;
+  width: 200px;
 }
 .logo {
-  width: 150px;
+  width: 200px;
   height: auto;
 }
 
@@ -39,6 +39,14 @@ div.wrapper {
   p {
     margin-right: 20px;
   }
+}
+
+.bookButton {
+  @include mixins.fontPrimary;
+  font-size: 15px;
+  border: none;
+  background: none;
+  margin-right: 10px;
 }
 
 @media screen and (max-width: variables.$mobile) {

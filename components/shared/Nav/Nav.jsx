@@ -1,31 +1,16 @@
 import Link from 'next/link';
 import styles from './Nav.module.scss';
-import Button from '@/components/shared/Button/Button';
 import { ROUTES } from '@/utils/constants';
 import Image from 'next/image';
 import clsx from 'clsx';
-import useWindowSize from '@/hooks/useWindowSize';
-import MobileNav from '@/components/shared/Nav/MobileNav/MobileNav';
+import NavMenu from '@/components/shared/Nav/NavMenu/NavMenu';
 import Wrapper from '../Wrapper/Wrapper';
 import logo from 'public/logo.png';
 import HamburgerMenu from './HamburgerMenu/HamburgerMenu';
+import { useState } from 'react';
 
-// const mapDeviceToLogo = {
-//   mobile: {
-//     light: '',
-//     dark: '',
-//   },
-//   desktop: {
-//     light: '',
-//     dark: '',
-//   },
-// };
-
-export default function Nav({ isDark, isFixed = false }) {
-  // const { isMobile } = useWindowSize();
-
-  // const logoTheme = isDark ? 'dark' : 'light';
-  // const logo = mapDeviceToLogo[isMobile ? 'mobile' : 'desktop'][logoTheme];
+export default function Nav({ isFixed = false }) {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className={clsx(styles.nav, isFixed && styles.fixed)}>
@@ -36,9 +21,11 @@ export default function Nav({ isDark, isFixed = false }) {
           </Link>
         </div>
         <div className={styles.rightContainer}>
-          <p>Book A Consultation</p>
-          <HamburgerMenu />
-          {/* <MobileNav /> */}
+          <button className={styles.bookButton}>
+            <p>Book A Consultation</p>
+          </button>
+          <HamburgerMenu setIsOpen={setIsOpen} isOpen={isOpen} />
+          {isOpen && <NavMenu setIsOpen={setIsOpen} />}
         </div>
       </Wrapper>
     </nav>
