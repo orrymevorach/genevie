@@ -9,7 +9,7 @@
 
 .tile {
   background-color: variables.$darkGrey;
-  padding: 45px 30px;
+  padding: 45px 25px;
 }
 
 .number {
@@ -31,6 +31,7 @@
   font-size: 25px;
   text-transform: uppercase;
   @include mixins.fontPrimary;
+  padding: 0 35px;
 }
 
 .description {
@@ -41,6 +42,6 @@
 .button {
   @include mixins.headingSmall;
   width: 100%;
-  margin: 80px 0 120px;
+  margin: 80px 0 140px;
   padding: 15px 0;
 }

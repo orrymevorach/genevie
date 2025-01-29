@@ -2,6 +2,7 @@
 
 @mixin fontPrimary {
   font-family: 'Beaufort Regular';
+  text-transform: uppercase;
 }
 
 @mixin fontSecondaryLight {
@@ -33,6 +34,7 @@
 @mixin paragraph {
   @include fontSecondary;
   font-size: 15px;
+  line-height: 21px;
 }
 
 @mixin pulseShadow($color: #fff, $size: 15px, $opacity: 1) {
