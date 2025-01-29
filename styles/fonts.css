@@ -1,4 +1,19 @@
-/* @font-face {
-  font-family: 'Aktiv Grotesk Regular';
-  src: url('../asset/fonts/AktivGrotesk/AktivGrotesk-Regular.ttf');
-} */
+@font-face {
+  font-family: 'Beaufort Regular';
+  src: url('../asset/fonts/Beaufort/BeaufortforLOL-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Beaufort Light';
+  src: url('../asset/fonts/Beaufort/BeaufortforLOL-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Maison Neue Regular';
+  src: url('../asset/fonts/Maison-Neue/fonnts.com-Maison_Neue_Book.ttf');
+}
+
+@font-face {
+  font-family: 'Maison Neue Bold';
+  src: url('../asset/fonts/Maison-Neue/fonnts.com-Maison_Neue_Bold.ttf');
+}

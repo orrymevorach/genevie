@@ -1,23 +1,23 @@
 @use '@variables' as variables;
 
 @mixin fontPrimary {
-  font-family: '';
+  font-family: 'Beaufort Regular';
 }
 
 @mixin fontSecondaryLight {
-  font-family: '';
+  font-family: 'Beaufort Light';
 }
 
 @mixin fontSecondary {
-  font-family: '';
+  font-family: 'Maison Neue Regular';
 }
 
-@mixin fontSecondaryMedium {
-  font-family: '';
-}
+// @mixin fontSecondaryMedium {
+//   font-family: '';
+// }
 
 @mixin fontSecondaryBold {
-  font-family: '';
+  font-family: 'Maison Neue Bold';
 }
 
 @mixin heading {

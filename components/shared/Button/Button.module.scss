@@ -2,7 +2,7 @@
 @use '@variables' as variables;
 
 .button {
-  @include mixins.fontSecondary;
+  @include mixins.fontPrimary;
   color: black;
   border: none;
   padding: 12px 25px;
