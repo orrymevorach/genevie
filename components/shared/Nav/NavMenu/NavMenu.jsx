@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { ROUTES } from '@/utils/constants';
 import logo from 'public/logo.png';
 
-export default function NavMenu({ setIsOpen }) {
+export default function NavMenu() {
   return (
     <>
       <div className={clsx(styles.navMenu)}>
@@ -36,10 +36,6 @@ export default function NavMenu({ setIsOpen }) {
           </ul>
         </Wrapper>
       </div>
-      <button
-        onClick={() => setIsOpen(false)}
-        className={styles.overlay}
-      ></button>
     </>
   );
 }

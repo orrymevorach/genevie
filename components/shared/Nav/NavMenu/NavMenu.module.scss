@@ -9,20 +9,9 @@
   bottom: 0;
   left: 0;
   height: 100%;
-  z-index: 10;
+  z-index: 12;
   width: 100%;
   padding-top: 100px;
-}
-
-.overlay {
-  background-color: rgba(variables.$black, 0.5);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 9;
-  top: 0;
-  left: 0;
-  border: none;
 }
 
 div.wrapper {

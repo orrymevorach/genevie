@@ -1,7 +1,7 @@
 @use '@variables' as variables;
 
 .hamburgerMenu {
-  z-index: 11;
+  z-index: 13;
   width: 60px;
   height: 10px;
   -webkit-transform: rotate(0deg);
@@ -15,6 +15,9 @@
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
   border: none;
+  &:active {
+    background-color: transparent;
+  }
 }
 
 .hamburgerMenu span {
@@ -22,7 +25,6 @@
   position: absolute;
   height: 1px;
   width: 70px;
-  background: black;
   border-radius: 9px;
   opacity: 1;
   left: 0;

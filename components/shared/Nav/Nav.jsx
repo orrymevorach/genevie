@@ -25,7 +25,7 @@ export default function Nav({ isFixed = false }) {
             <p>Book A Consultation</p>
           </button>
           <HamburgerMenu setIsOpen={setIsOpen} isOpen={isOpen} />
-          {isOpen && <NavMenu setIsOpen={setIsOpen} />}
+          {isOpen && <NavMenu />}
         </div>
       </Wrapper>
     </nav>

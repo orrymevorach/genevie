@@ -21,12 +21,12 @@
     animation: rotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   }
   &:hover {
-    color: variables.$black;
-    background-color: white;
+    color: white;
+    background-color: variables.$teal;
     transition: 0.2s;
     svg,
     p {
-      color: variables.$black;
+      color: white;
     }
   }
   &.light {
@@ -57,8 +57,8 @@
     color: variables.$grey;
     border: 1px solid variables.$grey;
     &:hover {
-      background-color: #474747;
-      color: white;
+      background-color: variables.$beige;
+      color: black;
     }
   }
   &.tertiary {
@@ -67,8 +67,8 @@
     color: variables.$black;
     border: 1px solid variables.$black;
     &:hover {
-      background-color: black;
       color: white;
+      background-color: variables.$teal;
     }
   }
 
