@@ -9,7 +9,9 @@
 .input {
   width: 300px;
   border-radius: 3px;
+  @include mixins.fontSecondary;
   input {
+    @include mixins.fontSecondary;
     padding: 12px 0;
     background-color: rgba(0, 0, 0, 0);
     border-radius: 0;
@@ -17,6 +19,7 @@
     outline: 0;
     border-bottom: 2px solid black;
     &::placeholder {
+      @include mixins.fontSecondary;
       color: black;
     }
   }

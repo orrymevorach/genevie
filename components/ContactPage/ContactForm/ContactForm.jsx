@@ -9,7 +9,7 @@ const ContactFormHeading = () => {
       <h3 className={styles.title}>General Inquiries</h3>
       <p className={styles.description}>
         If you want to join the Genevie team or have any questions, please email
-        us at info@geneviehealth.com or fill out the form below.
+        us at <span>info@geneviehealth.com</span> or fill out the form below.
       </p>
     </div>
   );

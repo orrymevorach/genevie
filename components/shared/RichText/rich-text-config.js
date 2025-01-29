@@ -11,7 +11,7 @@ export const sharedRichTextConfig = {
     [INLINES.HYPERLINK]: (node, children) => (
       <Link
         href={node.data.uri}
-        classNames={styles.link}
+        className={styles.link}
         target="_blank"
         rel="noreferrer"
         isSecondary

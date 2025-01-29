@@ -14,13 +14,11 @@ export default function Form({
   placeholder = '',
   minRows = 1,
   required = false,
-  maxWordCount = null,
   inputClassNames = '',
   labelClassNames = '',
   inputContainerClassNames = '',
 }) {
-  const [wordCount, setWordCount] = useState(0); // used for textarea
-  const Label = ({ id, label }) => {
+  const Label = () => {
     return (
       <InputLabel className={clsx(styles.inputLabel, labelClassNames)} id={id}>
         {label}
@@ -28,13 +26,15 @@ export default function Form({
       </InputLabel>
     );
   };
+
+  const placeholderWithAsterisk = `${placeholder}*`;
+
   switch (type) {
     case 'dropdown':
       return (
         <div
           className={clsx(styles.formFieldContainer, inputContainerClassNames)}
         >
-          <Label label={label} id={id} required={required} />
           <Select
             required={required}
             id={`${id}-label`}
@@ -57,10 +57,9 @@ export default function Form({
         <div
           className={clsx(styles.formFieldContainer, inputContainerClassNames)}
         >
-          <Label label={label} id={id} required={required} />
           <Input
             handleChange={e => handleChange(e.target.value)}
-            placeholder={placeholder}
+            placeholder={required ? placeholderWithAsterisk : placeholder}
             value={value}
             classNames={clsx(styles.input, inputClassNames)}
             required={required}
@@ -74,18 +73,12 @@ export default function Form({
           <TextareaAutosize
             value={value}
             onChange={e => {
-              setWordCount(e.target.value.split(' ').length);
               handleChange(e.target.value);
             }}
             minRows={minRows}
             className={styles.textarea}
             required={required}
           />
-          {maxWordCount && (
-            <p className={styles.wordCount}>
-              {wordCount}/{maxWordCount}
-            </p>
-          )}
         </div>
       );
   }

@@ -3,13 +3,17 @@
 .textContainer {
   text-align: center;
   width: 470px;
-  margin: 0 auto 40px;
+  margin: 100px auto 40px;
 }
 
 .title {
   @include mixins.headingSmall;
+  margin-bottom: 20px;
 }
 
 .description {
   @include mixins.paragraph;
+  span {
+    text-decoration: underline;
+  }
 }

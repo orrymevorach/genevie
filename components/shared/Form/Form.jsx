@@ -12,7 +12,6 @@ export default function SubmissionForm({
   labelClassNames = '',
   inputContainerClassNames = '',
   buttonClassNames = '',
-  requiredPosition = 'top',
 }) {
   const handleSubmitForm = e => {
     e.preventDefault();
@@ -25,13 +24,6 @@ export default function SubmissionForm({
       className={clsx(styles.container, formContainerClassNames)}
       onSubmit={handleSubmitForm}
     >
-      {requiredPosition === 'top' && (
-        <p className={styles.requiredText}>
-          Fields marked with an <span className={styles.asterisk}>*</span> are
-          required
-        </p>
-      )}
-
       {formConfig.map((elementConfig, index) => {
         return (
           <GetFormElement
@@ -43,16 +35,11 @@ export default function SubmissionForm({
           />
         );
       })}
-      {requiredPosition === 'bottom' && (
-        <p className={styles.requiredText}>
-          Fields marked with an <span className={styles.asterisk}>*</span> are
-          required
-        </p>
-      )}
 
       <Button
         classNames={clsx(styles.submitButton, buttonClassNames)}
         isLoading={isLoading}
+        isTertiary
       >
         Submit
       </Button>
