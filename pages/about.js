@@ -2,21 +2,11 @@ import AboutPage from '@/components/AboutPage/AboutPage';
 import Meta from '@/components/shared/Head/Head';
 import { getEntryByField, getEntryById } from '@/lib/contentful-utils';
 
-export default function About({
-  education,
-  instructor,
-  societies,
-  publications,
-}) {
+export default function About({ entries }) {
   return (
     <>
       <Meta />
-      <AboutPage
-        education={education}
-        instructor={instructor}
-        societies={societies}
-        publications={publications}
-      />
+      <AboutPage entries={entries} />
     </>
   );
 }
@@ -30,6 +20,7 @@ export async function getStaticProps() {
 
   const entries = await Promise.all(
     page.content.map(async ({ fields }) => {
+      if (!fields.content) return fields;
       const children = await Promise.all(
         fields.content.map(async ({ sys: { id } }) => {
           const entry = await getEntryById({ entryId: id });
@@ -40,14 +31,9 @@ export async function getStaticProps() {
     })
   );
 
-  const [education, instructor, societies, publications] = entries;
-
   return {
     props: {
-      education,
-      instructor,
-      societies,
-      publications,
+      entries,
     },
   };
 }

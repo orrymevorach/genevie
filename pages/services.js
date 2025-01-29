@@ -6,11 +6,11 @@ import {
   getMedia,
 } from '@/lib/contentful-utils';
 
-export default function Services({ services }) {
+export default function Services({ entries }) {
   return (
     <>
       <Meta />
-      <ServicesPage services={services} />
+      <ServicesPage entries={entries} />
     </>
   );
 }
@@ -21,20 +21,25 @@ export async function getStaticProps() {
     fieldName: 'title',
     fieldValue: 'SERVICES_PAGE',
   });
-  const servicesEntryIds = page.content[0].fields.services;
 
-  const services = await Promise.all(
-    servicesEntryIds.map(async ({ sys: { id } }) => {
-      const entry = await getEntryById({ entryId: id });
-      const icon = getMedia(entry.fields.icon);
-      entry.fields.icon = icon;
-      return entry.fields;
+  const entries = await Promise.all(
+    page.content.map(async ({ fields }) => {
+      if (!fields.services) return fields;
+
+      const services = [];
+      for (let service of fields.services) {
+        const entry = await getEntryById({ entryId: service.sys.id });
+        const icon = getMedia(entry.fields.icon);
+        entry.fields.icon = icon;
+        services.push(entry.fields);
+      }
+      return services;
     })
   );
 
   return {
     props: {
-      services,
+      entries,
     },
   };
 }

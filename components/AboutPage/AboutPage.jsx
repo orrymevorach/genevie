@@ -1,4 +1,5 @@
-import Hero from '../HomePage/Hero/Hero';
+import { getMedia } from '@/lib/contentful-utils';
+import Hero from '../shared/Hero/Hero';
 import Layout from '../shared/Layout/Layout';
 import Wrapper from '../shared/Wrapper/Wrapper';
 import styles from './AboutPage.module.scss';
@@ -7,15 +8,12 @@ import Instructor from './Instructor/Instructor';
 import Publications from './Publications/Publications';
 import Societies from './Societies/Societies';
 
-export default function AboutPage({
-  education,
-  instructor,
-  societies,
-  publications,
-}) {
+export default function AboutPage({ entries }) {
+  const [banner, education, instructor, societies, publications] = entries;
+  const bannerImage = getMedia(banner.image);
   return (
     <Layout>
-      <Hero imageUrl="./about-hero.png" />
+      <Hero imageUrl={bannerImage.src} />
       <Wrapper isSmall>
         <div className={styles.textContainer}>
           <p className={styles.title}>

@@ -1,18 +1,29 @@
 import HomePage from '@/components/HomePage/HomePage';
-import Tiles from '@/components/HomePage/Tiles/Tiles';
 import Meta from '@/components/shared/Head/Head';
-import Nav from '@/components/shared/Nav/Nav';
+import { getEntryByField, getEntryById } from '@/lib/contentful-utils';
 
-export default function Index({ tiles }) {
+export default function Index({ entries }) {
   return (
     <>
       <Meta />
-      <HomePage tiles={tiles} />
+      <HomePage entries={entries} />
     </>
   );
 }
 
-export function getStaticProps() {
+export async function getStaticProps() {
+  const page = await getEntryByField({
+    contentTypeId: 'page',
+    fieldName: 'title',
+    fieldValue: 'HOME_PAGE',
+  });
+
+  const entries = await Promise.all(
+    page.content?.map(async ({ fields }) => {
+      return fields;
+    })
+  );
+
   const tilesData = [
     {
       title: 'Comprehensive Risk Assessment',
@@ -32,7 +43,7 @@ export function getStaticProps() {
   ];
   return {
     props: {
-      tiles: tilesData,
+      entries: [...entries, tilesData],
     },
   };
 }

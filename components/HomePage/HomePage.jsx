@@ -1,16 +1,23 @@
-// import styles from './HomePage.module.scss';
+import styles from './HomePage.module.scss';
+import { getMedia } from '@/lib/contentful-utils';
 import Layout from '../shared/Layout/Layout';
 import About from './About/About';
-import Hero from './Hero/Hero';
-import HeroContent from './HeroContent/HeroContent';
+import Hero from '../shared/Hero/Hero';
+import HeroContent from '../shared/Hero/HeroContent/HeroContent';
 import Information from './Information/Information';
 import Tiles from './Tiles/Tiles';
+import Button from '../shared/Button/Button';
 
-export default function HomePage({ tiles }) {
+export default function HomePage({ entries }) {
+  const [banner, tiles] = entries;
+  const imageFields = getMedia(banner.image);
   return (
     <Layout>
-      <Hero imageUrl="./home-hero.png">
-        <HeroContent />
+      <Hero imageUrl={imageFields.src}>
+        <HeroContent text={banner.text} isCenter={false}>
+          <Button classNames={styles.bookButton}>Book A Consultation</Button>
+          <Button isSecondary>Services</Button>
+        </HeroContent>
       </Hero>
       <Information />
       <Tiles data={tiles} />

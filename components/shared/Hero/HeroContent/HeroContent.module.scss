@@ -1,0 +1,44 @@
+@use '@mixins' as mixins;
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  position: relative;
+}
+
+.textContainer {
+  color: white;
+  position: absolute;
+  bottom: 70px;
+}
+
+.title {
+  @include mixins.heading;
+}
+
+.paragraph {
+  @include mixins.paragraph;
+  width: 510px;
+  margin: 0 auto 15px;
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.center {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .textContainer {
+    position: relative;
+    bottom: auto;
+  }
+  .buttonsContainer {
+    justify-content: center;
+  }
+}

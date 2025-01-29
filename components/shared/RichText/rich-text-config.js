@@ -15,7 +15,6 @@ export const sharedRichTextConfig = {
         target="_blank"
         rel="noreferrer"
         isSecondary
-        isRound
       >
         {children}
       </Link>
