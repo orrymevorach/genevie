@@ -1,0 +1,17 @@
+@use '@variables' as variables;
+@use '@mixins' as mixins;
+
+.container {
+  background-color: variables.$darkGrey;
+  padding: 1px 0 1px;
+  margin: 0 60px;
+  padding-bottom: 70px;
+  margin-bottom: 100px;
+}
+
+.disclaimer {
+  @include mixins.paragraph;
+  text-transform: uppercase;
+  margin: 0 auto;
+  width: 582px;
+}

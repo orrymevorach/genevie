@@ -1,0 +1,54 @@
+@use '@mixins' as mixins;
+
+.container {
+  text-align: center;
+  margin-top: 120px;
+  margin-bottom: 80px;
+}
+
+.title {
+  @include mixins.headingSmall;
+  margin-bottom: 30px;
+}
+
+.description {
+  @include mixins.paragraph;
+  width: 687px;
+  margin: 0 auto 40px;
+}
+
+.itemsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 687px;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  width: 50%;
+}
+
+.check {
+  width: 26px;
+  margin-right: 15px;
+}
+
+.itemTitle,
+.line {
+  @include mixins.paragraph;
+}
+
+.itemTitle {
+  margin-bottom: 12px;
+  height: 40px;
+}
+
+.line {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}

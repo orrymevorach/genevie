@@ -17,6 +17,7 @@ export default function Form({
   inputClassNames = '',
   labelClassNames = '',
   inputContainerClassNames = '',
+  items = [],
 }) {
   const Label = () => {
     return (
@@ -33,7 +34,11 @@ export default function Form({
     case 'dropdown':
       return (
         <div
-          className={clsx(styles.formFieldContainer, inputContainerClassNames)}
+          className={clsx(
+            styles.formFieldContainer,
+            inputContainerClassNames,
+            styles.pseudoBorderBottom
+          )}
         >
           <Select
             required={required}
@@ -41,7 +46,21 @@ export default function Form({
             value={value}
             className={styles.dropdown}
             onChange={e => handleChange(e.target.value)}
+            displayEmpty
+            sx={{
+              '& .MuiOutlinedInput-notchedOutline': { border: 'none' },
+              '&:hover .MuiOutlinedInput-notchedOutline': { border: 'none' },
+              '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                border: 'none',
+              },
+              '& .MuiSelect-select': {
+                padding: '0px', // Removes default padding
+              },
+            }}
           >
+            <MenuItem value="" disabled>
+              {placeholder || 'Select an option'}
+            </MenuItem>
             {dropdownItems.map(item => {
               return (
                 <MenuItem key={item} value={item}>
@@ -68,7 +87,9 @@ export default function Form({
       );
     case 'textarea':
       return (
-        <div className={styles.formFieldContainer}>
+        <div
+          className={clsx(styles.formFieldContainer, styles.pseudoBorderBottom)}
+        >
           <Label label={label} id={id} required={required} />
           <TextareaAutosize
             value={value}
@@ -79,6 +100,17 @@ export default function Form({
             className={styles.textarea}
             required={required}
           />
+        </div>
+      );
+    case 'row':
+      return (
+        <div
+          className={clsx(styles.row)}
+          style={{ gridTemplateColumns: `repeat(${items.length}, 1fr)` }}
+        >
+          {items.map((item, index) => (
+            <Form key={index} {...item} />
+          ))}
         </div>
       );
   }

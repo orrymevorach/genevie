@@ -3,18 +3,6 @@ import styles from './ContactForm.module.scss';
 import Form from '../../shared/Form/Form';
 import Loader from '@/components/shared/Loader/Loader';
 
-const ContactFormHeading = () => {
-  return (
-    <div className={styles.textContainer}>
-      <h3 className={styles.title}>General Inquiries</h3>
-      <p className={styles.description}>
-        If you want to join the Genevie team or have any questions, please email
-        us at <span>info@geneviehealth.com</span> or fill out the form below.
-      </p>
-    </div>
-  );
-};
-
 export default function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -72,23 +60,17 @@ export default function ContactForm() {
     },
   ];
 
-  if (isLoading)
-    return (
-      <div className={styles.container}>
-        <ContactFormHeading />
-        <Loader />
-      </div>
-    );
-
   return (
     <div className={styles.container}>
-      <ContactFormHeading />
       {!isSubmitted ? (
         <Form
           formConfig={formConfig}
           handleSubmit={handleSubmit}
           isLoading={isLoading}
-          // inputClassNames={styles.input}
+          heading="General Inquiries"
+          text={
+            'If you want to join the Genevie team or have any questions, please email us at info@geneviehealth.com or fill out the form below.'
+          }
         />
       ) : (
         <h2 className={styles.thankYou}>Thank you for your submission!</h2>
