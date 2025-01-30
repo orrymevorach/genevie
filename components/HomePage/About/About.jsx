@@ -17,11 +17,12 @@ export default function About() {
           <p className={styles.description}>
             Starting a family raises a million questions, many of which can’t be
             fully addressed during limited time with our providers. From the big
-            questions like, "Will my baby be healthy? How will I know? Should I
-            have genetic testing, and which option is best?" to the smaller,
-            daily concerns such as, "Is this product safe to use?" or "Can I
-            take this supplement or medication?"  Information online (or from
-            friends) is often generic, contradictory, or outdated.
+            questions like, &quot;Will my baby be healthy? How will I know?
+            Should I have genetic testing, and which option is best?&quot; to
+            the smaller, daily concerns such as, &quot;Is this product safe to
+            use?&quot; or &quot;Can I take this supplement or medication?&quot; 
+            Information online (or from friends) is often generic,
+            contradictory, or outdated.
           </p>
           <p className={styles.description}>
             Despite the overwhelming need for reliable guidance, most families
