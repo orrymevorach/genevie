@@ -3,6 +3,7 @@ import Meta from '@/components/shared/Head/Head';
 import { getEntryByField } from '@/lib/contentful-utils';
 
 export default function Providers({ entries = [] }) {
+  return;
   return (
     <>
       <Meta />

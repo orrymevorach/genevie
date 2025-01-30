@@ -2,7 +2,8 @@ import AboutPage from '@/components/AboutPage/AboutPage';
 import Meta from '@/components/shared/Head/Head';
 import { getEntryByField, getEntryById } from '@/lib/contentful-utils';
 
-export default function About({ entries }) {
+export default function About({ entries = [] }) {
+  return;
   return (
     <>
       <Meta />

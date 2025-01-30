@@ -7,6 +7,7 @@ import {
 } from '@/lib/contentful-utils';
 
 export default function Services({ entries = [] }) {
+  return;
   return (
     <>
       <Meta />
