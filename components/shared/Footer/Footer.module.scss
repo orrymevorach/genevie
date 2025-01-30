@@ -39,7 +39,7 @@
   text-transform: uppercase;
   font-size: 15px;
   margin-bottom: 10px;
-  @include mixins.fontPrimary;
+  @include mixins.fontSecondary;
 }
 
 .title {
@@ -50,10 +50,13 @@
 }
 
 .bottomRow {
-  font-size: 12px;
   display: flex;
   align-items: center;
   margin-top: 40px;
+  p {
+    font-size: 13px;
+    @include mixins.fontSecondary;
+  }
   p:first-child {
     margin-right: 10px;
   }
@@ -74,6 +77,9 @@
   color: black;
   &::placeholder {
     color: black;
+    @include mixins.fontSecondary;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 }
 .chevron {

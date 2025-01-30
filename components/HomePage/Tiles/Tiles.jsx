@@ -1,5 +1,7 @@
 import Wrapper from '@/components/shared/Wrapper/Wrapper';
 import styles from './Tiles.module.scss';
+import Link from 'next/link';
+import { ROUTES } from '@/utils/constants';
 
 const Tile = ({ title, description, index }) => {
   return (
@@ -19,7 +21,9 @@ export default function Tiles({ data = [] }) {
           return <Tile key={tile.title} {...tile} index={index} />;
         })}
       </div>
-      <button className={styles.button}>Learn more about our services</button>
+      <Link href={ROUTES.SERVICES} className={styles.button}>
+        Learn more about our services
+      </Link>
     </Wrapper>
   );
 }

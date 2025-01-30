@@ -3,6 +3,7 @@ import styles from './About.module.scss';
 import Image from 'next/image';
 import image from '@/public/pregnant.png';
 import Button from '@/components/shared/Button/Button';
+import { ROUTES } from '@/utils/constants';
 
 export default function About() {
   return (
@@ -39,7 +40,7 @@ export default function About() {
             support throughout, empowering patients to feel confident and
             informed every step of their reproductive journey. 
           </p>
-          <Button isTertiary classNames={styles.button}>
+          <Button isTertiary classNames={styles.button} href={ROUTES.ABOUT}>
             Meet the founder
           </Button>
         </div>
