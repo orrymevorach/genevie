@@ -1,0 +1,27 @@
+@use '@mixins' as mixins;
+
+.columnHeading {
+  font-size: 28px;
+  @include mixins.fontPrimary;
+  margin-bottom: 20px;
+}
+
+.item {
+  margin-bottom: 40px;
+}
+
+.title {
+  @include mixins.fontSecondaryBold;
+  line-height: 21px;
+}
+
+.author {
+  @include mixins.paragraph;
+  margin-bottom: 10px;
+}
+
+.link {
+  @include mixins.fontSecondary;
+  text-transform: uppercase;
+  text-decoration: underline;
+}

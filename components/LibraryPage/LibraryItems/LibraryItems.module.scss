@@ -1,0 +1,23 @@
+@use '@mixins' as mixins;
+
+.container {
+  margin-bottom: 100px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 65px;
+}
+
+.pageHeading {
+  @include mixins.headingSmall;
+  margin: 120px auto 70px;
+  text-align: center;
+}
+
+.columnHeading {
+  font-size: 28px;
+  @include mixins.fontPrimary;
+  margin-bottom: 20px;
+}
