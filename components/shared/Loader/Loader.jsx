@@ -2,12 +2,15 @@ import styles from './Loader.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import clsx from 'clsx';
+import Image from 'next/image';
+import logoIcon from 'public/logo-icon.png';
 
 export default function Loader({
-  isDotted = true,
+  isDotted = false,
+  isRing = false,
   size = '2xl',
   classNames = '',
-  color = 'white',
+  color = 'black',
   isFullPage = false,
 }) {
   if (isDotted) {
@@ -28,18 +31,31 @@ export default function Loader({
       </div>
     );
   }
+  if (isRing)
+    return (
+      <div
+        className={clsx(
+          styles['lds-ring'],
+          isFullPage && styles.isFullPage,
+          classNames
+        )}
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    );
   return (
     <div
       className={clsx(
         styles['lds-ring'],
         isFullPage && styles.isFullPage,
-        classNames
+        classNames,
+        styles.pulse
       )}
     >
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <Image src={logoIcon} alt="Loader" />
     </div>
   );
 }

@@ -99,3 +99,20 @@
   position: absolute;
   font-size: 20px;
 }
+
+.pulse {
+  animation: pulse 1.3s infinite forwards ease-in-out;
+  left: auto;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
