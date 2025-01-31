@@ -7,7 +7,7 @@ export default function Meta() {
       <meta charSet="utf-8" />
       <meta name="description" content="Genevie" />
       <title>{tabTitle}</title>
-      <link rel="icon" href="" />
+      <link rel="icon" href="./logo-icon.png" />
     </Head>
   );
 }
