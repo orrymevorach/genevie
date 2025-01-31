@@ -6,6 +6,8 @@ import logo from 'public/logo.png';
 import logoIcon from 'public/logo-icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { ROUTES } from '@/utils/constants';
+import Link from 'next/link';
 
 const Email = () => {
   return (
@@ -38,8 +40,8 @@ const data = [
   {
     title: 'About',
     links: [
-      { title: 'meet the founder', url: '' },
-      { title: 'contact', url: '/contact' },
+      { title: 'meet the founder', url: ROUTES.ABOUT },
+      { title: 'contact', url: ROUTES.CONTACT },
     ],
   },
 ];
@@ -49,8 +51,12 @@ export default function Footer() {
     <footer className={styles.footer}>
       <Wrapper>
         <div className={styles.topRow}>
-          <Image src={logo} alt="Logo" className={styles.logo} />
-          <Image src={logoIcon} alt="Logo" className={styles.logoIcon} />
+          <Link href={ROUTES.HOME}>
+            <Image src={logo} alt="Logo" className={styles.logo} />
+          </Link>
+          <Link href={ROUTES.HOME}>
+            <Image src={logoIcon} alt="Logo" className={styles.logoIcon} />
+          </Link>
         </div>
         <div className={styles.columns}>
           {data.map(column => {
