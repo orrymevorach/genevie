@@ -19,21 +19,35 @@ export default function NavMenu({ fadeOut }) {
             </div>
             <ul className={styles.listItems}>
               <li>
-                <Link href="/about">About</Link>
+                <Link href="/about" className={styles.link}>
+                  About
+                </Link>
               </li>
               <li>
-                <Link href="/services">Services</Link>
+                <Link href="/services" className={styles.link}>
+                  Services
+                </Link>
               </li>
               <li>
-                <Link href="/providers">For Providers</Link>
+                <Link href="/providers" className={styles.link}>
+                  For Providers
+                </Link>
               </li>
               <li>
-                <Link href="/library">Library</Link>
+                <Link href="/library" className={styles.link}>
+                  Library
+                </Link>
               </li>
               <li>
-                <Link href="/contact">Contact</Link>
+                <Link href="/contact" className={styles.link}>
+                  Contact
+                </Link>
               </li>
-              <li className={styles.bold}>Book Now</li>
+              <li>
+                <Link href="#" className={clsx(styles.link, styles.bold)}>
+                  Book Now
+                </Link>
+              </li>
             </ul>
           </div>
           <div className={styles.footer}>

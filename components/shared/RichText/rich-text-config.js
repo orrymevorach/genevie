@@ -32,7 +32,11 @@ export const sharedRichTextConfig = {
   },
   renderText: text => {
     return text.split('\n').reduce((children, textSegment, index) => {
-      return [...children, index > 0 && <br key={index} />, textSegment];
+      return [
+        ...children,
+        index > 0 && <div key={index} className={styles.margin} />,
+        textSegment,
+      ];
     }, []);
   },
 };

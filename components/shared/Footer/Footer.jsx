@@ -25,16 +25,14 @@ const Email = () => {
 const data = [
   {
     title: 'Mailing List',
-    links: [
-      { title: 'RECEIVE OUR MONTHLY NEWSLETTER AND UPDATES', url: '/signup' },
-    ],
+    links: [{ title: 'RECEIVE OUR MONTHLY NEWSLETTER AND UPDATES' }],
     Component: Email,
   },
   {
     title: 'Follow Along',
     links: [
-      { title: 'instagram', url: '' },
-      { title: 'tik tok', url: '' },
+      { title: 'instagram', url: '#' },
+      { title: 'tik tok', url: '#' },
     ],
   },
   {
@@ -66,9 +64,18 @@ export default function Footer() {
                 <p className={styles.title}>{column.title}</p>
                 <ul>
                   {column.links.map(link => {
+                    if (!link.url) {
+                      return (
+                        <li key={link.title} className={styles.link}>
+                          {link.title}
+                        </li>
+                      );
+                    }
                     return (
                       <li key={link.title} className={styles.link}>
-                        <a href={link.url}>{link.title}</a>
+                        <a href={link.url} className={styles.anchor}>
+                          {link.title}
+                        </a>
                       </li>
                     );
                   })}

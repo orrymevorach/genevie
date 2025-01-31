@@ -46,7 +46,11 @@ div.wrapper {
   font-size: 15px;
   border: none;
   background: none;
-  margin-right: 10px;
+  margin-right: 20px;
+  position: relative;
+  transition: 0.3s;
+  @include mixins.borderBottom;
+  padding: 0;
 }
 
 @media screen and (max-width: variables.$mobile) {

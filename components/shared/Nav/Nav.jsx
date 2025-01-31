@@ -29,9 +29,7 @@ export default function Nav({ isFixed = false }) {
           </Link>
         </div>
         <div className={styles.rightContainer}>
-          <button className={styles.bookButton}>
-            <p>Book A Consultation</p>
-          </button>
+          <button className={styles.bookButton}>Book A Consultation</button>
           <HamburgerMenu
             setIsOpen={setIsOpen}
             isOpen={isOpen}

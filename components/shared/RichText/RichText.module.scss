@@ -6,6 +6,10 @@
   @include mixins.paragraph;
 }
 
+.margin {
+  margin-bottom: 10px;
+}
+
 .link {
   @include mixins.fontSecondaryBold;
   &:active {
