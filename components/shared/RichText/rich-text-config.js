@@ -14,7 +14,6 @@ export const sharedRichTextConfig = {
         className={styles.link}
         target="_blank"
         rel="noreferrer"
-        isSecondary
       >
         {children}
       </Link>

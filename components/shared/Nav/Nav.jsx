@@ -11,6 +11,7 @@ import { useState } from 'react';
 
 export default function Nav({ isFixed = false }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
 
   return (
     <nav className={clsx(styles.nav, isFixed && styles.fixed)}>
@@ -24,8 +25,13 @@ export default function Nav({ isFixed = false }) {
           <button className={styles.bookButton}>
             <p>Book A Consultation</p>
           </button>
-          <HamburgerMenu setIsOpen={setIsOpen} isOpen={isOpen} />
-          {isOpen && <NavMenu />}
+          <HamburgerMenu
+            setIsOpen={setIsOpen}
+            isOpen={isOpen}
+            setFadeOut={setFadeOut}
+            fadeOut={fadeOut}
+          />
+          {isOpen && <NavMenu fadeOut={fadeOut} />}
         </div>
       </Wrapper>
     </nav>
