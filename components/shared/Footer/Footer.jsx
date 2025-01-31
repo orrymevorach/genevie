@@ -24,8 +24,11 @@ const data = [
   {
     title: 'Follow Along',
     links: [
-      { title: 'instagram', url: '#' },
-      { title: 'tik tok', url: '#' },
+      {
+        title: 'instagram',
+        url: 'https://www.instagram.com/geneviehealth/',
+        target: '_blank',
+      },
     ],
   },
   {
@@ -38,6 +41,7 @@ const data = [
 ];
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className={styles.footer}>
       <Wrapper>
@@ -66,7 +70,11 @@ export default function Footer() {
                     }
                     return (
                       <li key={link.title} className={styles.link}>
-                        <a href={link.url} className={styles.anchor}>
+                        <a
+                          href={link.url}
+                          className={styles.anchor}
+                          target={link.target}
+                        >
                           {link.title}
                         </a>
                       </li>
@@ -79,7 +87,7 @@ export default function Footer() {
           })}
         </div>
         <div className={styles.bottomRow}>
-          <p>&copy; GENEVIE 2024</p>
+          <p>&copy; GENEVIE {currentYear}</p>
           <p>Privacy Policy</p>
         </div>
       </Wrapper>

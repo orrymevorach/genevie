@@ -6,16 +6,16 @@ export default function HamburgerMenu({
   isOpen = false,
   setIsOpen,
   hamburgerMenuColor = '#2f2f2f',
-  setFadeOut,
-  fadeOut,
+  setSlideOut,
+  slideOut,
 }) {
   const backgroundColor = isOpen ? '#2f2f2f' : hamburgerMenuColor;
   const handleClick = () => {
     if (isOpen) {
-      setFadeOut(true);
+      setSlideOut(true);
       setTimeout(() => {
         setIsOpen(false);
-        setFadeOut(false);
+        setSlideOut(false);
       }, 200);
       return;
     }
@@ -25,7 +25,7 @@ export default function HamburgerMenu({
     <button
       className={clsx(
         styles.hamburgerMenu,
-        isOpen && !fadeOut ? styles.open : ''
+        isOpen && !slideOut ? styles.open : ''
       )}
       onClick={handleClick}
     >

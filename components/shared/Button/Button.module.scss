@@ -32,36 +32,25 @@
       color: white;
     }
   }
-  &.light {
-    background-color: white;
-    color: variables.$black;
-    border: 2px solid variables.$black;
-    &:hover {
-      background-color: variables.$black;
-      color: white;
-    }
-  }
-  &.small {
-    padding: 12px 10px 10px 10px;
-    min-width: 80px;
-    @include mixins.fontPrimaryLight;
-    margin-top: 10px;
-    &:hover {
-      @include mixins.fontPrimary;
-    }
-  }
-  svg {
-    position: relative;
-    top: -2px;
-  }
+  // svg {
+  //   position: relative;
+  //   top: -2px;
+  // }
   &.secondary {
     background-color: rgba(0, 0, 0, 0);
     border: none;
     color: variables.$grey;
     border: 1px solid variables.$grey;
     &:hover {
-      background-color: variables.$beige;
+      color: white;
+      background-color: variables.$warmGrey;
+      transition: 0.2s;
       color: black;
+      border: 1px solid variables.$warmGrey;
+      svg,
+      p {
+        color: white;
+      }
     }
   }
   &.tertiary {
@@ -75,17 +64,11 @@
       transition: 0.2s;
       color: black;
       border: 1px solid variables.$warmGrey;
+      svg,
+      p {
+        color: white;
+      }
     }
-  }
-
-  &.naked {
-    background: none;
-    border: none;
-    padding: 0;
-    min-width: auto;
-  }
-  &.round {
-    border-radius: 20px;
   }
 }
 

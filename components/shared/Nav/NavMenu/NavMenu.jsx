@@ -2,21 +2,19 @@ import styles from './NavMenu.module.scss';
 import clsx from 'clsx';
 import Wrapper from '../../Wrapper/Wrapper';
 import Link from 'next/link';
-import Image from 'next/image';
-import { ROUTES } from '@/utils/constants';
-import logo from 'public/logo.png';
 
-export default function NavMenu({ fadeOut }) {
+export default function NavMenu({ slideOut, isOpen }) {
   return (
     <>
-      <div className={clsx(styles.navMenu, fadeOut && styles.fadeOut)}>
+      {isOpen && (
+        <div
+          className={clsx(styles.overlay, isOpen && slideOut && styles.fadeOut)}
+        ></div>
+      )}
+      <div className={clsx(styles.navMenu, slideOut && styles.slideOut)}>
         <Wrapper classNames={styles.wrapper}>
           <div className={styles.innerContainer}>
-            <div>
-              <Link href={ROUTES.HOME} className={styles.logoLink}>
-                <Image src={logo} alt="logo" className={styles.logo} />
-              </Link>
-            </div>
+            <div></div>
             <ul className={styles.listItems}>
               <li>
                 <Link href="/about" className={styles.link}>

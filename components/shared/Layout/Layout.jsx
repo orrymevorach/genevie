@@ -6,7 +6,7 @@ export default function Layout({ children }) {
   return (
     <div>
       <Nav />
-      {children}
+      <div className={styles.children}>{children}</div>
       <Footer />
     </div>
   );

@@ -7,18 +7,11 @@ import NavMenu from '@/components/shared/Nav/NavMenu/NavMenu';
 import Wrapper from '../Wrapper/Wrapper';
 import logo from 'public/logo.png';
 import HamburgerMenu from './HamburgerMenu/HamburgerMenu';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function Nav({ isFixed = false }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [fadeOut, setFadeOut] = useState(false);
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-  }, [isOpen]);
+  const [slideOut, setSlideOut] = useState(false);
 
   return (
     <nav className={clsx(styles.nav, isFixed && styles.fixed)}>
@@ -29,14 +22,21 @@ export default function Nav({ isFixed = false }) {
           </Link>
         </div>
         <div className={styles.rightContainer}>
-          <button className={styles.bookButton}>Book A Consultation</button>
+          <button
+            className={clsx(
+              styles.bookButton,
+              !isOpen && slideOut && styles.fadeOut
+            )}
+          >
+            Book A Consultation
+          </button>
           <HamburgerMenu
             setIsOpen={setIsOpen}
             isOpen={isOpen}
-            setFadeOut={setFadeOut}
-            fadeOut={fadeOut}
+            setSlideOut={setSlideOut}
+            slideOut={slideOut}
           />
-          {isOpen && <NavMenu fadeOut={fadeOut} />}
+          {isOpen && <NavMenu slideOut={slideOut} isOpen={isOpen} />}
         </div>
       </Wrapper>
     </nav>

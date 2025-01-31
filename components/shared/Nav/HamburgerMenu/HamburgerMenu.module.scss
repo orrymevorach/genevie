@@ -39,6 +39,11 @@
   cursor: pointer;
 }
 
+.hamburgerMenu.open span {
+  width: 40px;
+  left: 15px;
+}
+
 .hamburgerMenu span:nth-child(1) {
   top: 0px;
 }
