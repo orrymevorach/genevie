@@ -1,6 +1,7 @@
 import LibraryPage from '@/components/LibraryPage/LibraryPage';
 import Meta from '@/components/shared/Head/Head';
 import { getEntryByField, getEntryById } from '@/lib/contentful-utils';
+import { CONTENTFUL_PAGE_IDS } from '@/utils/constants';
 
 export default function Library({ entries = [] }) {
   return (
@@ -15,7 +16,7 @@ export async function getStaticProps() {
   const page = await getEntryByField({
     contentTypeId: 'page',
     fieldName: 'title',
-    fieldValue: 'LIBRARY_PAGE',
+    fieldValue: CONTENTFUL_PAGE_IDS.LIBRARY,
   });
 
   const entries = await Promise.all(

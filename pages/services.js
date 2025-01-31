@@ -5,6 +5,7 @@ import {
   getEntryById,
   getMedia,
 } from '@/lib/contentful-utils';
+import { CONTENTFUL_PAGE_IDS } from '@/utils/constants';
 
 export default function Services({ entries = [] }) {
   return (
@@ -19,7 +20,7 @@ export async function getStaticProps() {
   const page = await getEntryByField({
     contentTypeId: 'page',
     fieldName: 'title',
-    fieldValue: 'SERVICES_PAGE',
+    fieldValue: CONTENTFUL_PAGE_IDS.SERVICES,
   });
 
   const entries = await Promise.all(

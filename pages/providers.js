@@ -1,6 +1,7 @@
 import ProvidersPage from '@/components/ProvidersPage/ProvidersPage';
 import Meta from '@/components/shared/Head/Head';
 import { getEntryByField } from '@/lib/contentful-utils';
+import { CONTENTFUL_PAGE_IDS } from '@/utils/constants';
 
 export default function Providers({ entries = [] }) {
   return (
@@ -15,7 +16,7 @@ export async function getStaticProps() {
   const page = await getEntryByField({
     contentTypeId: 'page',
     fieldName: 'title',
-    fieldValue: 'PROVIDERS_PAGE',
+    fieldValue: CONTENTFUL_PAGE_IDS.PROVIDERS,
   });
 
   const entries = await Promise.all(
