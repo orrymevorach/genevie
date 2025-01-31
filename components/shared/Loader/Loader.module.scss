@@ -34,6 +34,11 @@
 .dottedIcon {
   animation: rotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
+
+.icon {
+  width: 40px;
+}
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);

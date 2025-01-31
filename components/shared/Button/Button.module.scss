@@ -5,7 +5,7 @@
   @include mixins.fontPrimary;
   color: black;
   border: none;
-  padding: 12px;
+  padding: 12px 14px;
   font-size: 16px;
   border-radius: variables.$borderRadius;
   min-width: 150px;
@@ -17,13 +17,16 @@
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
+  letter-spacing: 2px;
   .spinnerIcon {
     animation: rotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   }
   &:hover {
     color: white;
-    background-color: variables.$teal;
+    background-color: variables.$warmGrey;
     transition: 0.2s;
+    color: black;
+    border: 1px solid variables.$warmGrey;
     svg,
     p {
       color: white;
@@ -41,10 +44,10 @@
   &.small {
     padding: 12px 10px 10px 10px;
     min-width: 80px;
-    @include mixins.fontSecondaryLight;
+    @include mixins.fontPrimaryLight;
     margin-top: 10px;
     &:hover {
-      @include mixins.fontSecondary;
+      @include mixins.fontPrimary;
     }
   }
   svg {
@@ -68,7 +71,10 @@
     border: 1px solid variables.$black;
     &:hover {
       color: white;
-      background-color: variables.$teal;
+      background-color: variables.$warmGrey;
+      transition: 0.2s;
+      color: black;
+      border: 1px solid variables.$warmGrey;
     }
   }
 

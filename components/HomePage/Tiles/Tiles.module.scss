@@ -49,8 +49,10 @@
   text-align: center;
   transition: 0.3s;
   &:hover {
-    background-color: black;
     color: white;
-    transition: 0.3s;
+    background-color: variables.$warmGrey;
+    transition: 0.2s;
+    color: black;
+    border: 1px solid variables.$warmGrey;
   }
 }

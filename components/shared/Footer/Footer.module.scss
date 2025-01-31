@@ -70,7 +70,20 @@
   display: flex;
   align-items: center;
   position: relative;
+  &:after {
+    content: '>';
+    position: absolute;
+    right: 0;
+    color: black;
+    top: 0;
+    font-size: 20px;
+    height: 10px;
+    width: 10px;
+    display: block;
+    @include mixins.fontSecondary;
+  }
 }
+
 .emailInput {
   background-color: rgba(0, 0, 0, 0);
   border: none;
@@ -79,6 +92,11 @@
   margin-top: 10px;
   padding-bottom: 5px;
   color: black;
+  &:focus {
+    outline: none; /* Ensures no blue outline on focus */
+    border: none; /* Ensures no border on focus */
+    border-bottom: 1px solid black;
+  }
   &::placeholder {
     color: black;
     @include mixins.fontSecondary;

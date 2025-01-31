@@ -7,8 +7,9 @@
 
 .wrapper {
   display: flex;
-  padding: 120px 20px;
   gap: 95px;
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 
 .title {
@@ -19,7 +20,7 @@
 .description {
   margin: 20px 0;
   @include mixins.paragraph;
-  padding-right: 180px;
+  padding-right: 50px;
 }
 
 .button {

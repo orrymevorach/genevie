@@ -9,6 +9,11 @@
 }
 
 @font-face {
+  font-family: 'Beaufort Medium';
+  src: url('../asset/fonts/Beaufort/Beaufort\ W01\ Medium.ttf');
+}
+
+@font-face {
   font-family: 'Maison Neue Regular';
   src: url('../asset/fonts/Maison-Neue/fonnts.com-Maison_Neue_Book.ttf');
 }

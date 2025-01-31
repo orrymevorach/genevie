@@ -55,7 +55,7 @@ export default function Loader({
         styles.pulse
       )}
     >
-      <Image src={logoIcon} alt="Loader" />
+      <Image src={logoIcon} alt="Loader" className={styles.icon} />
     </div>
   );
 }

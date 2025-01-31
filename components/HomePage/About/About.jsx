@@ -20,7 +20,7 @@ export default function About() {
             questions like, &quot;Will my baby be healthy? How will I know?
             Should I have genetic testing, and which option is best?&quot; to
             the smaller, daily concerns such as, &quot;Is this product safe to
-            use?&quot; or &quot;Can I take this supplement or medication?&quot; 
+            use?&quot; or &quot;Can I take this supplement or medication?&quot;
             Information online (or from friends) is often generic,
             contradictory, or outdated.
           </p>

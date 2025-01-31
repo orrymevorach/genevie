@@ -1,4 +1,5 @@
 @use '@mixins' as mixins;
+@use '@variables' as variables;
 
 .wrapper {
   position: relative;
@@ -14,6 +15,7 @@
 
 .title {
   @include mixins.heading;
+  color: variables.$grey;
 }
 
 .paragraph {

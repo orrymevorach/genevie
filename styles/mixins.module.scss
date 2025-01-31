@@ -3,10 +3,17 @@
 @mixin fontPrimary {
   font-family: 'Beaufort Regular';
   text-transform: uppercase;
+  letter-spacing: 1.3px;
 }
 
-@mixin fontSecondaryLight {
+@mixin fontPrimaryLight {
   font-family: 'Beaufort Light';
+  // text-transform: uppercase;
+}
+
+@mixin fontPrimaryMedium {
+  font-family: 'Beaufort Medium';
+  // text-transform: uppercase;
 }
 
 @mixin fontSecondary {
@@ -22,13 +29,16 @@
 }
 
 @mixin heading {
-  @include fontPrimary;
+  @include fontPrimaryLight;
   font-size: 50px;
+  line-height: 55px;
+  letter-spacing: 1px;
 }
 
 @mixin headingSmall {
   @include fontPrimary;
   font-size: 35px;
+  letter-spacing: 2px;
 }
 
 @mixin paragraph {
