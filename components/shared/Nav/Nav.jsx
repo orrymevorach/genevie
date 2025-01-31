@@ -7,11 +7,18 @@ import NavMenu from '@/components/shared/Nav/NavMenu/NavMenu';
 import Wrapper from '../Wrapper/Wrapper';
 import logo from 'public/logo.png';
 import HamburgerMenu from './HamburgerMenu/HamburgerMenu';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Nav({ isFixed = false }) {
   const [isOpen, setIsOpen] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isOpen]);
 
   return (
     <nav className={clsx(styles.nav, isFixed && styles.fixed)}>

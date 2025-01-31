@@ -13,7 +13,6 @@ export default function HamburgerMenu({
   const handleClick = () => {
     if (isOpen) {
       setFadeOut(true);
-      document.body.style.overflow = '';
       setTimeout(() => {
         setIsOpen(false);
         setFadeOut(false);
@@ -21,7 +20,6 @@ export default function HamburgerMenu({
       return;
     }
     setIsOpen(true);
-    document.body.style.overflow = 'hidden';
   };
   return (
     <button
