@@ -1,5 +1,6 @@
 import HomePage from '@/components/HomePage/HomePage';
 import Meta from '@/components/shared/Head/Head';
+import Layout from '@/components/shared/Layout/Layout';
 import { getEntryByField } from '@/lib/contentful-utils';
 import { CONTENTFUL_PAGE_IDS } from '@/utils/constants';
 
@@ -7,7 +8,9 @@ export default function Index({ entries = [] }) {
   return (
     <>
       <Meta />
-      <HomePage entries={entries} />
+      <Layout>
+        <HomePage entries={entries} />
+      </Layout>
     </>
   );
 }

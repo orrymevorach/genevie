@@ -3,7 +3,16 @@ import clsx from 'clsx';
 import Wrapper from '../../Wrapper/Wrapper';
 import Link from 'next/link';
 
-export default function NavMenu({ slideOut, isOpen }) {
+export default function NavMenu({
+  slideOut,
+  isOpen,
+  setShowIframe,
+  setIsOpen,
+}) {
+  const handleClickBookNow = () => {
+    setIsOpen(false);
+    setShowIframe(true);
+  };
   return (
     <>
       {isOpen && (
@@ -42,9 +51,12 @@ export default function NavMenu({ slideOut, isOpen }) {
                 </Link>
               </li>
               <li>
-                <Link href="#" className={clsx(styles.link, styles.bold)}>
+                <button
+                  className={clsx(styles.link, styles.bold)}
+                  onClick={handleClickBookNow}
+                >
                   Book Now
-                </Link>
+                </button>
               </li>
             </ul>
           </div>

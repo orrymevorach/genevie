@@ -1,5 +1,6 @@
 import ServicesPage from '@/components/ServicesPage/ServicesPage';
 import Meta from '@/components/shared/Head/Head';
+import Layout from '@/components/shared/Layout/Layout';
 import {
   getEntryByField,
   getEntryById,
@@ -11,7 +12,9 @@ export default function Services({ entries = [] }) {
   return (
     <>
       <Meta />
-      <ServicesPage entries={entries} />
+      <Layout>
+        <ServicesPage entries={entries} />
+      </Layout>
     </>
   );
 }

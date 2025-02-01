@@ -1,11 +1,12 @@
 @use '@variables' as variables;
 
 .closeButton {
-  background-color: transparent;
+  background-color: black;
+  border-radius: 50%;
   border: none;
   position: absolute;
   right: 10px;
-  top: 10px;
+  // top: 10px;
   z-index: 10001;
   cursor: pointer;
   transition: 0.3s;
