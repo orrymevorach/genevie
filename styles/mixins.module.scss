@@ -28,6 +28,18 @@
   font-family: 'Maison Neue Bold';
 }
 
+@mixin fontSecondaryMedium {
+  font-family: 'Maison Neue Medium';
+}
+
+@mixin fontSecondaryDemi {
+  font-family: 'Maison Neue Demi';
+}
+
+@mixin fontSecondaryMono {
+  font-family: 'Maison Neue Mono';
+}
+
 @mixin heading {
   @include fontPrimaryLight;
   font-size: 50px;

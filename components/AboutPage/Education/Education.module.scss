@@ -11,8 +11,9 @@
 }
 
 .degree {
-  @include mixins.fontSecondaryBold;
+  @include mixins.fontSecondaryDemi;
   margin-bottom: 5px;
+  font-size: 16px;
 }
 
 .school {

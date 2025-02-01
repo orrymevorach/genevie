@@ -1,8 +1,9 @@
 @use '@mixins' as mixins;
+@use '@variables' as variables;
 
 .container {
   width: 100%;
-  height: 80vh;
+  height: 70vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -14,4 +15,10 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+@media screen and (min-width: 1500px) {
+  .container {
+    height: 80vh;
+  }
 }

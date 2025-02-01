@@ -32,6 +32,7 @@ export default function Button({
   isNaked = false,
   isRound = false,
   style = {},
+  isLinkStyle = false,
 }) {
   const classnames = clsx(
     styles.button,
@@ -42,7 +43,8 @@ export default function Button({
     isSecondary && styles.secondary,
     isNaked && styles.naked,
     isRound && styles.round,
-    isTertiary && styles.tertiary
+    isTertiary && styles.tertiary,
+    isLinkStyle && styles.link
   );
 
   if (isAnchor) {

@@ -11,9 +11,18 @@
 }
 
 .link {
-  @include mixins.fontSecondaryBold;
+  @include mixins.fontSecondaryMono;
+  font-size: 13px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin-top: 5px;
+  display: block;
   &:active {
     color: black;
+  }
+  &:hover {
+    text-decoration: none;
   }
 }
 

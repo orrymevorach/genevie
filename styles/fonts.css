@@ -22,3 +22,18 @@
   font-family: 'Maison Neue Bold';
   src: url('../asset/fonts/Maison-Neue/fonnts.com-Maison_Neue_Bold.ttf');
 }
+
+@font-face {
+  font-family: 'Maison Neue Medium';
+  src: url('../asset/fonts/Maison-Neue/MaisonNeue-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Maison Neue Demi';
+  src: url('../asset/fonts/Maison-Neue/MaisonNeue-Demi.ttf');
+}
+
+@font-face {
+  font-family: 'Maison Neue Mono';
+  src: url('../asset/fonts/Maison-Neue/fonnts.com-Maison_Neue_Mono.ttf');
+}
