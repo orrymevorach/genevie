@@ -1,5 +1,8 @@
 @use '@mixins' as mixins;
 
+.column {
+  width: 250px;
+}
 .columnHeading {
   font-size: 28px;
   @include mixins.fontPrimary;
@@ -11,8 +14,10 @@
 }
 
 .title {
-  @include mixins.fontSecondaryBold;
+  @include mixins.fontSecondaryMedium;
   line-height: 21px;
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
 .author {
