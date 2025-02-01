@@ -6,10 +6,16 @@ export default function Hero({
   children,
   classNames = {},
   isCenter = false,
+  isSmall = false,
 }) {
   return (
     <div
-      className={clsx(styles.container, classNames, isCenter && styles.center)}
+      className={clsx(
+        styles.container,
+        classNames,
+        isCenter && styles.center,
+        isSmall && styles.small
+      )}
       style={{ backgroundImage: `url(${imageUrl})` }}
     >
       {children}

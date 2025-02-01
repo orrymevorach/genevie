@@ -7,10 +7,8 @@ export default function Services({ services }) {
   return (
     <Wrapper classNames={styles.container}>
       <div className={styles.intro}>
-        <p>
-          Included in Your <br />
-          Genevie Experience
-        </p>
+        Included in Your <br />
+        Genevie Experience
       </div>
       {services.map(service => {
         const { title, icon, textContent } = service;

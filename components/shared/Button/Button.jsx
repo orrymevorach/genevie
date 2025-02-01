@@ -23,40 +23,33 @@ export default function Button({
   href = null,
   handleClick = null,
   classNames = {},
-  isLight = false,
   isAnchor = false,
-  isSmall = false,
-  isInverted = false,
   isSecondary = false,
   isTertiary = false,
-  isNaked = false,
-  isRound = false,
   style = {},
   isLinkStyle = false,
+  target = null,
+  isBeige = false,
 }) {
   const classnames = clsx(
     styles.button,
     classNames,
-    isLight && styles.light,
-    isSmall && styles.small,
-    isInverted && styles.inverted,
     isSecondary && styles.secondary,
-    isNaked && styles.naked,
-    isRound && styles.round,
     isTertiary && styles.tertiary,
-    isLinkStyle && styles.link
+    isLinkStyle && styles.link,
+    isBeige && styles.beige
   );
 
   if (isAnchor) {
     return (
-      <a href={href} className={classnames} style={style}>
+      <a href={href} className={classnames} style={style} target={target}>
         {children}
       </a>
     );
   }
   if (href) {
     return (
-      <Link href={href} className={classnames} style={style}>
+      <Link href={href} className={classnames} style={style} target={target}>
         {children}
       </Link>
     );

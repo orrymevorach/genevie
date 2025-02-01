@@ -12,9 +12,9 @@ export default function ServicesPage({ entries }) {
   const { setShowIframe } = useIframeContext();
   return (
     <>
-      <Hero imageUrl={image.src} isCenter>
+      <Hero imageUrl={image.src} isCenter isSmall>
         <HeroContent text={banner.text}>
-          <Button isSecondary handleClick={() => setShowIframe(true)}>
+          <Button isBeige handleClick={() => setShowIframe(true)}>
             Book A Consultation
           </Button>
         </HeroContent>

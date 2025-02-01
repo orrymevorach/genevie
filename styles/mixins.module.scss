@@ -8,21 +8,15 @@
 
 @mixin fontPrimaryLight {
   font-family: 'Beaufort Light';
-  // text-transform: uppercase;
 }
 
 @mixin fontPrimaryMedium {
   font-family: 'Beaufort Medium';
-  // text-transform: uppercase;
 }
 
 @mixin fontSecondary {
   font-family: 'Maison Neue Regular';
 }
-
-// @mixin fontSecondaryMedium {
-//   font-family: '';
-// }
 
 @mixin fontSecondaryBold {
   font-family: 'Maison Neue Bold';
@@ -45,12 +39,14 @@
   font-size: 50px;
   line-height: 55px;
   letter-spacing: 1px;
+  font-weight: normal;
 }
 
 @mixin headingSmall {
   @include fontPrimary;
   font-size: 35px;
   letter-spacing: 2px;
+  font-weight: normal;
 }
 
 @mixin paragraph {

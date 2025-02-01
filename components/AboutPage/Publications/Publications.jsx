@@ -12,7 +12,12 @@ export default function Publications({ publications }) {
             <p className={styles.name}>{publicationName}</p>
             <RichText json={description} />
             {link && (
-              <Button isLinkStyle href={link} classNames={styles.button}>
+              <Button
+                isLinkStyle
+                href={link}
+                classNames={styles.button}
+                target={'_blank'}
+              >
                 Read More
               </Button>
             )}

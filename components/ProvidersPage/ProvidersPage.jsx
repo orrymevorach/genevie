@@ -11,7 +11,7 @@ export default function ProvidersPage({ entries }) {
   const image = getMedia(banner.image);
   return (
     <Layout>
-      <Hero imageUrl={image.src} isCenter>
+      <Hero imageUrl={image.src} isCenter isSmall>
         <HeroContent text={banner.text} />
       </Hero>
       <Information />

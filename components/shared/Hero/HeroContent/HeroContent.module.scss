@@ -14,8 +14,9 @@
 }
 
 .title {
-  @include mixins.heading;
+  @include mixins.headingSmall;
   color: variables.$grey;
+  text-transform: uppercase;
 }
 
 .paragraph {

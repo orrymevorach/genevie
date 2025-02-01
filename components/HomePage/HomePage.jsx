@@ -15,7 +15,7 @@ export default function HomePage({ entries }) {
   const { setShowIframe } = useIframeContext();
   return (
     <>
-      <Hero imageUrl={imageFields.src}>
+      <Hero imageUrl={imageFields.src} classNames={styles.hero}>
         <HeroContent text={banner.text} isCenter={false}>
           <Button
             classNames={styles.bookButton}

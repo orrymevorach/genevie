@@ -87,6 +87,21 @@
       border: 1px solid transparent;
     }
   }
+  &.beige {
+    background-color: variables.$darkGrey;
+    border: 1px solid variables.$darkGrey;
+    &:hover {
+      color: white;
+      background-color: variables.$warmGrey;
+      transition: 0.2s;
+      color: black;
+      border: 1px solid variables.$warmGrey;
+      svg,
+      p {
+        color: white;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: variables.$mobile) {
