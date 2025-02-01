@@ -45,7 +45,20 @@ button {
   cursor: pointer;
 }
 
+input:-webkit-autofill {
+  background-color: transparent !important;
+  transition: background-color 5000s ease-in-out 0s;
+  animation-name: autofill;
+  animation-fill-mode: both;
+}
+
 html {
   scroll-behavior: smooth;
   background-color: #f0efee;
+}
+
+@keyframes autofill {
+  to {
+    background: transparent; /* Ensures consistent background */
+  }
 }

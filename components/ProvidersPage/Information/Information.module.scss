@@ -20,8 +20,8 @@
 .itemsContainer {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  width: 687px;
+  gap: 30px;
+  width: 750px;
   margin: 0 auto;
 }
 
@@ -44,11 +44,13 @@
 
 .itemTitle {
   margin-bottom: 12px;
-  height: 40px;
+  font-weight: normal;
 }
 
 .line {
-  list-style: disc;
   margin-left: 20px;
   margin-bottom: 10px;
+  padding-left: 5px;
+  position: relative;
+  @include mixins.marker;
 }

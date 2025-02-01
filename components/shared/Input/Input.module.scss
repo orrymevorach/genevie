@@ -10,14 +10,13 @@
   width: 300px;
   border-radius: 3px;
   @include mixins.fontSecondary;
+  @include mixins.pseudoBorderBottom;
   input {
     @include mixins.fontSecondary;
     padding: 12px 0;
     background-color: rgba(0, 0, 0, 0);
     border-radius: 0;
-    border: none;
     outline: 0;
-    border-bottom: 2px solid black;
     &::placeholder {
       @include mixins.fontSecondary;
       color: black;
@@ -37,6 +36,12 @@
   font-size: 16px;
   margin-bottom: 10px;
   @include mixins.fontPrimaryLight;
+}
+
+.check {
+  position: absolute;
+  right: 10px;
+  top: 20px;
 }
 
 @media screen and (max-width: variables.$mobile) {

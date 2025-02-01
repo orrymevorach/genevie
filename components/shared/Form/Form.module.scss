@@ -15,6 +15,10 @@
   height: 40px;
   border: none;
   margin-top: 10px;
+  @include mixins.pseudoBorderBottom;
+}
+.dropdownCheck {
+  right: 30px !important;
 }
 
 .input,
@@ -28,24 +32,23 @@ label.inputLabel {
   border-color: #c0baab;
   font-size: 16px;
   position: relative;
-}
-
-.pseudoBorderBottom {
-  position: relative;
-  &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    background-color: black;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-  }
+  font-weight: normal;
+  @include mixins.fontSecondary;
 }
 
 .textarea {
   padding: 8.5px 14px; // to match default MUI input padding
-  border: none;
+  border: 1px solid black;
+  border-radius: 0;
+  margin-top: 12px;
+}
+
+.textareaFormFields {
+  margin-top: 40px !important;
+}
+
+.textareaCheck {
+  top: 10px !important;
 }
 
 .wordCount {
@@ -94,6 +97,12 @@ label.inputLabel {
   span {
     text-decoration: underline;
   }
+}
+
+.check {
+  position: absolute;
+  right: 10px;
+  top: 20px;
 }
 
 @media screen and (max-width: variables.$mobile) {

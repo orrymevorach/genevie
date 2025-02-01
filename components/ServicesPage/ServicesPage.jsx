@@ -14,7 +14,7 @@ export default function ServicesPage({ entries }) {
     <>
       <Hero imageUrl={image.src} isCenter isSmall>
         <HeroContent text={banner.text}>
-          <Button isBeige handleClick={() => setShowIframe(true)}>
+          <Button handleClick={() => setShowIframe(true)}>
             Book A Consultation
           </Button>
         </HeroContent>

@@ -74,6 +74,33 @@
   }
 }
 
+@mixin marker {
+  position: relative;
+  &:after {
+    content: '';
+    background-color: black;
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 7px;
+    left: -10px;
+    border-radius: 50%;
+  }
+}
+
+@mixin pseudoBorderBottom {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background-color: black;
+    height: 1px;
+    bottom: -3px;
+    left: 0;
+  }
+}
+
 @mixin pulseShadow($color: #fff, $size: 15px, $opacity: 1) {
   animation: infinite 2s pulseShadow ease-in-out;
   box-shadow: 0 0 $size $color;

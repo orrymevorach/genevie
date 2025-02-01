@@ -21,6 +21,7 @@
 
 .paragraph {
   @include mixins.paragraph;
+  color: variables.$grey;
   width: 510px;
   margin: 0 auto 15px;
 }

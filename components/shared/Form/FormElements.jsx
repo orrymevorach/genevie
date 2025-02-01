@@ -3,6 +3,8 @@ import { InputLabel, MenuItem, Select, TextareaAutosize } from '@mui/material';
 import Input from '@/components/shared/Input/Input';
 import { useState } from 'react';
 import clsx from 'clsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 export default function Form({
   type,
@@ -19,6 +21,7 @@ export default function Form({
   inputContainerClassNames = '',
   items = [],
 }) {
+  const [showCheckMark, setShowCheckMark] = useState(false);
   const Label = () => {
     return (
       <InputLabel className={clsx(styles.inputLabel, labelClassNames)} id={id}>
@@ -28,17 +31,36 @@ export default function Form({
     );
   };
 
+  const handleAnimationStart = event => {
+    if (
+      event.animationName === 'autofill' ||
+      event.animationName === 'mui-auto-fill'
+    ) {
+      setShowCheckMark(true);
+    }
+    if (
+      event.animationName === 'autofill-cancel' ||
+      event.animationName === 'mui-auto-fill-cancel'
+    ) {
+      setShowCheckMark(false);
+    }
+  };
+
+  const handleBlur = () => {
+    if (value) {
+      setShowCheckMark(true);
+    } else {
+      setShowCheckMark(false);
+    }
+  };
+
   const placeholderWithAsterisk = `${placeholder}*`;
 
   switch (type) {
     case 'dropdown':
       return (
         <div
-          className={clsx(
-            styles.formFieldContainer,
-            inputContainerClassNames,
-            styles.pseudoBorderBottom
-          )}
+          className={clsx(styles.formFieldContainer, inputContainerClassNames)}
         >
           <Select
             required={required}
@@ -46,6 +68,8 @@ export default function Form({
             value={value}
             className={styles.dropdown}
             onChange={e => handleChange(e.target.value)}
+            onBlur={handleBlur}
+            onAnimationStart={handleAnimationStart}
             displayEmpty
             sx={{
               '& .MuiOutlinedInput-notchedOutline': { border: 'none' },
@@ -55,6 +79,13 @@ export default function Form({
               },
               '& .MuiSelect-select': {
                 padding: '0px', // Removes default padding
+              },
+              '& .MuiSelect-icon': {
+                color: 'black', // Change arrow color
+              },
+              '&:focus-within': {
+                outline: '2px solid #1976d2', // Chrome's default blue
+                outlineOffset: '2px',
               },
             }}
           >
@@ -69,6 +100,13 @@ export default function Form({
               );
             })}
           </Select>
+          {showCheckMark && (
+            <FontAwesomeIcon
+              icon={faCheckCircle}
+              className={clsx(styles.check, styles.dropdownCheck)}
+              color="#499048"
+            />
+          )}
         </div>
       );
     case 'text':
@@ -88,7 +126,7 @@ export default function Form({
     case 'textarea':
       return (
         <div
-          className={clsx(styles.formFieldContainer, styles.pseudoBorderBottom)}
+          className={clsx(styles.formFieldContainer, styles.textareaFormFields)}
         >
           <Label label={label} id={id} required={required} />
           <TextareaAutosize
@@ -99,7 +137,16 @@ export default function Form({
             minRows={minRows}
             className={styles.textarea}
             required={required}
+            onBlur={handleBlur}
+            onAnimationStart={handleAnimationStart}
           />
+          {showCheckMark && (
+            <FontAwesomeIcon
+              icon={faCheckCircle}
+              className={clsx(styles.check, styles.textareaCheck)}
+              color="#499048"
+            />
+          )}
         </div>
       );
     case 'row':

@@ -10,8 +10,10 @@
 }
 
 .disclaimer {
-  @include mixins.paragraph;
+  @include mixins.fontSecondaryMono;
   text-transform: uppercase;
   margin: 0 auto;
   width: 582px;
+  font-size: 13px;
+  line-height: 16px;
 }

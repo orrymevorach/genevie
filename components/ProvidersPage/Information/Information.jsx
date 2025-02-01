@@ -8,14 +8,14 @@ const items = [
     items: [
       'Carrier Screening',
       'Cancer Predisposition Screening',
-      'Comprehensive Genetic  and Genomic Testing',
+      'Comprehensive Genetic and Genomic Testing',
     ],
   },
   {
     title: 'When you refer to Genevie, we’ll handle:',
     items: [
       'Ordering and interpreting genetic testing ',
-      'Providing you with detailed,  actionable reports',
+      'Providing you with detailed, actionable reports',
       'Availability for patient care discussions ',
     ],
   },
