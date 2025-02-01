@@ -1,0 +1,42 @@
+@use '@mixins' as mixins;
+@use '@variables' as variables;
+
+.iframeContainer {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+}
+
+.iframe {
+  z-index: 3;
+}
+
+.overlay {
+  animation: fadeIn linear 0.3s forwards;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+.closeButtonContainer {
+  width: 650px;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

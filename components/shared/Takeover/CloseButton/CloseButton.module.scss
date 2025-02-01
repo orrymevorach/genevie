@@ -1,9 +1,8 @@
 @use '@variables' as variables;
 
 .closeButton {
-  background-color: white;
+  background-color: transparent;
   border: none;
-  color: variables.$primaryColor;
   position: absolute;
   right: 10px;
   top: 10px;
@@ -12,18 +11,14 @@
   transition: 0.3s;
   padding: 0;
   &:hover {
-    background-color: variables.$primaryColor;
-    color: white;
     transition: 0.3s;
     border-radius: 50%;
   }
   &.dark {
-    background-color: variables.$newBlack;
     color: white;
     border: none;
     &:hover {
       background-color: white;
-      color: variables.$newBlack;
       transition: 0.3s;
     }
   }

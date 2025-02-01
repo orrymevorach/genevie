@@ -50,7 +50,7 @@
     height: calc(100% + 50px);
   }
   &.dark {
-    background-color: variables.$newBlack;
+    background-color: variables.$black;
     color: white;
   }
 }

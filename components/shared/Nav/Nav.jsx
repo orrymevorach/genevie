@@ -8,13 +8,16 @@ import Wrapper from '../Wrapper/Wrapper';
 import logo from 'public/logo.png';
 import HamburgerMenu from './HamburgerMenu/HamburgerMenu';
 import { useState } from 'react';
+import AppointmentsIframe from './AppointmentsIframe/AppointmentsIframe';
 
 export default function Nav({ isFixed = false }) {
   const [isOpen, setIsOpen] = useState(false);
   const [slideOut, setSlideOut] = useState(false);
+  const [showIFrame, setShowIFrame] = useState(false);
 
   return (
     <nav className={clsx(styles.nav, isFixed && styles.fixed)}>
+      {showIFrame && <AppointmentsIframe setShowIFrame={setShowIFrame} />}
       <Wrapper classNames={styles.wrapper}>
         <div>
           <Link href={ROUTES.HOME} className={styles.logoLink}>
@@ -23,6 +26,7 @@ export default function Nav({ isFixed = false }) {
         </div>
         <div className={styles.rightContainer}>
           <button
+            onClick={() => setShowIFrame(true)}
             className={clsx(
               styles.bookButton,
               !isOpen && slideOut && styles.fadeOut
