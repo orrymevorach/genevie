@@ -3,6 +3,13 @@
 
 .container {
   background-color: variables.$cream;
+  h2 {
+    margin-bottom: 30px;
+  }
+  p {
+    margin: 20px 0;
+    padding-right: 50px;
+  }
 }
 
 .wrapper {
@@ -10,17 +17,6 @@
   gap: 95px;
   padding-top: 120px;
   padding-bottom: 120px;
-}
-
-.title {
-  @include mixins.headingSmall;
-  margin-bottom: 30px;
-}
-
-.description {
-  margin: 20px 0;
-  @include mixins.paragraph;
-  padding-right: 50px;
 }
 
 .button {

@@ -10,7 +10,7 @@ import { ROUTES } from '@/utils/constants';
 import { useIframeContext } from '../shared/Layout/Layout';
 
 export default function HomePage({ entries }) {
-  const [banner, tiles] = entries;
+  const [banner, richTextInformation, richTextAbout, tiles] = entries;
   const imageFields = getMedia(banner.image);
   const { setShowIframe } = useIframeContext();
   return (
@@ -28,9 +28,9 @@ export default function HomePage({ entries }) {
           </Button>
         </HeroContent>
       </Hero>
-      <Information />
+      <Information richText={richTextInformation} />
       <Tiles data={tiles} />
-      <About />
+      <About richText={richTextAbout} />
     </>
   );
 }

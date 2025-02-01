@@ -31,6 +31,17 @@
   text-decoration: underline;
 }
 
+.title {
+  @include mixins.headingSmall;
+  font-weight: normal;
+}
+
+.subHeading {
+  @include mixins.headingSmall;
+  font-weight: normal;
+  font-size: 28px;
+}
+
 @media screen and (max-width: variables.$mobile) {
   .link {
     font-size: 14px;

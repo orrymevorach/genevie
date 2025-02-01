@@ -3,6 +3,20 @@
 .textContainer {
   margin-top: 100px;
   margin-bottom: 80px;
+  text-align: center;
+  h2,
+  h3 {
+    margin: 0 auto 40px;
+    text-align: center;
+    display: inline-block;
+  }
+  h2 {
+    margin-right: 10px;
+  }
+  p {
+    text-align: left;
+    margin-bottom: 20px;
+  }
 }
 .container {
   display: flex;
@@ -13,18 +27,4 @@
 .left,
 .right {
   width: 50%;
-}
-
-.title {
-  @include mixins.headingSmall;
-  text-align: center;
-  margin-bottom: 40px;
-  span {
-    font-size: 28px;
-  }
-}
-
-.about {
-  @include mixins.paragraph;
-  margin-bottom: 20px;
 }

@@ -6,24 +6,16 @@
   flex-direction: column;
   align-items: center;
   margin: 140px auto 80px !important;
-}
-.title,
-.description {
-  text-align: center;
-}
-
-.title {
-  @include mixins.headingSmall;
-  width: 700px;
-  margin: 0 auto;
-  text-transform: uppercase;
-  padding: 0 20px;
-}
-
-.description {
-  width: 510px;
-  margin: 25px auto;
-  @include mixins.paragraph;
+  // Rich text styles
+  h2 {
+    width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  p {
+    width: 510px;
+    margin: 25px auto;
+  }
 }
 
 .button {

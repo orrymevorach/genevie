@@ -29,12 +29,18 @@ export const sharedRichTextConfig = {
     [MARKS.UNDERLINE]: (node, children) => (
       <p className={styles.underline}>{children}</p>
     ),
+    [BLOCKS.HEADING_1]: (node, children) => {
+      return <h2 className={styles.title}>{children}</h2>;
+    },
+    [BLOCKS.HEADING_2]: (node, children) => {
+      return <h3 className={styles.subHeading}>{children}</h3>;
+    },
   },
   renderText: text => {
     return text.split('\n').reduce((children, textSegment, index) => {
       return [
         ...children,
-        index > 0 && <div key={index} className={styles.margin} />,
+        index > 0 && <div key={textSegment} className={styles.margin} />,
         textSegment,
       ];
     }, []);
