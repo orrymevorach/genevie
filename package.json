@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' && npm run clear-cache && next dev",
-    "build": "npm run clear-cache && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "clear-cache": "rm -rf .next"
