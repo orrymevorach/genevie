@@ -1,11 +1,8 @@
 import ServicesPage from '@/components/ServicesPage/ServicesPage';
 import Meta from '@/components/shared/Head/Head';
 import Layout from '@/components/shared/Layout/Layout';
-import {
-  getEntryByField,
-  getEntryById,
-  getMedia,
-} from '@/lib/contentful-utils';
+import { getEntryByField, getEntryById } from '@/lib/contentful-server-utils';
+import { getMedia } from '@/lib/contentful-utils';
 import { CONTENTFUL_PAGE_IDS } from '@/utils/constants';
 
 export default function Services({ entries = [] }) {

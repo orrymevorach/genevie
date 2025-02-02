@@ -1,6 +1,6 @@
 import ProvidersPage from '@/components/ProvidersPage/ProvidersPage';
 import Meta from '@/components/shared/Head/Head';
-import { getEntryByField } from '@/lib/contentful-utils';
+import { getEntryByField } from '@/lib/contentful-server-utils';
 import { CONTENTFUL_PAGE_IDS } from '@/utils/constants';
 
 export default function Providers({ entries = [] }) {

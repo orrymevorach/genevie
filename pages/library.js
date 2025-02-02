@@ -1,6 +1,6 @@
 import LibraryPage from '@/components/LibraryPage/LibraryPage';
 import Meta from '@/components/shared/Head/Head';
-import { getEntryByField, getEntryById } from '@/lib/contentful-utils';
+import { getEntryByField, getEntryById } from '@/lib/contentful-server-utils';
 import { CONTENTFUL_PAGE_IDS } from '@/utils/constants';
 
 export default function Library({ entries = [] }) {
