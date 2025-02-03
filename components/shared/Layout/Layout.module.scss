@@ -2,11 +2,11 @@
 @use '@variables' as variables;
 
 .children {
-  padding-top: 90px;
+  padding-top: 90px; // to show up below the navbar
 }
 
 @media screen and (max-width: variables.$mobile) {
   .children {
-    padding-top: 25px;
+    padding-top: 75px; // to show up below the navbar
   }
 }
