@@ -35,6 +35,10 @@ a {
   color: black;
 }
 
+a:active {
+  color: black;
+}
+
 img {
   display: block;
   height: auto;
