@@ -1,6 +1,7 @@
 @use '@mixins' as mixins;
+@use '@variables' as variables;
 
-.container {
+.wrapper {
   width: 1100px;
   padding-bottom: 80px !important;
 }
@@ -29,4 +30,28 @@
   font-size: 28px;
   @include mixins.fontPrimary;
   width: 300px;
+}
+
+@media screen and (max-width: variables.$mobile) {
+  .intro {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
+  .wrapper {
+    padding-bottom: 0 !important;
+  }
+
+  .service {
+    flex-direction: column;
+  }
+
+  .icon {
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
 }

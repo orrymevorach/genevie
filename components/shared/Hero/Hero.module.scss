@@ -72,6 +72,11 @@
 }
 
 @media screen and (max-width: variables.$mobile) {
+  .container {
+    &.small {
+      height: 70vh;
+    }
+  }
   .textContainer {
     bottom: 30px;
   }
