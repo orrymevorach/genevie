@@ -17,40 +17,42 @@ export default function Nav({ isFixed = false, setShowIframe }) {
 
   return (
     <nav className={clsx(styles.nav, isFixed && styles.fixed)}>
-      <Wrapper classNames={styles.wrapper}>
-        <div>
-          <Link href={ROUTES.HOME} className={styles.logoLink}>
-            <Image src={logo} alt="logo" className={styles.logo} />
-          </Link>
-        </div>
-        <div className={styles.rightContainer}>
-          {!isMobile && (
-            <button
-              onClick={() => setShowIframe(true)}
-              className={clsx(
-                styles.bookButton,
-                !isOpen && slideOut && styles.fadeOut
-              )}
-            >
-              Book A Consultation
-            </button>
-          )}
+      <Wrapper>
+        <div className={styles.topRow}>
+          <div>
+            <Link href={ROUTES.HOME} className={styles.logoLink}>
+              <Image src={logo} alt="logo" className={styles.logo} />
+            </Link>
+          </div>
+          <div className={styles.rightContainer}>
+            {!isMobile && (
+              <button
+                onClick={() => setShowIframe(true)}
+                className={clsx(
+                  styles.bookButton,
+                  !isOpen && slideOut && styles.fadeOut
+                )}
+              >
+                Book A Consultation
+              </button>
+            )}
 
-          <HamburgerMenu
-            setIsOpen={setIsOpen}
-            isOpen={isOpen}
-            setSlideOut={setSlideOut}
-            slideOut={slideOut}
-          />
-          {isOpen && (
-            <NavMenu
-              slideOut={slideOut}
-              isOpen={isOpen}
-              setShowIframe={setShowIframe}
+            <HamburgerMenu
               setIsOpen={setIsOpen}
+              isOpen={isOpen}
+              setSlideOut={setSlideOut}
+              slideOut={slideOut}
             />
-          )}
+          </div>
         </div>
+        {isOpen && (
+          <NavMenu
+            slideOut={slideOut}
+            isOpen={isOpen}
+            setShowIframe={setShowIframe}
+            setIsOpen={setIsOpen}
+          />
+        )}
       </Wrapper>
     </nav>
   );

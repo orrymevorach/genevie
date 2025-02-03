@@ -84,7 +84,7 @@
 }
 
 @media (max-width: variables.$mobile) {
-  .hamburgerMenu {
-    display: block;
+  .hamburgerMenu.open {
+    margin-top: -5px;
   }
 }

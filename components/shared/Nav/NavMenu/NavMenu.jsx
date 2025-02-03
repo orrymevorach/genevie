@@ -61,7 +61,9 @@ export default function NavMenu({
             </ul>
           </div>
           <div className={styles.footer}>
-            <p>© 2024 Genevie Health. All Rights Reserved.</p>
+            <p className={styles.copyright}>
+              © 2024 Genevie Health. All Rights Reserved.
+            </p>
             <div className={styles.socials}>
               <a href="#">Instagram</a> / <a href="#">Linkedin</a> /{' '}
               <a href="#">Tik Tok</a>
