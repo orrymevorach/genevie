@@ -8,10 +8,12 @@ import Wrapper from '../Wrapper/Wrapper';
 import logo from 'public/logo.png';
 import HamburgerMenu from './HamburgerMenu/HamburgerMenu';
 import { useState } from 'react';
+import useWindowSize from '@/hooks/useWindowSize';
 
 export default function Nav({ isFixed = false, setShowIframe }) {
   const [isOpen, setIsOpen] = useState(false);
   const [slideOut, setSlideOut] = useState(false);
+  const { isMobile } = useWindowSize();
 
   return (
     <nav className={clsx(styles.nav, isFixed && styles.fixed)}>
@@ -22,15 +24,18 @@ export default function Nav({ isFixed = false, setShowIframe }) {
           </Link>
         </div>
         <div className={styles.rightContainer}>
-          <button
-            onClick={() => setShowIframe(true)}
-            className={clsx(
-              styles.bookButton,
-              !isOpen && slideOut && styles.fadeOut
-            )}
-          >
-            Book A Consultation
-          </button>
+          {!isMobile && (
+            <button
+              onClick={() => setShowIframe(true)}
+              className={clsx(
+                styles.bookButton,
+                !isOpen && slideOut && styles.fadeOut
+              )}
+            >
+              Book A Consultation
+            </button>
+          )}
+
           <HamburgerMenu
             setIsOpen={setIsOpen}
             isOpen={isOpen}

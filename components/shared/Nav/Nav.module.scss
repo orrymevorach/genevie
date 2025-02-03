@@ -32,7 +32,7 @@ div.wrapper {
   z-index: 10001;
 }
 .logo {
-  width: 200px;
+  width: 100%;
   height: auto;
 }
 
@@ -56,22 +56,6 @@ div.wrapper {
   padding: 0;
 }
 
-@media screen and (max-width: variables.$mobile) {
-  .nav {
-    margin: 0 auto 20px;
-    padding: 15px 0 0 0;
-    align-items: center;
-    &.fixed {
-      padding: 0 20px;
-    }
-  }
-
-  .logo {
-    width: 29px;
-    background: none;
-  }
-}
-
 .fadeOut {
   animation: fadeOut linear 0.1s forwards;
 }
@@ -82,5 +66,15 @@ div.wrapper {
   }
   to {
     opacity: 0;
+  }
+}
+
+@media screen and (max-width: variables.$mobile) {
+  .nav {
+    padding: 22px 0;
+  }
+
+  .logoLink {
+    width: 200px;
   }
 }

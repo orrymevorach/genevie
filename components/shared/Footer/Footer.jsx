@@ -6,6 +6,7 @@ import logo from 'public/logo.png';
 import logoIcon from 'public/logo-icon.png';
 import { ROUTES } from '@/utils/constants';
 import Link from 'next/link';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const Email = () => {
   return (
@@ -42,6 +43,7 @@ const data = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { isMobile } = useWindowSize();
   return (
     <footer className={styles.footer}>
       <Wrapper>
@@ -49,9 +51,11 @@ export default function Footer() {
           <Link href={ROUTES.HOME}>
             <Image src={logo} alt="Logo" className={styles.logo} />
           </Link>
-          <Link href={ROUTES.HOME}>
-            <Image src={logoIcon} alt="Logo" className={styles.logoIcon} />
-          </Link>
+          {!isMobile && (
+            <Link href={ROUTES.HOME}>
+              <Image src={logoIcon} alt="Logo" className={styles.logoIcon} />
+            </Link>
+          )}
         </div>
         <div className={styles.columns}>
           {data.map(column => {
@@ -86,6 +90,11 @@ export default function Footer() {
             );
           })}
         </div>
+        {isMobile && (
+          <Link href={ROUTES.HOME}>
+            <Image src={logoIcon} alt="Logo" className={styles.logoIcon} />
+          </Link>
+        )}
         <div className={styles.bottomRow}>
           <p>&copy; GENEVIE {currentYear}</p>
           <p>Privacy Policy</p>

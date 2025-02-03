@@ -11,7 +11,7 @@ export default function About({ richText }) {
     <div className={styles.container}>
       <Wrapper classNames={styles.wrapper}>
         <div>
-          <Image src={image} alt="" />
+          <Image src={image} alt="" className={styles.image} />
         </div>
         <div className={styles.textContainer}>
           <RichText json={richText.richText} />

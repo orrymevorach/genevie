@@ -4,3 +4,9 @@
 .children {
   padding-top: 90px;
 }
+
+@media screen and (max-width: variables.$mobile) {
+  .children {
+    padding-top: 25px;
+  }
+}

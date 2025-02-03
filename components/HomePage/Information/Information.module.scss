@@ -1,6 +1,7 @@
 @use '@mixins' as mixins;
+@use '@variables' as variables;
 
-.container {
+.wrapper {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -21,4 +22,19 @@
 .button {
   display: block;
   margin: 0 auto;
+}
+
+@media screen and (max-width: variables.$mobile) {
+  .wrapper {
+    margin: 60px auto 40px !important;
+    h2 {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    p {
+      width: 100%;
+      margin: 25px auto;
+    }
+  }
 }

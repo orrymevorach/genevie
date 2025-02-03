@@ -23,3 +23,24 @@
   margin-top: 30px;
   display: inline-block !important;
 }
+
+@media screen and (max-width: variables.$mobile) {
+  .container {
+    p {
+      padding-right: 0;
+    }
+  }
+  .wrapper {
+    flex-direction: column;
+    gap: 30px;
+    padding: 75px 25px;
+  }
+  .image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    margin-top: 20px;
+  }
+}

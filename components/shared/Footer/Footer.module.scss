@@ -108,3 +108,21 @@
   position: absolute;
   right: 0;
 }
+
+@media screen and (max-width: variables.$mobile) {
+  .topRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .columns {
+    flex-direction: column;
+  }
+  .column {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .bottomRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

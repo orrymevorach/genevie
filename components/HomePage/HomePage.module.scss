@@ -1,4 +1,5 @@
 @use '@mixins' as mixins;
+@use '@variables' as variables;
 
 .bookButton {
   margin-right: 15px;
@@ -8,5 +9,13 @@
   h1 {
     text-transform: initial;
     @include mixins.heading;
+  }
+}
+
+@media screen and (max-width: variables.$mobile) {
+  .hero {
+    h1 {
+      font-size: 45px;
+    }
   }
 }

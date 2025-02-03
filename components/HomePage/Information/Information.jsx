@@ -7,7 +7,7 @@ import RichText from '@/components/shared/RichText/RichText';
 export default function Information({ richText }) {
   const { setShowIframe } = useIframeContext();
   return (
-    <Wrapper classNames={styles.container}>
+    <Wrapper classNames={styles.wrapper}>
       <RichText json={richText.richText} />
       <Button
         classNames={styles.button}

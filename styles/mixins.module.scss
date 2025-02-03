@@ -47,6 +47,9 @@
   font-size: 35px;
   letter-spacing: 2px;
   font-weight: normal;
+  @media screen and (max-width: variables.$mobile) {
+    font-size: 30px;
+  }
 }
 
 @mixin paragraph {
