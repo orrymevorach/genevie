@@ -108,16 +108,21 @@ label.inputLabel {
 @media screen and (max-width: variables.$mobile) {
   .container {
     width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
-  .input,
-  .textarea,
-  label.inputLabel {
-    font-size: 18px;
-    width: 300px !important;
-    text-wrap: wrap;
-    white-space: normal;
+  .textContainer {
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: 30px;
   }
-  .requiredText {
-    margin: 20px 0 50px 0px;
+  .formFieldContainer {
+    margin-top: 20px;
+  }
+  .dropdown {
+    margin-top: -2px;
+  }
+  .row {
+    display: block;
   }
 }

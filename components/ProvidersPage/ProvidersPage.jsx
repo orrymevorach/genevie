@@ -4,6 +4,7 @@ import Layout from '../shared/Layout/Layout';
 import styles from './ProvidersPage.module.scss';
 import ProvidersForm from './ProvidersForm/ProvidersForm';
 import Information from './Information/Information';
+import Wrapper from '../shared/Wrapper/Wrapper';
 
 export default function ProvidersPage({ entries }) {
   const [banner] = entries;
@@ -11,7 +12,9 @@ export default function ProvidersPage({ entries }) {
   return (
     <Layout>
       <Hero imageUrl={image.src} isCenter isSmall text={banner.text} />
-      <Information />
+      <Wrapper>
+        <Information />
+      </Wrapper>
       <ProvidersForm />
     </Layout>
   );

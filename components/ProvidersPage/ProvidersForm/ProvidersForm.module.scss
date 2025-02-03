@@ -17,3 +17,15 @@
   font-size: 13px;
   line-height: 16px;
 }
+
+@media screen and (max-width: variables.$mobile) {
+  .container {
+    margin: 0 20px;
+    padding: 1px 20px 1px;
+    margin-bottom: 50px;
+  }
+  .disclaimer {
+    width: 100%;
+    margin: 40px auto 30px;
+  }
+}
