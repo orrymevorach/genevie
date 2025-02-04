@@ -2,6 +2,15 @@ import styles from './NavMenu.module.scss';
 import clsx from 'clsx';
 import Wrapper from '../../Wrapper/Wrapper';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+const navItems = [
+  { path: '/about', label: 'About' },
+  { path: '/services', label: 'Services' },
+  { path: '/providers', label: 'For Providers' },
+  { path: '/library', label: 'Library' },
+  { path: '/contact', label: 'Contact' },
+];
 
 export default function NavMenu({
   slideOut,
@@ -13,6 +22,7 @@ export default function NavMenu({
     setIsOpen(false);
     setShowIframe(true);
   };
+
   return (
     <>
       {isOpen && (
@@ -25,39 +35,40 @@ export default function NavMenu({
           <div className={styles.innerContainer}>
             <div></div>
             <ul className={styles.listItems}>
-              <li>
-                <Link href="/about" className={styles.link}>
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className={styles.link}>
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/providers" className={styles.link}>
-                  For Providers
-                </Link>
-              </li>
-              <li>
-                <Link href="/library" className={styles.link}>
-                  Library
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className={styles.link}>
-                  Contact
-                </Link>
-              </li>
-              <li>
+              {navItems.map((item, index) => {
+                return (
+                  <motion.li
+                    initial={{ opacity: 0, y: -40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.7,
+                      delay: (navItems.length - index) * 0.1, // Reverse stagger delay
+                      ease: 'easeOut',
+                    }}
+                    key={item.label}
+                  >
+                    <Link href={item.path} className={styles.link}>
+                      {item.label}
+                    </Link>
+                  </motion.li>
+                );
+              })}
+              <motion.li
+                initial={{ opacity: 0, y: -40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.7,
+                  delay: (navItems.length - 5) * 0.1, // Reverse stagger delay
+                  ease: 'easeOut',
+                }}
+              >
                 <button
                   className={clsx(styles.link, styles.bold)}
                   onClick={handleClickBookNow}
                 >
                   Book Now
                 </button>
-              </li>
+              </motion.li>
             </ul>
           </div>
           <div className={styles.footer}>
