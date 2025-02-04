@@ -40,6 +40,12 @@
   line-height: 55px;
   letter-spacing: 1px;
   font-weight: normal;
+  @media screen and (max-width: variables.$mobile) {
+    @include fontPrimary;
+    text-transform: initial;
+    font-size: 45px;
+    line-height: 47px;
+  }
 }
 
 @mixin headingSmall {
@@ -94,7 +100,7 @@
 
 @mixin pseudoBorderBottom {
   position: relative;
-  &::after {
+  &::before {
     content: '';
     position: absolute;
     width: 100%;

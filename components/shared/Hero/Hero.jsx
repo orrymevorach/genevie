@@ -5,6 +5,7 @@ import Button from '@/components/shared/Button/Button';
 import RichText from '@/components/shared/RichText/RichText';
 import { BLOCKS } from '@contentful/rich-text-types';
 import { motion } from 'framer-motion';
+import useWindowSize from '@/hooks/useWindowSize';
 
 export const richTextConfig = {
   renderNode: {
@@ -44,6 +45,7 @@ export default function Hero({
   shouldAnimate = false,
 }) {
   const Element = shouldAnimate ? motion.div : 'div';
+  const { isMobile } = useWindowSize();
   return (
     <Element
       initial={{ opacity: 0, scale: 1.05 }}
@@ -55,7 +57,10 @@ export default function Hero({
         isCenter && styles.center,
         isSmall && styles.small
       )}
-      style={{ backgroundImage: `url(${imageUrl})` }}
+      style={{
+        backgroundImage: `url(${imageUrl})`,
+        transformOrigin: isMobile ? 'center right' : 'center',
+      }}
     >
       <Wrapper classNames={clsx(styles.wrapper, isCenter && styles.center)}>
         <Element

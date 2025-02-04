@@ -59,10 +59,9 @@
   left: 0;
   bottom: 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
-  padding-right: 170px;
-  padding-left: 50px;
+  padding-right: 160px;
   p,
   a {
     @include mixins.fontSecondary;
@@ -147,8 +146,5 @@
   .socials {
     order: 1;
     margin-bottom: 5px;
-  }
-  .copyright {
-    order: 2;
   }
 }

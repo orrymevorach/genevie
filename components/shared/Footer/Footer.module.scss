@@ -70,6 +70,7 @@
   display: flex;
   align-items: center;
   position: relative;
+  @include mixins.pseudoBorderBottom;
   &:after {
     content: '>';
     position: absolute;
@@ -87,7 +88,6 @@
 .emailInput {
   background-color: rgba(0, 0, 0, 0);
   border: none;
-  border-bottom: 1px solid black;
   width: 100%;
   margin-top: 10px;
   padding-bottom: 5px;
@@ -95,7 +95,6 @@
   &:focus {
     outline: none; /* Ensures no blue outline on focus */
     border: none; /* Ensures no border on focus */
-    border-bottom: 1px solid black;
   }
   &::placeholder {
     color: black;

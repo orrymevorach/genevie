@@ -6,7 +6,7 @@
   height: 70vh;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   position: relative;
   &.small {
     height: 50vh;
@@ -87,8 +87,5 @@
   .paragraph {
     width: 100%;
     margin: 0 auto 15px;
-  }
-  .buttonsContainer {
-    margin-top: 15px;
   }
 }

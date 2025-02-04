@@ -72,7 +72,8 @@
     text-align: left;
   }
   .button {
-    font-size: 13px;
+    font-size: 18px;
     margin: 30px 0 100px;
+    @include mixins.fontPrimaryMedium;
   }
 }
