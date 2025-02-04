@@ -4,6 +4,7 @@ import Wrapper from '@/components/shared/Wrapper/Wrapper';
 import Button from '@/components/shared/Button/Button';
 import RichText from '@/components/shared/RichText/RichText';
 import { BLOCKS } from '@contentful/rich-text-types';
+import { motion } from 'framer-motion';
 
 export const richTextConfig = {
   renderNode: {
@@ -11,7 +12,16 @@ export const richTextConfig = {
       return <p className={styles.paragraph}>{children}</p>;
     },
     [BLOCKS.HEADING_1]: (node, children) => {
-      return <h1 className={styles.title}>{children}</h1>;
+      return (
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.8, ease: 'easeOut' }}
+          className={styles.title}
+        >
+          {children}
+        </motion.h1>
+      );
     },
     // [INLINES.HYPERLINK]: (node, children) => (
     //   <Link
@@ -42,7 +52,10 @@ export default function Hero({
   text,
 }) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, scale: 1.05 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1, ease: 'easeOut' }}
       className={clsx(
         styles.container,
         classNames,
@@ -55,10 +68,17 @@ export default function Hero({
         <div className={clsx(styles.textContainer)}>
           <RichText json={text} config={richTextConfig} />
           {children && (
-            <div className={styles.buttonsContainer}>{children}</div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.8, ease: 'easeOut' }}
+              className={styles.buttonsContainer}
+            >
+              {children}
+            </motion.div>
           )}
         </div>
       </Wrapper>
-    </div>
+    </motion.div>
   );
 }
