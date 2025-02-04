@@ -24,15 +24,20 @@
   display: inline-block !important;
 }
 
-@media screen and (max-width: variables.$mobile) {
+@media screen and (max-width: variables.$tablet) {
   .container {
     p {
       padding-right: 0;
     }
   }
   .wrapper {
-    flex-direction: column;
     gap: 30px;
+  }
+}
+
+@media screen and (max-width: variables.$mobile) {
+  .wrapper {
+    flex-direction: column;
     padding: 75px 25px;
   }
   .image {

@@ -57,7 +57,7 @@
   }
 }
 
-@media screen and (max-width: variables.$mobile) {
+@media screen and (max-width: variables.$tablet) {
   .container {
     grid-template-columns: 1fr;
   }
