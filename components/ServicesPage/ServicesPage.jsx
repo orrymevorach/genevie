@@ -9,7 +9,7 @@ export default function ServicesPage({ entries }) {
   const { setShowIframe } = useIframeContext();
   return (
     <>
-      <Hero bannerFields={banner} isCenter isSmall>
+      <Hero bannerFields={banner} isCenter isSmall shrinkWrapper>
         <Button handleClick={() => setShowIframe(true)}>
           Book A Consultation
         </Button>

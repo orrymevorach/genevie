@@ -10,7 +10,7 @@ export default function ProvidersPage({ entries }) {
   const [banner] = entries;
   return (
     <Layout>
-      <Hero bannerFields={banner} isCenter isSmall breakWords />
+      <Hero bannerFields={banner} isCenter isSmall shrinkWrapper />
       <Wrapper>
         <Reveal>
           <Information />

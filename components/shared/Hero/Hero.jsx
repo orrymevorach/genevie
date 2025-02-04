@@ -8,24 +8,13 @@ import { motion } from 'framer-motion';
 import useWindowSize from '@/hooks/useWindowSize';
 import { getMedia } from '@/lib/contentful-utils';
 
-const getRichTextConfig = ({ breakWords = false }) => ({
+const getRichTextConfig = ({ shrinkWrapper = false }) => ({
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => {
       return <p className={styles.paragraph}>{children}</p>;
     },
     [BLOCKS.HEADING_1]: (node, children) => {
-      if (!breakWords) return <h1 className={styles.title}>{children}</h1>;
-      const text = node.content[0].value;
-      const formattedText = text.split(' ').map((word, index) => {
-        return (
-          <span key={index}>
-            {word} <br />
-          </span>
-        );
-      });
-      const { isMobile } = useWindowSize();
-      const textToShow = isMobile ? formattedText : text;
-      return <h1 className={styles.title}>{textToShow}</h1>;
+      return <h1 className={styles.title}>{children}</h1>;
     },
     // [INLINES.HYPERLINK]: (node, children) => (
     //   <Link
@@ -54,7 +43,7 @@ export default function Hero({
   isSmall = false,
   shouldAnimate = false,
   bannerFields,
-  breakWords = false,
+  shrinkWrapper = false,
 }) {
   const Element = shouldAnimate ? motion.div : 'div';
   const { isMobile } = useWindowSize();
@@ -88,7 +77,12 @@ export default function Hero({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8, ease: 'easeOut' }}
         >
-          <RichText json={text} config={getRichTextConfig({ breakWords })} />
+          <div className={shrinkWrapper ? styles.wrapperContainer : {}}>
+            <RichText
+              json={text}
+              config={getRichTextConfig({ shrinkWrapper })}
+            />
+          </div>
           <div className={styles.buttonsContainer}>{children && children}</div>
         </Element>
       </Wrapper>
