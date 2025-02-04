@@ -5,6 +5,7 @@ import styles from './LibraryPage.module.scss';
 import LibraryItems from './LibraryItems/LibraryItems';
 import Wrapper from '../shared/Wrapper/Wrapper';
 import useWindowSize from '@/hooks/useWindowSize';
+import Reveal from '../shared/Reveal/Reveal';
 
 export default function LibraryPage({ entries }) {
   const [banner, libraryItems] = entries;
@@ -19,7 +20,9 @@ export default function LibraryPage({ entries }) {
         text={banner.text}
       />
       <Wrapper>
-        <LibraryItems items={libraryItems} />
+        <Reveal>
+          <LibraryItems items={libraryItems} />
+        </Reveal>
       </Wrapper>
     </Layout>
   );

@@ -8,6 +8,7 @@ import Instructor from './Instructor/Instructor';
 import Publications from './Publications/Publications';
 import Societies from './Societies/Societies';
 import RichText from '../shared/RichText/RichText';
+import Reveal from '../shared/Reveal/Reveal';
 
 export default function AboutPage({ entries }) {
   const [
@@ -23,17 +24,23 @@ export default function AboutPage({ entries }) {
     <Layout>
       <Hero imageUrl={bannerImage.src} />
       <Wrapper isSmall>
-        <div className={styles.textContainer}>
-          <RichText json={aboutRichText.richText} />
-        </div>
+        <Reveal>
+          <div className={styles.textContainer}>
+            <RichText json={aboutRichText.richText} />
+          </div>
+        </Reveal>
         <div className={styles.container}>
           <div className={styles.left}>
-            <Education education={education} />
-            <Instructor instructor={instructor} />
-            <Societies societies={societies} />
+            <Reveal>
+              <Education education={education} />
+              <Instructor instructor={instructor} />
+              <Societies societies={societies} />
+            </Reveal>
           </div>
           <div className={styles.right}>
-            <Publications publications={publications} />
+            <Reveal>
+              <Publications publications={publications} />
+            </Reveal>
           </div>
         </div>
       </Wrapper>

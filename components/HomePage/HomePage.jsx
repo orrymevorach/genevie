@@ -7,6 +7,7 @@ import Tiles from './Tiles/Tiles';
 import Button from '../shared/Button/Button';
 import { ROUTES } from '@/utils/constants';
 import { useIframeContext } from '../shared/Layout/Layout';
+import Reveal from '../shared/Reveal/Reveal';
 
 export default function HomePage({ entries }) {
   const [banner, richTextInformation, richTextAbout, tiles] = entries;
@@ -30,8 +31,12 @@ export default function HomePage({ entries }) {
           Services
         </Button>
       </Hero>
-      <Information richText={richTextInformation} />
-      <Tiles data={tiles} />
+      <Reveal>
+        <Information richText={richTextInformation} />
+      </Reveal>
+      <Reveal>
+        <Tiles data={tiles} />
+      </Reveal>
       <About richText={richTextAbout} />
     </>
   );
