@@ -21,6 +21,11 @@
       @include mixins.fontSecondary;
       color: black;
     }
+    &:focus {
+      outline: none; /* Ensures no blue outline on focus */
+      border: none; /* Ensures no border on focus */
+      border-bottom: 1px solid black;
+    }
   }
 }
 

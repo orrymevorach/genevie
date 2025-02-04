@@ -12,16 +12,7 @@ export const richTextConfig = {
       return <p className={styles.paragraph}>{children}</p>;
     },
     [BLOCKS.HEADING_1]: (node, children) => {
-      return (
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8, ease: 'easeOut' }}
-          className={styles.title}
-        >
-          {children}
-        </motion.h1>
-      );
+      return <h1 className={styles.title}>{children}</h1>;
     },
     // [INLINES.HYPERLINK]: (node, children) => (
     //   <Link
@@ -50,9 +41,11 @@ export default function Hero({
   isCenter = false,
   isSmall = false,
   text,
+  shouldAnimate = false,
 }) {
+  const Element = shouldAnimate ? motion.div : 'div';
   return (
-    <motion.div
+    <Element
       initial={{ opacity: 0, scale: 1.05 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1, ease: 'easeOut' }}
@@ -65,20 +58,16 @@ export default function Hero({
       style={{ backgroundImage: `url(${imageUrl})` }}
     >
       <Wrapper classNames={clsx(styles.wrapper, isCenter && styles.center)}>
-        <div className={clsx(styles.textContainer)}>
+        <Element
+          className={clsx(styles.textContainer)}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.8, ease: 'easeOut' }}
+        >
           <RichText json={text} config={richTextConfig} />
-          {children && (
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.8, ease: 'easeOut' }}
-              className={styles.buttonsContainer}
-            >
-              {children}
-            </motion.div>
-          )}
-        </div>
+          <div className={styles.buttonsContainer}>{children && children}</div>
+        </Element>
       </Wrapper>
-    </motion.div>
+    </Element>
   );
 }

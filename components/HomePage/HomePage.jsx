@@ -20,6 +20,7 @@ export default function HomePage({ entries }) {
         classNames={styles.hero}
         isCenter={false}
         text={banner.text}
+        shouldAnimate
       >
         <Button
           classNames={styles.bookButton}

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from './ContactForm.module.scss';
 import Form from '../../shared/Form/Form';
 import Loader from '@/components/shared/Loader/Loader';
+import CopyToClipboard from '@/components/shared/CopyToClipboard/CopyToClipboard';
 
 export default function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -60,6 +61,19 @@ export default function ContactForm() {
     },
   ];
 
+  const TextElement = ({ classNames = {} }) => {
+    return (
+      <p className={classNames}>
+        If you want to join the Genevie team or have any questions, please email
+        us at{' '}
+        <CopyToClipboard text="info@geneviehealth.com">
+          <span>info@geneviehealth.com</span>
+        </CopyToClipboard>{' '}
+        or fill out the form below.
+      </p>
+    );
+  };
+
   return (
     <div className={styles.container}>
       {!isSubmitted ? (
@@ -68,9 +82,7 @@ export default function ContactForm() {
           handleSubmit={handleSubmit}
           isLoading={isLoading}
           heading="General Inquiries"
-          text={
-            'If you want to join the Genevie team or have any questions, please email us at info@geneviehealth.com or fill out the form below.'
-          }
+          TextElement={TextElement}
         />
       ) : (
         <h2 className={styles.thankYou}>Thank you for your submission!</h2>

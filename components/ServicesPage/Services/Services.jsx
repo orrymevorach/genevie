@@ -9,10 +9,19 @@ export default function Services({ services }) {
   const { isMobile } = useWindowSize();
   return (
     <Wrapper classNames={styles.wrapper}>
-      <div className={styles.intro}>
-        Included in Your {!isMobile && <br />}
-        Genevie Experience
-      </div>
+      <Reveal>
+        <div className={styles.textContainer}>
+          <p className={styles.heading}>
+            Included in Your {!isMobile && <br />}
+            Genevie Experience
+          </p>
+          <p className={styles.description}>
+            Services are tailored to meet your unique needs, offering
+            data-driven clinical guidance and experienced support every step of
+            the way.
+          </p>
+        </div>
+      </Reveal>
       {services.map(service => {
         const { title, icon, textContent } = service;
         return (

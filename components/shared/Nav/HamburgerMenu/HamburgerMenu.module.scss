@@ -41,7 +41,8 @@
 
 .hamburgerMenu.open span {
   width: 40px;
-  left: 15px;
+  left: 15px !important;
+  top: 0px !important;
 }
 
 .hamburgerMenu span:nth-child(1) {

@@ -71,6 +71,7 @@ export default function Input({
           '&:focus-within': {
             outline: '2px solid #1976d2', // Chrome's default blue
             outlineOffset: '2px',
+            borderRadius: '1px',
           },
         }}
       />

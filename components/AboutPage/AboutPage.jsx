@@ -9,6 +9,7 @@ import Publications from './Publications/Publications';
 import Societies from './Societies/Societies';
 import RichText from '../shared/RichText/RichText';
 import Reveal from '../shared/Reveal/Reveal';
+import useWindowSize from '@/hooks/useWindowSize';
 
 export default function AboutPage({ entries }) {
   const [
@@ -20,28 +21,24 @@ export default function AboutPage({ entries }) {
     publications,
   ] = entries;
   const bannerImage = getMedia(banner.image);
+  const { isMobile } = useWindowSize();
+  const Element = !isMobile ? Reveal : 'div';
   return (
     <Layout>
-      <Hero imageUrl={bannerImage.src} />
+      <Hero imageUrl={bannerImage.src} shouldAnimate />
       <Wrapper isSmall>
-        <Reveal>
-          <div className={styles.textContainer}>
-            <RichText json={aboutRichText.richText} />
-          </div>
-        </Reveal>
+        <Element className={styles.textContainer}>
+          <RichText json={aboutRichText.richText} />
+        </Element>
         <div className={styles.container}>
-          <div className={styles.left}>
-            <Reveal>
-              <Education education={education} />
-              <Instructor instructor={instructor} />
-              <Societies societies={societies} />
-            </Reveal>
-          </div>
-          <div className={styles.right}>
-            <Reveal>
-              <Publications publications={publications} />
-            </Reveal>
-          </div>
+          <Element className={styles.left}>
+            <Education education={education} />
+            <Instructor instructor={instructor} />
+            <Societies societies={societies} />
+          </Element>
+          <Element className={styles.right}>
+            <Publications publications={publications} />
+          </Element>
         </div>
       </Wrapper>
     </Layout>

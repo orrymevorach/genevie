@@ -6,11 +6,20 @@
   padding-bottom: 80px !important;
 }
 
-.intro {
-  margin: 90px 0;
+.textContainer {
+  margin: 90px 0 110px;
   text-align: center;
-  @include mixins.headingSmall;
   padding: 0;
+}
+
+.heading {
+  @include mixins.headingSmall;
+}
+
+.description {
+  @include mixins.paragraph;
+  width: 510px;
+  margin: 25px auto;
 }
 
 .service {
@@ -54,5 +63,8 @@
   .title {
     font-size: 24px;
     margin-bottom: 25px;
+  }
+  .description {
+    width: 100%;
   }
 }

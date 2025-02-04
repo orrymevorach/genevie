@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Wrapper from '../../Wrapper/Wrapper';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const navItems = [
   { path: '/about', label: 'About' },
@@ -23,6 +24,11 @@ export default function NavMenu({
     setShowIframe(true);
   };
 
+  const { isMobile } = useWindowSize();
+
+  const Element = isMobile ? motion.li : 'li';
+  const currentYear = new Date().getFullYear();
+
   return (
     <>
       {isOpen && (
@@ -37,7 +43,7 @@ export default function NavMenu({
             <ul className={styles.listItems}>
               {navItems.map((item, index) => {
                 return (
-                  <motion.li
+                  <Element
                     initial={{ opacity: 0, y: -40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
@@ -50,10 +56,10 @@ export default function NavMenu({
                     <Link href={item.path} className={styles.link}>
                       {item.label}
                     </Link>
-                  </motion.li>
+                  </Element>
                 );
               })}
-              <motion.li
+              <Element
                 initial={{ opacity: 0, y: -40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -68,12 +74,12 @@ export default function NavMenu({
                 >
                   Book Now
                 </button>
-              </motion.li>
+              </Element>
             </ul>
           </div>
           <div className={styles.footer}>
             <p className={styles.copyright}>
-              © 2024 Genevie Health. All Rights Reserved.
+              © {currentYear} Genevie Health. All Rights Reserved.
             </p>
             <div className={styles.socials}>
               <a href="#">Instagram</a> / <a href="#">Linkedin</a> /{' '}

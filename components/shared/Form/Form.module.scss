@@ -96,6 +96,9 @@ label.inputLabel {
   @include mixins.paragraph;
   span {
     text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 

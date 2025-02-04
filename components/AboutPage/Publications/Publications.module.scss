@@ -7,9 +7,9 @@
 }
 
 .name {
-  @include mixins.fontSecondaryDemi;
-  font-size: 16px;
+  @include mixins.fontSecondaryMedium;
   line-height: 21px;
+  font-size: 16px;
   margin-bottom: 5px;
 }
 

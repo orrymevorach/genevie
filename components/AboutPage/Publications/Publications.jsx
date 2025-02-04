@@ -1,14 +1,20 @@
 import RichText from '@/components/shared/RichText/RichText';
 import styles from './Publications.module.scss';
 import Button from '@/components/shared/Button/Button';
+import Reveal from '@/components/shared/Reveal/Reveal';
+import useWindowSize from '@/hooks/useWindowSize';
 
 export default function Publications({ publications }) {
+  const { isMobile } = useWindowSize();
+  const ElementTitle = isMobile ? Reveal : 'p';
+  const ElementDiv = isMobile ? Reveal : 'div';
+
   return (
     <div className={styles.container}>
-      <p className={styles.title}>Publications</p>
+      <ElementTitle className={styles.title}>Publications</ElementTitle>
       {publications.map(({ publicationName, description, link }) => {
         return (
-          <div key={publicationName} className={styles.publication}>
+          <ElementDiv key={publicationName} className={styles.publication}>
             <p className={styles.name}>{publicationName}</p>
             <RichText json={description} />
             {link && (
@@ -21,7 +27,7 @@ export default function Publications({ publications }) {
                 Read More
               </Button>
             )}
-          </div>
+          </ElementDiv>
         );
       })}
     </div>

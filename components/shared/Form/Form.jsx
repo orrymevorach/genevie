@@ -4,11 +4,12 @@ import styles from './Form.module.scss';
 import clsx from 'clsx';
 import Loader from '../Loader/Loader';
 
-const Heading = ({ heading, text }) => {
+const Heading = ({ heading, text, TextElement }) => {
   return (
     <div className={styles.textContainer}>
       <h3 className={styles.title}>{heading}</h3>
-      <p className={styles.description}>{text}</p>
+      {text && <p className={styles.description}>{text}</p>}
+      {TextElement && <TextElement classNames={styles.description} />}
     </div>
   );
 };
@@ -24,6 +25,7 @@ export default function SubmissionForm({
   buttonClassNames = '',
   heading,
   text,
+  TextElement = null,
 }) {
   const handleSubmitForm = e => {
     e.preventDefault();
@@ -40,7 +42,7 @@ export default function SubmissionForm({
 
   return (
     <>
-      <Heading heading={heading} text={text} />
+      <Heading heading={heading} text={text} TextElement={TextElement} />
       <form
         action="#"
         className={clsx(styles.container, formContainerClassNames)}

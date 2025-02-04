@@ -1,16 +1,20 @@
+import useWindowSize from '@/hooks/useWindowSize';
 import styles from './Instructor.module.scss';
+import Reveal from '@/components/shared/Reveal/Reveal';
 
 export default function Instructor({ instructor }) {
+  const { isMobile } = useWindowSize();
+  const Element = isMobile ? Reveal : 'p';
   return (
     <div className={styles.container}>
-      <p className={styles.title}>
+      <Element className={styles.title}>
         clinical lecturer <br /> & instructor
-      </p>
+      </Element>
       {instructor.map(({ school }) => {
         return (
-          <p key={school} className={styles.school}>
+          <Element key={school} className={styles.school}>
             {school}
-          </p>
+          </Element>
         );
       })}
     </div>
