@@ -2,6 +2,7 @@ import Wrapper from '@/components/shared/Wrapper/Wrapper';
 import styles from './Tiles.module.scss';
 import Link from 'next/link';
 import { ROUTES } from '@/utils/constants';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const Tile = ({ title, description, index }) => {
   return (
@@ -14,6 +15,8 @@ const Tile = ({ title, description, index }) => {
 };
 
 export default function Tiles({ data = [] }) {
+  const { isMobile } = useWindowSize();
+  const buttonText = isMobile ? 'Learn more' : 'Learn more about our services';
   return (
     <Wrapper>
       <div className={styles.container}>
@@ -22,7 +25,7 @@ export default function Tiles({ data = [] }) {
         })}
       </div>
       <Link href={ROUTES.SERVICES} className={styles.button}>
-        Learn more about our services
+        {buttonText}
       </Link>
     </Wrapper>
   );
