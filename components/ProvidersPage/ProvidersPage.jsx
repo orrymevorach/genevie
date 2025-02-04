@@ -1,4 +1,3 @@
-import { getMedia } from '@/lib/contentful-utils';
 import Hero from '../shared/Hero/Hero';
 import Layout from '../shared/Layout/Layout';
 import styles from './ProvidersPage.module.scss';
@@ -9,10 +8,9 @@ import Reveal from '../shared/Reveal/Reveal';
 
 export default function ProvidersPage({ entries }) {
   const [banner] = entries;
-  const image = getMedia(banner.image);
   return (
     <Layout>
-      <Hero imageUrl={image.src} isCenter isSmall text={banner.text} />
+      <Hero bannerFields={banner} isCenter isSmall breakWords />
       <Wrapper>
         <Reveal>
           <Information />

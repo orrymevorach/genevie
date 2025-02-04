@@ -1,5 +1,4 @@
 import styles from './HomePage.module.scss';
-import { getMedia } from '@/lib/contentful-utils';
 import About from './About/About';
 import Hero from '../shared/Hero/Hero';
 import Information from './Information/Information';
@@ -11,16 +10,15 @@ import Reveal from '../shared/Reveal/Reveal';
 
 export default function HomePage({ entries }) {
   const [banner, richTextInformation, richTextAbout, tiles] = entries;
-  const imageFields = getMedia(banner.image);
   const { setShowIframe } = useIframeContext();
   return (
     <>
       <Hero
-        imageUrl={imageFields.src}
         classNames={styles.hero}
         isCenter={false}
         text={banner.text}
         shouldAnimate
+        bannerFields={banner}
       >
         <Button
           classNames={styles.bookButton}

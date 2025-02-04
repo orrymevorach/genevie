@@ -6,14 +6,26 @@ import RichText from '@/components/shared/RichText/RichText';
 import { BLOCKS } from '@contentful/rich-text-types';
 import { motion } from 'framer-motion';
 import useWindowSize from '@/hooks/useWindowSize';
+import { getMedia } from '@/lib/contentful-utils';
 
-export const richTextConfig = {
+const getRichTextConfig = ({ breakWords = false }) => ({
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => {
       return <p className={styles.paragraph}>{children}</p>;
     },
     [BLOCKS.HEADING_1]: (node, children) => {
-      return <h1 className={styles.title}>{children}</h1>;
+      if (!breakWords) return <h1 className={styles.title}>{children}</h1>;
+      const text = node.content[0].value;
+      const formattedText = text.split(' ').map((word, index) => {
+        return (
+          <span key={index}>
+            {word} <br />
+          </span>
+        );
+      });
+      const { isMobile } = useWindowSize();
+      const textToShow = isMobile ? formattedText : text;
+      return <h1 className={styles.title}>{textToShow}</h1>;
     },
     // [INLINES.HYPERLINK]: (node, children) => (
     //   <Link
@@ -33,19 +45,26 @@ export const richTextConfig = {
       return [...children, index > 0 && <br key={index} />, textSegment];
     }, []);
   },
-};
+});
 
 export default function Hero({
-  imageUrl = '',
   children,
   classNames = {},
   isCenter = false,
   isSmall = false,
-  text,
   shouldAnimate = false,
+  bannerFields,
+  breakWords = false,
 }) {
   const Element = shouldAnimate ? motion.div : 'div';
   const { isMobile } = useWindowSize();
+  const imageFields = getMedia(bannerFields.image);
+  const mobileImagesFields = bannerFields?.mobileImage
+    ? getMedia(bannerFields.mobileImage)
+    : null;
+  const imageUrl =
+    isMobile && mobileImagesFields ? mobileImagesFields.src : imageFields.src;
+  const text = bannerFields.text;
   return (
     <Element
       initial={{ opacity: 0, scale: 1.05 }}
@@ -69,7 +88,7 @@ export default function Hero({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8, ease: 'easeOut' }}
         >
-          <RichText json={text} config={richTextConfig} />
+          <RichText json={text} config={getRichTextConfig({ breakWords })} />
           <div className={styles.buttonsContainer}>{children && children}</div>
         </Element>
       </Wrapper>

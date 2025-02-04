@@ -1,4 +1,3 @@
-import { getMedia } from '@/lib/contentful-utils';
 import Hero from '../shared/Hero/Hero';
 import Layout from '../shared/Layout/Layout';
 import Wrapper from '../shared/Wrapper/Wrapper';
@@ -20,12 +19,11 @@ export default function AboutPage({ entries }) {
     societies,
     publications,
   ] = entries;
-  const bannerImage = getMedia(banner.image);
   const { isMobile } = useWindowSize();
   const Element = !isMobile ? Reveal : 'div';
   return (
     <Layout>
-      <Hero imageUrl={bannerImage.src} shouldAnimate />
+      <Hero bannerFields={banner} shouldAnimate />
       <Wrapper isSmall>
         <Element className={styles.textContainer}>
           <RichText json={aboutRichText.richText} />
