@@ -1,18 +1,45 @@
 import Image from 'next/image';
 import Wrapper from '../Wrapper/Wrapper';
 import styles from './Footer.module.scss';
-import clsx from 'clsx';
 import logo from 'public/logo.png';
 import logoIcon from 'public/logo-icon.png';
 import { ROUTES } from '@/utils/constants';
 import Link from 'next/link';
 import useWindowSize from '@/hooks/useWindowSize';
+import { useState } from 'react';
+import Loader from '../Loader/Loader';
+import { sendFormSubmission } from '@/lib/mailgun';
 
 const Email = () => {
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const handleSubmit = async e => {
+    e.preventDefault();
+    setIsLoading(true);
+    await sendFormSubmission({
+      fields: {
+        email,
+      },
+      formName: 'Mailing List',
+    });
+    setIsSubmitted(true);
+    setIsLoading(false);
+  };
+
+  if (isLoading) return <Loader isDotted classNames={styles.loader} />;
+  if (isSubmitted) return <p className={styles.thankYou}>Thank you!</p>;
+
   return (
-    <div className={styles.emailContainer}>
-      <input type="email" placeholder="Email" className={styles.emailInput} />
-    </div>
+    <form className={styles.emailContainer} onSubmit={handleSubmit}>
+      <input
+        type="email"
+        placeholder="Email"
+        className={styles.emailInput}
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+      />
+    </form>
   );
 };
 

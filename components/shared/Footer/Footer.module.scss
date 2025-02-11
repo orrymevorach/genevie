@@ -108,6 +108,16 @@
   right: 0;
 }
 
+.loader {
+  position: relative;
+  margin: 25px 0 0px 70px;
+}
+
+.thankYou {
+  @include mixins.fontPrimary;
+  margin-top: 25px;
+}
+
 @media screen and (max-width: variables.$mobile) {
   .topRow {
     flex-direction: column;
