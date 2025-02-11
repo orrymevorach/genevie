@@ -120,6 +120,7 @@
 
 .button {
   @include mixins.fontSecondaryBold;
+  margin-top: 14px;
   &:hover {
     text-decoration: underline;
   }

@@ -21,7 +21,7 @@ export default function ContactForm() {
       phone,
       message,
     };
-    await sendFormSubmission({ fields, formName: 'Contact Form' });
+    await sendFormSubmission({ fields, formName: 'General Inquiry Form' });
     setIsSubmitted(true);
     setIsLoading(false);
   };

@@ -36,7 +36,7 @@ export default function SubmissionForm({
     return (
       <div className={styles.container}>
         <Heading heading={heading} text={text} />
-        <Loader classNames={styles.loader} />
+        <Loader classNames={styles.loader} isDotted />
       </div>
     );
 
