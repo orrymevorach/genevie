@@ -108,6 +108,10 @@ label.inputLabel {
   top: 20px;
 }
 
+.loader {
+  position: relative;
+}
+
 @media screen and (max-width: variables.$mobile) {
   .container {
     width: 100%;

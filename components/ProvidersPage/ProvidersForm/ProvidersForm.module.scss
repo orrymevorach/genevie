@@ -7,6 +7,10 @@
   margin: 0 60px;
   padding-bottom: 70px;
   margin-bottom: 100px;
+  position: relative;
+  &.padding {
+    padding-top: 70px;
+  }
 }
 
 .disclaimer {
@@ -23,6 +27,9 @@
     margin: 0 20px;
     padding: 1px 20px 1px;
     margin-bottom: 50px;
+    &.padding {
+      padding: 40px 20px;
+    }
   }
   .disclaimer {
     width: 100%;

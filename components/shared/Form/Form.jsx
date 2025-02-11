@@ -36,7 +36,7 @@ export default function SubmissionForm({
     return (
       <div className={styles.container}>
         <Heading heading={heading} text={text} />
-        <Loader />
+        <Loader classNames={styles.loader} />
       </div>
     );
 

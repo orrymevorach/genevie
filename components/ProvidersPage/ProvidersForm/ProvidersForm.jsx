@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import styles from './ProvidersForm.module.scss';
 import Form from '../../shared/Form/Form';
+import { sendFormSubmission } from '@/lib/mailgun';
+import ThankYou from '@/components/shared/Form/ThankYou/ThankYou';
+import clsx from 'clsx';
 
 export default function ProvidersForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -24,7 +27,7 @@ export default function ProvidersForm() {
       specialty,
       message,
     };
-    //   await sendArtistSubmissionForm({ fields });
+    await sendFormSubmission({ fields, formName: 'Provider Form' });
     setIsSubmitted(true);
     setIsLoading(false);
   };
@@ -146,7 +149,12 @@ export default function ProvidersForm() {
   ];
 
   return (
-    <div className={styles.container}>
+    <div
+      className={clsx(
+        styles.container,
+        isLoading || (isSubmitted && styles.padding)
+      )}
+    >
       {!isSubmitted ? (
         <>
           <Form
@@ -166,7 +174,7 @@ export default function ProvidersForm() {
           </p>
         </>
       ) : (
-        <h2 className={styles.thankYou}>Thank you for your submission!</h2>
+        <ThankYou />
       )}
     </div>
   );

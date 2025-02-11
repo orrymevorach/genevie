@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import styles from './ContactForm.module.scss';
 import Form from '../../shared/Form/Form';
-import Loader from '@/components/shared/Loader/Loader';
 import CopyToClipboard from '@/components/shared/CopyToClipboard/CopyToClipboard';
+import { sendFormSubmission } from '@/lib/mailgun';
+import ThankYou from '@/components/shared/Form/ThankYou/ThankYou';
 
 export default function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -20,7 +21,7 @@ export default function ContactForm() {
       phone,
       message,
     };
-    //   await sendArtistSubmissionForm({ fields });
+    await sendFormSubmission({ fields, formName: 'Contact Form' });
     setIsSubmitted(true);
     setIsLoading(false);
   };
@@ -85,7 +86,7 @@ export default function ContactForm() {
           TextElement={TextElement}
         />
       ) : (
-        <h2 className={styles.thankYou}>Thank you for your submission!</h2>
+        <ThankYou />
       )}
     </div>
   );
