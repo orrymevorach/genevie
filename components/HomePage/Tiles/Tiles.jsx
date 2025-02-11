@@ -4,10 +4,9 @@ import Link from 'next/link';
 import { ROUTES } from '@/utils/constants';
 import useWindowSize from '@/hooks/useWindowSize';
 
-const Tile = ({ title, description, index }) => {
+const Tile = ({ title, description }) => {
   return (
     <div className={styles.tile}>
-      <p className={styles.number}>{index + 1}</p>
       <p className={styles.title}>{title}</p>
       <p className={styles.description}>{description}</p>
     </div>

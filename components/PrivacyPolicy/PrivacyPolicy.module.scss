@@ -1,0 +1,42 @@
+@use '@mixins' as mixins;
+@use '@variables' as variables;
+
+.wrapper {
+  padding: 90px 0;
+  h1 {
+    @include mixins.headingSmall;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  p,
+  li {
+    @include mixins.paragraph;
+  }
+
+  li {
+    list-style: disc;
+    margin-left: 20px;
+  }
+
+  ul {
+    margin: 10px 0;
+  }
+  .bold {
+    @include mixins.fontSecondaryBold;
+  }
+  .margin {
+    margin-bottom: 10px;
+  }
+
+  .heading {
+    @include mixins.fontSecondaryDemi;
+    font-size: 18px;
+    margin: 20px 0 10px;
+  }
+}
+
+@media screen and (max-width: variables.$mobile) {
+  .wrapper {
+    padding: 40px 20px;
+  }
+}

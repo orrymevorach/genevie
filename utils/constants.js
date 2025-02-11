@@ -2,10 +2,11 @@ export const ROUTES = {
   HOME: '/',
   PAGE_NOT_FOUND: '/404',
   CONTACT: '/contact',
-  ABOUT: '/about',
+  MEET_THE_FOUNDER: '/meet-the-founder',
   SERVICES: '/services',
   PROVIDERS: '/providers',
   LIBRARY: '/library',
+  PRIVACY_POLICY: '/privacy-policy',
 };
 
 export const CONTENTFUL_PAGE_IDS = {

@@ -3,7 +3,7 @@ import Meta from '@/components/shared/Head/Head';
 import { getEntryByField, getEntryById } from '@/lib/contentful-server-utils';
 import { CONTENTFUL_PAGE_IDS } from '@/utils/constants';
 
-export default function About({ entries = [] }) {
+export default function MeetTheFounder({ entries = [] }) {
   return (
     <>
       <Meta />

@@ -33,14 +33,14 @@ h1.meet {
 }
 
 h2.lila {
-  @include mixins.heading;
+  @include mixins.fontPrimary;
   text-transform: uppercase !important;
-  margin: 20px 0;
+  margin: 20px 0 5px;
   font-size: 45px;
 }
 
 p.qualifications {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   text-align: center;
   @include mixins.paragraph;
 }

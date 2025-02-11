@@ -1,7 +1,7 @@
 import Wrapper from '@/components/shared/Wrapper/Wrapper';
 import styles from './About.module.scss';
 import Image from 'next/image';
-import image from '@/public/pregnant.png';
+import image from '@/public/pregnant.jpg';
 import Button from '@/components/shared/Button/Button';
 import { ROUTES } from '@/utils/constants';
 import RichText from '@/components/shared/RichText/RichText';
@@ -18,8 +18,12 @@ export default function About({ richText }) {
           <div className={styles.textContainer}>
             <RichText json={richText.richText} />
 
-            <Button isTertiary classNames={styles.button} href={ROUTES.ABOUT}>
-              Meet the founder
+            <Button
+              isTertiary
+              classNames={styles.button}
+              href={ROUTES.SERVICES}
+            >
+              Services
             </Button>
           </div>
         </Wrapper>

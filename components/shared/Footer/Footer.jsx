@@ -9,6 +9,8 @@ import useWindowSize from '@/hooks/useWindowSize';
 import { useState } from 'react';
 import Loader from '../Loader/Loader';
 import { sendFormSubmission } from '@/lib/mailgun';
+import clsx from 'clsx';
+import { useIframeContext } from '../Layout/Layout';
 
 const Email = () => {
   const [email, setEmail] = useState('');
@@ -39,31 +41,48 @@ const Email = () => {
         value={email}
         onChange={e => setEmail(e.target.value)}
       />
+      <button className={styles.submitButton}>&gt;</button>
     </form>
   );
 };
 
-const data = [
+const getData = ({ setShowIframe }) => [
   {
-    title: 'Mailing List',
-    links: [{ title: 'RECEIVE OUR MONTHLY NEWSLETTER AND UPDATES' }],
+    links: [
+      { title: 'Mailing List', isTitle: true },
+      { title: 'RECEIVE OUR MONTHLY NEWSLETTER AND UPDATES' },
+    ],
     Component: Email,
   },
   {
-    title: 'Follow Along',
     links: [
       {
-        title: 'instagram',
-        url: 'https://www.instagram.com/geneviehealth/',
-        target: '_blank',
+        title: 'Meet The Founder',
+        url: ROUTES.ABOUT,
+      },
+      {
+        title: 'Services',
+        url: ROUTES.SERVICES,
+      },
+      {
+        title: 'Library',
+        url: ROUTES.LIBRARY,
+      },
+      {
+        title: 'For Providers',
+        url: ROUTES.PROVIDERS,
       },
     ],
   },
   {
-    title: 'About',
     links: [
-      { title: 'meet the founder', url: ROUTES.ABOUT },
-      { title: 'contact', url: ROUTES.CONTACT },
+      { title: 'Contact', url: ROUTES.CONTACT },
+      {
+        title: 'Instagram',
+        url: 'https://www.instagram.com/geneviehealth/',
+        target: '_blank',
+      },
+      { title: 'Book Now', handleClick: () => setShowIframe(true) },
     ],
   },
 ];
@@ -71,6 +90,8 @@ const data = [
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { isMobile } = useWindowSize();
+  const { setShowIframe } = useIframeContext();
+  const data = getData({ setShowIframe });
   return (
     <footer className={styles.footer}>
       <Wrapper>
@@ -85,29 +106,46 @@ export default function Footer() {
           )}
         </div>
         <div className={styles.columns}>
-          {data.map(column => {
+          {data.map((column, index) => {
             const Component = column.Component;
             return (
-              <div className={styles.column} key={column.title}>
-                <p className={styles.title}>{column.title}</p>
+              <div className={styles.column} key={`footer-column-${index}`}>
                 <ul>
                   {column.links.map(link => {
-                    if (!link.url) {
+                    if (link.handleClick) {
                       return (
-                        <li key={link.title} className={styles.link}>
+                        <li
+                          key={link.title}
+                          className={clsx(styles.link, styles.button)}
+                          onClick={link.handleClick}
+                        >
                           {link.title}
                         </li>
                       );
                     }
+                    if (link.url) {
+                      return (
+                        <li key={link.title} className={styles.link}>
+                          <a
+                            href={link.url}
+                            className={styles.anchor}
+                            target={link.target}
+                          >
+                            {link.title}
+                          </a>
+                        </li>
+                      );
+                    }
                     return (
-                      <li key={link.title} className={styles.link}>
-                        <a
-                          href={link.url}
-                          className={styles.anchor}
-                          target={link.target}
-                        >
-                          {link.title}
-                        </a>
+                      <li
+                        key={link.title}
+                        className={clsx(
+                          styles.link,
+                          link.isTitle && styles.title,
+                          styles.noCursor
+                        )}
+                      >
+                        {link.title}
                       </li>
                     );
                   })}
@@ -124,7 +162,9 @@ export default function Footer() {
         )}
         <div className={styles.bottomRow}>
           <p>&copy; GENEVIE {currentYear}</p>
-          <p>Privacy Policy</p>
+          <p>
+            <Link href={ROUTES.PRIVACY_POLICY}>Privacy Policy</Link>
+          </p>
         </div>
       </Wrapper>
     </footer>

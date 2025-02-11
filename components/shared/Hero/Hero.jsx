@@ -11,6 +11,7 @@ import { getMedia } from '@/lib/contentful-utils';
 const getRichTextConfig = ({ shrinkWrapper = false }) => ({
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => {
+      if (children && !children[1]) return; // remove empty paragraphs
       return <p className={styles.paragraph}>{children}</p>;
     },
     [BLOCKS.HEADING_1]: (node, children) => {

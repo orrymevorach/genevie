@@ -30,19 +30,19 @@ export async function getStaticProps() {
 
   const tilesData = [
     {
-      title: 'Comprehensive Risk Assessment',
+      title: 'Expert Reproductive Genetic Guidance',
       description:
-        'Consult a genetic specialist in reproductive and preventative health to identify potential risks for you and your family.',
+        'Consult with a leading genetic specialist in reproductive and preventive health to identify potential risks for thousands of preventable and treatable conditions through advanced genomic testing.',
     },
     {
-      title: 'cutting edge genetic testing',
+      title: 'On-Call Support Throughout Your Journey',
       description:
-        'Advanced genomic testing from leading laboratories to identify risks for thousands of preventable and treatable conditions.',
+        'Receive personalized evidence-based guidance regarding any prenatal concerns or questions that arise before and during pregnancy.',
     },
     {
-      title: 'Concierge Support',
+      title: 'Enhancing Reproductive Success',
       description:
-        'Providing evidence-based reproductive guidance to support your journey and address the questions that arise along the way.',
+        'Targeted assessment of medication safety and environmental risks, with expert strategies to improve reproductive outcomes.',
     },
   ];
   return {

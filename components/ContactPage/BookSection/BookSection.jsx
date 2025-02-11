@@ -12,7 +12,7 @@ export default function BookSection() {
         <p className={styles.description}>
           Ready to get started? Click below to schedule your complimentary
           10-minute session to explore your goals and questions. Availability is
-          based on limited number of accepts clients per year.
+          based on limited number of accepted clients per year.
         </p>
 
         <Button isTertiary handleClick={() => setShowIframe(true)}>

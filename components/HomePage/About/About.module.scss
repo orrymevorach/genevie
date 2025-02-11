@@ -5,6 +5,7 @@
   background-color: variables.$cream;
   h2 {
     margin-bottom: 30px;
+    padding-right: 100px;
   }
   p {
     margin: 20px 0;
@@ -22,10 +23,19 @@
 .button {
   margin-top: 30px;
   display: inline-block !important;
+  text-align: center;
+}
+
+.image {
+  width: 393px;
+  height: auto;
 }
 
 @media screen and (max-width: variables.$tablet) {
   .container {
+    h2 {
+      padding: 0;
+    }
     p {
       padding-right: 0;
     }
