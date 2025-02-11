@@ -4,34 +4,42 @@
   font-family: 'Beaufort Regular';
   text-transform: uppercase;
   letter-spacing: 1.3px;
+  font-weight: normal;
 }
 
 @mixin fontPrimaryLight {
   font-family: 'Beaufort Light';
+  font-weight: normal;
 }
 
 @mixin fontPrimaryMedium {
   font-family: 'Beaufort Medium';
+  font-weight: normal;
 }
 
 @mixin fontSecondary {
   font-family: 'Maison Neue Regular';
+  font-weight: normal;
 }
 
 @mixin fontSecondaryBold {
   font-family: 'Maison Neue Bold';
+  font-weight: normal;
 }
 
 @mixin fontSecondaryMedium {
   font-family: 'Maison Neue Medium';
+  font-weight: normal;
 }
 
 @mixin fontSecondaryDemi {
   font-family: 'Maison Neue Demi';
+  font-weight: normal;
 }
 
 @mixin fontSecondaryMono {
   font-family: 'Maison Neue Mono';
+  font-weight: normal;
 }
 
 @mixin heading {
