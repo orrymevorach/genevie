@@ -11,7 +11,7 @@ export const ROUTES = {
 
 export const CONTENTFUL_PAGE_IDS = {
   HOME: 'Home Page',
-  ABOUT: 'About Page',
+  MEET_THE_FOUNDER: 'Meet The Founder Page',
   SERVICES: 'Services Page',
   PROVIDERS: 'Providers Page',
   LIBRARY: 'Library Page',

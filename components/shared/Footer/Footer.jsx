@@ -58,7 +58,7 @@ const getData = ({ setShowIframe }) => [
     links: [
       {
         title: 'Meet The Founder',
-        url: ROUTES.ABOUT,
+        url: ROUTES.MEET_THE_FOUNDER,
       },
       {
         title: 'Services',

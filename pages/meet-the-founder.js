@@ -16,7 +16,7 @@ export async function getStaticProps() {
   const page = await getEntryByField({
     contentTypeId: 'page',
     fieldName: 'title',
-    fieldValue: CONTENTFUL_PAGE_IDS.ABOUT,
+    fieldValue: CONTENTFUL_PAGE_IDS.MEET_THE_FOUNDER,
   });
 
   const entries = await Promise.all(
