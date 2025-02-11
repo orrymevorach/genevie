@@ -25,7 +25,7 @@ export default async function handler(req, res) {
 
   await transporter.sendMail({
     from: 'Genevie Form Submission noreply@genevie.com',
-    to: 'orry.mevorach@gmail.com',
+    to: 'info@geneviehealth.com',
     subject: `${formName} Submission`,
     html: `
     <div style="width:550px;margin:0 auto;display:block">
