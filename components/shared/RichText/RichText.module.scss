@@ -2,7 +2,7 @@
 @use '@mixins' as mixins;
 
 .richText {
-  font-size: 15px;
+  font-size: 16px;
   @include mixins.paragraph;
 }
 
@@ -28,12 +28,12 @@
 
 .unorderedList {
   list-style: disc;
-  font-size: 15px;
+  font-size: 16px;
   margin: 10px 0;
   margin-left: 7px;
   li {
     margin: 5px 0px 5px 20px;
-    font-size: 15px;
+    font-size: 16px;
     padding-left: 5px;
     list-style: none;
     @include mixins.marker;
