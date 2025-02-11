@@ -28,14 +28,14 @@
 }
 
 h1.meet {
-  font-size: 24px;
+  font-size: 20px;
   @include mixins.fontPrimary;
 }
 
 h2.lila {
   @include mixins.fontPrimary;
   text-transform: uppercase !important;
-  margin: 20px 0 5px;
+  margin: 15px 0 5px;
   font-size: 45px;
 }
 

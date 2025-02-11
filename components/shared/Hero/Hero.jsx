@@ -42,6 +42,7 @@ export default function Hero({
   classNames = {},
   isCenter = false,
   isSmall = false,
+  isMedium = false,
   shouldAnimate = false,
   bannerFields,
   shrinkWrapper = false,
@@ -64,7 +65,8 @@ export default function Hero({
         styles.container,
         classNames,
         isCenter && styles.center,
-        isSmall && styles.small
+        isSmall && styles.small,
+        isMedium && styles.medium
       )}
       style={{
         backgroundImage: `url(${imageUrl})`,

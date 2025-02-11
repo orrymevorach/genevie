@@ -11,6 +11,9 @@
   &.small {
     height: 50vh;
   }
+  &.medium {
+    height: 58vh;
+  }
 }
 
 // Hero Content
@@ -73,7 +76,8 @@
 
 @media screen and (max-width: variables.$mobile) {
   .container {
-    &.small {
+    &.small,
+    &.medium {
       height: 70vh;
     }
   }
