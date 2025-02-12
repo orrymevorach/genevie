@@ -1,0 +1,31 @@
+@use '@mixins' as mixins;
+@use '@variables' as variables;
+
+.container {
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: 28px;
+  @include mixins.fontPrimary;
+  margin-bottom: 20px;
+}
+
+.company {
+  @include mixins.fontSecondaryMedium;
+  line-height: 21px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.job {
+  @include mixins.paragraph;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: variables.$mobile) {
+  .title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}

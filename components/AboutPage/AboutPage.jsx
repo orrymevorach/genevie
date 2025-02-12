@@ -9,10 +9,18 @@ import Societies from './Societies/Societies';
 import RichText from '../shared/RichText/RichText';
 import Reveal from '../shared/Reveal/Reveal';
 import useWindowSize from '@/hooks/useWindowSize';
+import ProfesionalBackground from './ProfesionalBackground/ProfesionalBackground';
 
 export default function AboutPageOptionTwo({ entries }) {
-  const [image, aboutRichText, education, instructor, societies, publications] =
-    entries;
+  const [
+    image,
+    aboutRichText,
+    professionalBackground,
+    education,
+    instructor,
+    societies,
+    publications,
+  ] = entries;
   const { isMobile } = useWindowSize();
   const Element = !isMobile ? Reveal : 'div';
   return (
@@ -24,6 +32,9 @@ export default function AboutPageOptionTwo({ entries }) {
         </Element>
         <div className={styles.container}>
           <Element className={styles.left}>
+            <ProfesionalBackground
+              professionalBackground={professionalBackground}
+            />
             <Education education={education} />
             <Instructor instructor={instructor} />
             <Societies societies={societies} />
