@@ -3,7 +3,7 @@
 
 .container {
   background-color: variables.$cream;
-  h2 {
+  h1 {
     margin-bottom: 30px;
     padding-right: 100px;
   }
@@ -33,7 +33,7 @@
 
 @media screen and (max-width: variables.$tablet) {
   .container {
-    h2 {
+    h1 {
       padding: 0;
     }
     p {

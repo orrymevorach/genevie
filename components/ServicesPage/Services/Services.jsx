@@ -40,6 +40,13 @@ export default function Services({ services }) {
           </Reveal>
         );
       })}
+      <p className={styles.disclaimer}>
+        Please note: due to state licensure laws, we can accept patients who
+        will physically be in the following states at the time of consult:
+        Alaska, Arizona, California, Colorado, Illinois, Kansas, Maine,
+        Mississippi, Missouri, Nevada, New York, North Carolina, South Carolina,
+        Texas, West Virginia
+      </p>
     </Wrapper>
   );
 }

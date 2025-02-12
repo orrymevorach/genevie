@@ -1,4 +1,3 @@
-import Hero from '../shared/Hero/Hero';
 import Layout from '../shared/Layout/Layout';
 import Wrapper from '../shared/Wrapper/Wrapper';
 import styles from './AboutPage.module.scss';
@@ -9,34 +8,29 @@ import Societies from './Societies/Societies';
 import RichText from '../shared/RichText/RichText';
 import Reveal from '../shared/Reveal/Reveal';
 import useWindowSize from '@/hooks/useWindowSize';
-import lila from 'public/lila.jpg';
+import Image from 'next/image';
+import { getMedia } from '@/lib/contentful-utils';
 
-export default function AboutPageOptionTwo({ entries }) {
+export default function AboutPage({ entries }) {
   const [image, aboutRichText, education, instructor, societies, publications] =
     entries;
   const { isMobile } = useWindowSize();
   const Element = !isMobile ? Reveal : 'div';
-  console.log('image', lila);
-  // const { src, width, height, alt } = getMedia(image.image);
-  const bannerFields = {
-    image: {
-      ...lila,
-      fields: {
-        file: {
-          url: lila.src,
-        },
-      },
-      alt: '',
-    },
-  };
+  const { src, width, height, alt } = getMedia(image.image);
   return (
     <Layout>
-      <Hero bannerFields={bannerFields} shouldAnimate isMedium />
       <Wrapper isSmall>
         <Element className={styles.textContainer}>
           <h1 className={styles.meet}>Meet the Founder</h1>
           <h2 className={styles.lila}>Lila Dayani</h2>
           <p className={styles.qualifications}>MS, MS, LCGC</p>
+          <Image
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            className={styles.image}
+          />
           <RichText json={aboutRichText.richText} />
         </Element>
         <div className={styles.container}>

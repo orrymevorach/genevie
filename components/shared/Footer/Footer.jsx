@@ -165,6 +165,9 @@ export default function Footer() {
           <p>
             <Link href={ROUTES.PRIVACY_POLICY}>Privacy Policy</Link>
           </p>
+          <p>
+            <Link href={ROUTES.TERMS_OF_USE}>Terms Of Use</Link>
+          </p>
         </div>
       </Wrapper>
     </footer>

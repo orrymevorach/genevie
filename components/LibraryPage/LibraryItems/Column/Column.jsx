@@ -18,7 +18,12 @@ export default function Column({ title, items, buttonText }) {
               <li className={styles.item}>
                 <p className={styles.title}>{item.title}</p>
                 <p className={styles.author}>{item.author}</p>
-                <Button href={item.link} className={styles.link} isLinkStyle>
+                <Button
+                  href={item.link}
+                  className={styles.link}
+                  isLinkStyle
+                  target="_blank"
+                >
                   {buttonText}
                 </Button>
               </li>

@@ -8,7 +8,7 @@
   align-items: center;
   margin: 140px auto 80px !important;
   // Rich text styles
-  h2 {
+  h1 {
     width: 700px;
     margin: 0 auto;
     padding: 0 20px;
@@ -27,7 +27,7 @@
 @media screen and (max-width: variables.$mobile) {
   .wrapper {
     margin: 60px auto 40px !important;
-    h2 {
+    h1 {
       width: 100%;
       margin: 0 auto;
       padding: 0 25px;

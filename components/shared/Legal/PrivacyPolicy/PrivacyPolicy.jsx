@@ -1,5 +1,5 @@
-import Wrapper from '../shared/Wrapper/Wrapper';
-import styles from './PrivacyPolicy.module.scss';
+import Wrapper from '../../Wrapper/Wrapper';
+import styles from '../Legal.module.scss';
 
 export default function PrivacyPolicy() {
   return (

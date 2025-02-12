@@ -7,6 +7,7 @@ export const ROUTES = {
   PROVIDERS: '/providers',
   LIBRARY: '/library',
   PRIVACY_POLICY: '/privacy-policy',
+  TERMS_OF_USE: '/terms-of-use',
 };
 
 export const CONTENTFUL_PAGE_IDS = {

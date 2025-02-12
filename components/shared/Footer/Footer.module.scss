@@ -64,9 +64,10 @@
   p {
     font-size: 13px;
     @include mixins.fontSecondary;
-  }
-  p:first-child {
     margin-right: 13px;
+  }
+  p:last-child {
+    margin-right: 0;
   }
 }
 

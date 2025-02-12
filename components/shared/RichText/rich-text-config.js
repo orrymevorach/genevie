@@ -30,10 +30,10 @@ export const sharedRichTextConfig = {
       <p className={styles.underline}>{children}</p>
     ),
     [BLOCKS.HEADING_1]: (node, children) => {
-      return <h2 className={styles.title}>{children}</h2>;
+      return <h1 className={styles.title}>{children}</h1>;
     },
     [BLOCKS.HEADING_2]: (node, children) => {
-      return <h3 className={styles.subHeading}>{children}</h3>;
+      return <h2 className={styles.subHeading}>{children}</h2>;
     },
   },
   renderText: text => {
