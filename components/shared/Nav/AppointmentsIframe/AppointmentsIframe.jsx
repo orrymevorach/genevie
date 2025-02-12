@@ -10,8 +10,9 @@ export default function AppointmentsIframe({ setShowIframe }) {
       <div className={styles.overlay}></div>
       <div className={styles.closeButtonContainer}>
         <CloseButton handleClick={() => setShowIframe(false)} />
+
         <iframe
-          src="https://secure.gethealthie.com/appointments/embed_appt?dietitian_id=7113289&provider_ids=%5B7113289%5D&appt_type_ids=%5B443516,443517,443518%5D"
+          src="https://secure.gethealthie.com/appointments/embed_appt?dietitian_id=7113289&provider_ids=%5B7113289%5D&appt_type_ids=%5B443516,445794,443517,445796,443518%5D"
           style={{
             width,
             minHeight: '600px',
