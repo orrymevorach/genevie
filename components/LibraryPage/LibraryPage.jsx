@@ -11,11 +11,9 @@ export default function LibraryPage({ entries }) {
   const { isMobile } = useWindowSize();
   return (
     <Layout>
-      <Hero isCenter isSmall={!isMobile} bannerFields={banner} />
+      <Hero isCenter isSmall={!isMobile} bannerFields={banner} shrinkWrapper />
       <Wrapper>
-        <Reveal>
-          <LibraryItems items={libraryItems} />
-        </Reveal>
+        <LibraryItems items={libraryItems} />
       </Wrapper>
     </Layout>
   );

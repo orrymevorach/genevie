@@ -68,6 +68,16 @@
   margin: 0 auto 15px;
 }
 
+.wrapperContainer {
+  padding: 0 100px;
+}
+
+@media screen and (max-width: variables.$tablet) {
+  .wrapperContainer {
+    padding: 0 50px;
+  }
+}
+
 @media screen and (min-width: 1500px) {
   .container {
     height: 80vh;
@@ -94,6 +104,9 @@
   }
 
   .wrapperContainer {
-    padding: 0 25px;
+    padding: 0 40px;
+  }
+  .wrapper {
+    padding: 0 15px;
   }
 }

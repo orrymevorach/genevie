@@ -1,14 +1,14 @@
 import styles from './LibraryItems.module.scss';
 import Column from './Column/Column';
+import Reveal from '@/components/shared/Reveal/Reveal';
 
 export default function LibraryItems({ items }) {
   const { articles, podcasts, books } = items;
   return (
     <div className={styles.container}>
-      <h2 className={styles.pageHeading}>
-        A curated collection of articles,
-        <br /> videos, podcasts and books
-      </h2>
+      <Reveal threshold={0.1}>
+        <h2 className={styles.pageHeading}>Library</h2>
+      </Reveal>
       <div className={styles.columns}>
         <Column title="Articles" items={articles} buttonText="Read Now" />
         <Column title="Podcasts" items={podcasts} buttonText="Listen" />

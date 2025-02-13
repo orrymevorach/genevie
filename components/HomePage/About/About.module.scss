@@ -57,5 +57,7 @@
 
   .button {
     margin-top: 20px;
+    @include mixins.headingSmall;
+    width: 100%;
   }
 }

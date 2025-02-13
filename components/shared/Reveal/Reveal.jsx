@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-const Reveal = ({ children, delay = 0.1, className = '' }) => {
+const Reveal = ({ children, delay = 0.1, className = '', threshold = 0.2 }) => {
   const { ref, inView } = useInView({
     triggerOnce: false, // Allows it to animate again when scrolled back into view
-    threshold: 0.2, // Triggers when 20% of the component is visible
+    threshold, // Triggers when 20% of the component is visible
   });
 
   return (

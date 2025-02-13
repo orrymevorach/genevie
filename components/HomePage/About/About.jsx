@@ -10,7 +10,7 @@ import Reveal from '@/components/shared/Reveal/Reveal';
 export default function About({ richText }) {
   return (
     <div className={styles.container}>
-      <Reveal>
+      <Reveal threshold={0.1}>
         <Wrapper classNames={styles.wrapper}>
           <div>
             <Image src={image} alt="" className={styles.image} />
