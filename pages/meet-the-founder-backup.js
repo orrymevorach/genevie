@@ -3,14 +3,15 @@
 // import { getEntryByField, getEntryById } from '@/lib/contentful-server-utils';
 // import { CONTENTFUL_PAGE_IDS } from '@/utils/constants';
 
-// export default function MeetTheFounder({ entries = [] }) {
-//   return (
-//     <>
-//       <Meta />
-//       <AboutPageBackUp entries={entries} />
-//     </>
-//   );
-// }
+export default function MeetTheFounderBackup({ entries = [] }) {
+  return;
+  //   return (
+  //     <>
+  //       <Meta />
+  //       <AboutPageBackUp entries={entries} />
+  //     </>
+  //   );
+}
 
 // export async function getStaticProps() {
 //   const page = await getEntryByField({
