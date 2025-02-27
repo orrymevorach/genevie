@@ -3,12 +3,13 @@ import styles from './Tiles.module.scss';
 import Link from 'next/link';
 import { ROUTES } from '@/utils/constants';
 import useWindowSize from '@/hooks/useWindowSize';
+import RichText from '@/components/shared/RichText/RichText';
 
 const Tile = ({ title, description }) => {
   return (
     <div className={styles.tile}>
       <p className={styles.title}>{title}</p>
-      <p className={styles.description}>{description}</p>
+      <RichText classNames={styles.description} json={description} />
     </div>
   );
 };
