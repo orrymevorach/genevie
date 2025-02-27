@@ -1,0 +1,26 @@
+name: Sync Contentful Models
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  sync-contentful:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Contentful CLI
+        run: npm install -g contentful-cli
+
+      - name: Authenticate with Contentful
+        run: contentful login --management-token ${{ secrets.CONTENTFUL_MANAGEMENT_TOKEN }}
+
+      - name: Export Content Model from Master
+        run: contentful space export --space-id ${{ secrets.CONTENTFUL_SPACE_ID }} --environment-id ${{ secrets.CONTENTFUL_ENV_MASTER }} --content-file content-model.json
+
+      - name: Import Content Model to Staging
+        run: contentful space import --space-id ${{ secrets.CONTENTFUL_SPACE_ID }} --environment-id ${{ secrets.CONTENTFUL_ENV_STAGING }} --content-file content-model.json
