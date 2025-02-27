@@ -3,15 +3,17 @@ name: Sync Contentful Models
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   sync-contentful:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install Contentful CLI
         run: npm install -g contentful-cli
