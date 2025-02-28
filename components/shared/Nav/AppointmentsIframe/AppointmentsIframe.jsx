@@ -3,8 +3,8 @@ import CloseButton from '../../Takeover/CloseButton/CloseButton';
 import styles from './AppointmentsIframe.module.scss';
 
 export default function AppointmentsIframe({ setShowIframe }) {
-  const { isMobile } = useWindowSize();
-  const width = isMobile ? '90%' : '600px';
+  const { isDesktop } = useWindowSize();
+  const width = !isDesktop ? '90%' : '1100px';
   return (
     <div className={styles.iframeContainer}>
       <div className={styles.overlay}></div>
