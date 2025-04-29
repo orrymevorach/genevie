@@ -24,7 +24,9 @@ export async function getStaticProps() {
 
   const entries = await Promise.all(
     page.content?.map(async ({ fields }) => {
+      if (!fields) return null;
       const isTiles = fields.tiles;
+      const isTestimonials = fields.testimonials;
       if (isTiles) {
         const tiles = await Promise.all(
           fields.tiles.map(async ({ sys }) => {
@@ -35,6 +37,17 @@ export async function getStaticProps() {
           })
         );
         return tiles;
+      }
+      if (isTestimonials) {
+        const testimonials = await Promise.all(
+          fields.testimonials.map(async ({ sys }) => {
+            const testimonial = await getEntryById({
+              entryId: sys.id,
+            });
+            return testimonial.fields;
+          })
+        );
+        return testimonials;
       }
 
       return fields;

@@ -7,9 +7,11 @@ import Button from '../shared/Button/Button';
 import { ROUTES } from '@/utils/constants';
 import { useIframeContext } from '../shared/Layout/Layout';
 import Reveal from '../shared/Reveal/Reveal';
+import Testimonials from './Testimonials/Testimonials';
 
 export default function HomePage({ entries }) {
-  const [banner, richTextInformation, richTextAbout, tiles] = entries;
+  const [banner, richTextInformation, richTextAbout, tiles, testimonials] =
+    entries;
   const { setShowIframe } = useIframeContext();
   return (
     <>
@@ -37,6 +39,11 @@ export default function HomePage({ entries }) {
         <Tiles data={tiles} />
       </Reveal>
       <About richText={richTextAbout} />
+      {testimonials && testimonials.length > 0 ? (
+        <Testimonials testimonials={testimonials} />
+      ) : (
+        ''
+      )}
     </>
   );
 }
