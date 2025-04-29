@@ -7,6 +7,7 @@ import Reveal from '../shared/Reveal/Reveal';
 
 export default function TestimonialsPage({ entries }) {
   const [testimonials] = entries;
+  if (!testimonials || testimonials.length === 0) return;
   return (
     <Reveal>
       <h1 className={styles.title}>Testimonials</h1>
