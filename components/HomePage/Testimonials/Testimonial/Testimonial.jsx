@@ -4,19 +4,15 @@ import clsx from 'clsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import useWindowSize from '@/hooks/useWindowSize';
+import { ROUTES } from '@/utils/constants';
 
-export default function Testimonial({
-  name,
-  testimonial,
-  link = '#',
-  randomX,
-}) {
+export default function Testimonial({ name, testimonial, randomX, index }) {
   const { isMobile } = useWindowSize();
 
   return (
     <Link
       className={clsx(styles.testimonial, styles.animate)}
-      href={link}
+      href={`${ROUTES.TESTIMONIALS}#testimonial-${index + 1}`}
       style={{ left: !isMobile ? `${randomX}%` : '0' }}
     >
       <p className={styles.testimonialText}>{testimonial}</p>

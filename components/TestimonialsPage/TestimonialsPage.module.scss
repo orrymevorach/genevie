@@ -1,0 +1,37 @@
+@use '@variables' as variables;
+@use '@mixins' as mixins;
+
+.title {
+  @include mixins.heading;
+  text-align: center;
+  margin: 80px 0 70px;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding-bottom: 80px;
+}
+
+.testimonial {
+  background-color: variables.$darkGrey;
+  padding: 30px;
+}
+
+.name {
+  margin-top: 40px;
+  @include mixins.paragraph;
+  text-transform: uppercase;
+}
+
+.icon {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: variables.$tablet) {
+  .testimonials {
+    grid-template-columns: 1fr;
+    padding-bottom: 70px;
+  }
+}

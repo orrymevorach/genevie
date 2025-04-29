@@ -8,6 +8,7 @@ export const ROUTES = {
   LIBRARY: '/library',
   PRIVACY_POLICY: '/privacy-policy',
   TERMS_OF_USE: '/terms-of-use',
+  TESTIMONIALS: '/testimonials',
 };
 
 export const CONTENTFUL_PAGE_IDS = {
@@ -16,4 +17,5 @@ export const CONTENTFUL_PAGE_IDS = {
   SERVICES: 'Services Page',
   PROVIDERS: 'Providers Page',
   LIBRARY: 'Library Page',
+  TESTIMONIALS: 'Testimonials Page',
 };

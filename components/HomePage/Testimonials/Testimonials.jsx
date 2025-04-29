@@ -44,7 +44,7 @@ export default function Testimonials({ testimonials = [] }) {
         </div>
 
         <div className={styles.testimonials}>
-          {activeTestimonials.map(({ id, index, randomX }) => {
+          {activeTestimonials.map(({ id, index, randomX }, idx) => {
             if (!activeTestimonials[index]) {
               return null;
             }
@@ -60,6 +60,7 @@ export default function Testimonials({ testimonials = [] }) {
                 testimonial={testimonial}
                 link={link}
                 randomX={randomX}
+                index={idx}
               />
             );
           })}
