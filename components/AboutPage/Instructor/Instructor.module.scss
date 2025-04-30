@@ -12,7 +12,7 @@
 }
 
 .school {
-  @include mixins.fontSecondary;
+  @include mixins.fontSecondaryLight;
   margin-bottom: 12px;
   font-size: 16px;
 }

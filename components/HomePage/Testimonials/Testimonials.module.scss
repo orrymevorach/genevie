@@ -13,29 +13,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .title {
-  @include mixins.fontPrimary;
+  @include mixins.headingSmall;
   font-size: 40px;
+  margin-bottom: 25px;
+}
+
+.button {
   position: relative;
-  &:after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -15px;
-    width: 300px;
-    height: 1px;
-    background-color: black;
-    z-index: -1;
-  }
+  z-index: 2;
 }
 
 .testimonials {
   width: 1280px;
   height: 100%;
-  z-index: 2;
   position: absolute;
   top: 0;
   left: 0;
@@ -62,8 +56,10 @@
   }
 
   .titleContainer {
-    align-items: flex-start;
     margin: 50px 0;
     position: relative;
+  }
+  .title {
+    text-align: center;
   }
 }

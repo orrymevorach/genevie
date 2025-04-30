@@ -12,6 +12,7 @@ const navItems = [
   { path: ROUTES.MEET_THE_FOUNDER, label: 'Meet The Founder' },
   { path: ROUTES.PROVIDERS, label: 'For Providers' },
   { path: ROUTES.LIBRARY, label: 'Library' },
+  { path: ROUTES.TESTIMONIALS, label: 'Testimonials' },
   { path: ROUTES.CONTACT, label: 'Contact' },
 ];
 

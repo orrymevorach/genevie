@@ -37,3 +37,8 @@
   font-family: 'Maison Neue Mono';
   src: url('../asset/fonts/Maison-Neue/fonnts.com-Maison_Neue_Mono.ttf');
 }
+
+@font-face {
+  font-family: 'Maison Neue Light';
+  src: url('../asset/fonts/Maison-Neue/MaisonNeue-Light.ttf');
+}

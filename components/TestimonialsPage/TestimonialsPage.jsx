@@ -1,9 +1,28 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import RichText from '../shared/RichText/RichText';
 import Wrapper from '../shared/Wrapper/Wrapper';
 import styles from './TestimonialsPage.module.scss';
-import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 import Reveal from '../shared/Reveal/Reveal';
+import apos from 'public/apos.png';
+import Image from 'next/image';
+import { BLOCKS } from '@contentful/rich-text-types';
+import star from 'public/star.png';
+
+export const config = {
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => {
+      return <p className={styles.richText}>{children}</p>;
+    },
+  },
+  renderText: text => {
+    return text.split('\n').reduce((children, textSegment, index) => {
+      return [
+        ...children,
+        index > 0 && <div key={textSegment} className={styles.margin} />,
+        textSegment,
+      ];
+    }, []);
+  },
+};
 
 export default function TestimonialsPage({ entries }) {
   const [testimonials] = entries;
@@ -20,12 +39,15 @@ export default function TestimonialsPage({ entries }) {
                 id={`testimonial-${index + 1}`}
                 className={styles.testimonial}
               >
-                <FontAwesomeIcon
-                  icon={faQuoteLeft}
-                  className={styles.icon}
-                  size="lg"
-                />
-                <RichText json={testimonial.testimonial} />
+                <Image src={apos} className={styles.quote} alt="" />
+                <RichText json={testimonial.testimonial} config={config} />
+                <div className={styles.stars}>
+                  <Image src={star} alt="" className={styles.star} />
+                  <Image src={star} alt="" className={styles.star} />
+                  <Image src={star} alt="" className={styles.star} />
+                  <Image src={star} alt="" className={styles.star} />
+                  <Image src={star} alt="" className={styles.star} />
+                </div>
                 <p className={styles.name}>{testimonial.name}</p>
               </div>
             );

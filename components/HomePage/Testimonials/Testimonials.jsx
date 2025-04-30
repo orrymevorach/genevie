@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 import useWindowSize from '@/hooks/useWindowSize';
 import Reveal from '@/components/shared/Reveal/Reveal';
 import Testimonial from './Testimonial/Testimonial';
+import Button from '@/components/shared/Button/Button';
+import { ROUTES } from '@/utils/constants';
+import Wrapper from '@/components/shared/Wrapper/Wrapper';
 
 export default function Testimonials({ testimonials = [] }) {
   const { isMobile } = useWindowSize();
@@ -36,36 +39,47 @@ export default function Testimonials({ testimonials = [] }) {
     return () => clearInterval(interval);
   }, [testimonials.length, isMobile, testimonials]);
 
-  return (
-    <Reveal>
-      <div className={styles.container}>
-        <div className={styles.titleContainer}>
-          <h2 className={styles.title}>What Our Clients Say</h2>
-        </div>
+  const Container = isMobile ? Wrapper : 'div';
 
-        <div className={styles.testimonials}>
-          {activeTestimonials.map(({ id, index, randomX }, idx) => {
-            if (!activeTestimonials[index]) {
-              return null;
-            }
-            const {
-              name,
-              homePageSnippet: testimonial,
-              link,
-            } = testimonials[index];
-            return (
-              <Testimonial
-                key={id}
-                name={name}
-                testimonial={testimonial}
-                link={link}
-                randomX={randomX}
-                index={idx}
-              />
-            );
-          })}
+  return (
+    <Container>
+      <Reveal>
+        <div className={styles.container}>
+          <div className={styles.titleContainer}>
+            <h2 className={styles.title}>What Our Clients Say</h2>
+            <Button
+              href={ROUTES.TESTIMONIALS}
+              isTertiary
+              classNames={styles.button}
+            >
+              Read Testimonials
+            </Button>
+          </div>
+
+          <div className={styles.testimonials}>
+            {activeTestimonials.map(({ id, index, randomX }, idx) => {
+              if (!activeTestimonials[index]) {
+                return null;
+              }
+              const {
+                name,
+                homePageSnippet: testimonial,
+                link,
+              } = testimonials[index];
+              return (
+                <Testimonial
+                  key={id}
+                  name={name}
+                  testimonial={testimonial}
+                  link={link}
+                  randomX={randomX}
+                  index={idx}
+                />
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </Reveal>
+      </Reveal>
+    </Container>
   );
 }

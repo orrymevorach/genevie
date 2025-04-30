@@ -26,12 +26,6 @@
   margin-bottom: 10px;
 }
 
-.link {
-  @include mixins.fontSecondary;
-  text-transform: uppercase;
-  text-decoration: underline;
-}
-
 @media screen and (max-width: variables.$mobile) {
   .columnHeading {
     font-size: 24px;

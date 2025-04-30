@@ -2,9 +2,9 @@
 @use '@mixins' as mixins;
 
 .title {
-  @include mixins.heading;
+  @include mixins.headingSmall;
   text-align: center;
-  margin: 80px 0 70px;
+  margin: 90px 0;
 }
 
 .testimonials {
@@ -17,16 +17,43 @@
 .testimonial {
   background-color: variables.$darkGrey;
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 30px;
 }
 
 .name {
-  margin-top: 40px;
-  @include mixins.paragraph;
+  @include mixins.fontSecondary;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
 }
 
-.icon {
+.quote {
+  width: 20px;
+  margin-bottom: 30px;
+}
+
+.richText {
+  @include mixins.fontSecondaryLight;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.margin {
+  margin-bottom: 10px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
+  margin-top: auto;
+}
+
+.star {
+  width: 20px;
+  margin-right: 2px;
 }
 
 @media screen and (max-width: variables.$tablet) {
