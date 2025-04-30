@@ -32,3 +32,6 @@ jobs:
 
       - name: Import Content Model to Staging
         run: contentful space import --space-id ${{ secrets.CONTENTFUL_SPACE_ID }} --environment-id ${{ secrets.CONTENTFUL_ENV_STAGING }} --content-file content-model.json
+
+      - name: Trigger Netlify Build
+        run: curl -X POST -d '{}' ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
