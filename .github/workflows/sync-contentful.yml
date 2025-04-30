@@ -25,10 +25,10 @@ jobs:
         run: contentful space export --space-id ${{ secrets.CONTENTFUL_SPACE_ID }} --environment-id ${{ secrets.CONTENTFUL_ENV_MASTER }} --content-file content-model.json
 
       - name: Delete Existing Staging Environment
-        run: contentful space environment delete --environment-id ${{ secrets.CONTENTFUL_ENV_STAGING }}
+        run: contentful space environment delete --space-id ${{ secrets.CONTENTFUL_SPACE_ID }} --environment-id ${{ secrets.CONTENTFUL_ENV_STAGING }}
 
       - name: Create Updated Staging Environment
-        run: contentful space environment create --name staging --environment-id ${{ secrets.CONTENTFUL_ENV_STAGING }}
+        run: contentful space environment create --space-id ${{ secrets.CONTENTFUL_SPACE_ID }} --name staging --environment-id ${{ secrets.CONTENTFUL_ENV_STAGING }}
 
       - name: Import Content Model to Staging
         run: contentful space import --space-id ${{ secrets.CONTENTFUL_SPACE_ID }} --environment-id ${{ secrets.CONTENTFUL_ENV_STAGING }} --content-file content-model.json
