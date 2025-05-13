@@ -34,7 +34,7 @@ export default function Services({ services }) {
                 alt=""
                 className={styles.icon}
               />
-              <p className={styles.title}>{title}</p>
+              <h2 className={styles.title}>{title}</h2>
               <RichText json={textContent} classNames={styles.richText} />
             </div>
           </Reveal>

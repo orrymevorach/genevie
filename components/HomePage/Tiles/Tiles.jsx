@@ -8,7 +8,7 @@ import RichText from '@/components/shared/RichText/RichText';
 const Tile = ({ title, description }) => {
   return (
     <div className={styles.tile}>
-      <p className={styles.title}>{title}</p>
+      <h2 className={styles.title}>{title}</h2>
       <RichText classNames={styles.description} json={description} />
     </div>
   );

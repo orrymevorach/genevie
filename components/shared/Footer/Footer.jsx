@@ -97,11 +97,15 @@ export default function Footer() {
       <Wrapper>
         <div className={styles.topRow}>
           <Link href={ROUTES.HOME}>
-            <Image src={logo} alt="Logo" className={styles.logo} />
+            <Image src={logo} alt="Genevie Logo" className={styles.logo} />
           </Link>
           {!isMobile && (
             <Link href={ROUTES.HOME}>
-              <Image src={logoIcon} alt="Logo" className={styles.logoIcon} />
+              <Image
+                src={logoIcon}
+                alt="Genevie Logo"
+                className={styles.logoIcon}
+              />
             </Link>
           )}
         </div>
@@ -157,7 +161,11 @@ export default function Footer() {
         </div>
         {isMobile && (
           <Link href={ROUTES.HOME}>
-            <Image src={logoIcon} alt="Logo" className={styles.logoIcon} />
+            <Image
+              src={logoIcon}
+              alt="Genevie Logo"
+              className={styles.logoIcon}
+            />
           </Link>
         )}
         <div className={styles.bottomRow}>

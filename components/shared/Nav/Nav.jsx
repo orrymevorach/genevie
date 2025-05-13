@@ -21,7 +21,7 @@ export default function Nav({ isFixed = false, setShowIframe }) {
         <div className={styles.topRow}>
           <div>
             <Link href={ROUTES.HOME} className={styles.logoLink}>
-              <Image src={logo} alt="logo" className={styles.logo} />
+              <Image src={logo} alt="Genevie Logo" className={styles.logo} />
             </Link>
           </div>
           <div className={styles.rightContainer}>

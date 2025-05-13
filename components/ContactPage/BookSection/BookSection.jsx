@@ -8,7 +8,7 @@ export default function BookSection() {
   return (
     <div className={styles.container}>
       <Wrapper classNames={styles.wrapper}>
-        <h2 className={styles.title}>Book A Consultation</h2>
+        <h1 className={styles.title}>Book A Consultation</h1>
         <p className={styles.description}>
           Ready to get started? Click below to schedule your complimentary
           10-minute session to explore your goals and questions. Availability is

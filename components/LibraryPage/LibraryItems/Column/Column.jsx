@@ -7,7 +7,7 @@ import Reveal from '@/components/shared/Reveal/Reveal';
 export default function Column({ title, items, buttonText }) {
   const { isMobile } = useWindowSize();
   const Element = isMobile ? Reveal : 'div';
-  const ElementTitle = isMobile ? Reveal : 'p';
+  const ElementTitle = isMobile ? Reveal : 'h3';
   return (
     <div className={styles.column}>
       <ElementTitle className={styles.columnHeading}>{title}</ElementTitle>

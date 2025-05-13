@@ -7,7 +7,7 @@ import Loader from '../Loader/Loader';
 const Heading = ({ heading, text, TextElement }) => {
   return (
     <div className={styles.textContainer}>
-      <h3 className={styles.title}>{heading}</h3>
+      <h2 className={styles.title}>{heading}</h2>
       {text && <p className={styles.description}>{text}</p>}
       {TextElement && <TextElement classNames={styles.description} />}
     </div>

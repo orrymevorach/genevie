@@ -5,9 +5,12 @@ import Reveal from '@/components/shared/Reveal/Reveal';
 export default function Societies({ societies }) {
   const { isMobile } = useWindowSize();
   const Element = isMobile ? Reveal : 'p';
+  const HeadingElement = isMobile ? Reveal : 'h2';
   return (
     <div className={styles.container}>
-      <Element className={styles.title}>professional socieites</Element>
+      <HeadingElement className={styles.title}>
+        professional socieites
+      </HeadingElement>
       {societies.map(({ profesionalSociety }) => {
         return (
           <Element key={profesionalSociety} className={styles.society}>

@@ -5,11 +5,12 @@ import Reveal from '@/components/shared/Reveal/Reveal';
 export default function Instructor({ instructor }) {
   const { isMobile } = useWindowSize();
   const Element = isMobile ? Reveal : 'p';
+  const HeadingElement = isMobile ? Reveal : 'h2';
   return (
     <div className={styles.container}>
-      <Element className={styles.title}>
+      <HeadingElement className={styles.title}>
         clinical lecturer <br /> & instructor
-      </Element>
+      </HeadingElement>
       {instructor.map(({ school }) => {
         return (
           <Element key={school} className={styles.school}>

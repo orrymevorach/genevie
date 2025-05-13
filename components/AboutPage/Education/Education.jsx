@@ -8,7 +8,7 @@ export default function Education({ education }) {
   return (
     <div className={styles.container}>
       <Element>
-        <p className={styles.title}>Education and Training</p>
+        <h2 className={styles.title}>Education and Training</h2>
       </Element>
 
       {education.map(({ school, degree }) => {

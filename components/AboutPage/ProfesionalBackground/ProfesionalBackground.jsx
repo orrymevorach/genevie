@@ -8,7 +8,7 @@ export default function ProfesionalBackground({ professionalBackground }) {
   return (
     <div className={styles.container}>
       <Element>
-        <p className={styles.title}>Professional Background</p>
+        <h2 className={styles.title}>Professional Background</h2>
       </Element>
 
       {professionalBackground.map(({ company, jobTitle }) => {
