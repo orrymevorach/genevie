@@ -158,6 +158,47 @@ export default function Footer() {
               </div>
             );
           })}
+          <div className={styles.column}>
+            <p className={clsx(styles.title, styles.link)}>Hours</p>
+            <p className={styles.hoursRow}>
+              <span className={styles.day}>Monday:</span>
+              <span className={styles.hour}>8 am – 5 pm</span>
+            </p>
+            <p className={styles.hoursRow}>
+              <span className={styles.day}>Tuesday:</span>
+              <span className={styles.hour}>8 am – 5 pm</span>
+            </p>
+            <p className={styles.hoursRow}>
+              <span className={styles.day}>Wednesday:</span>
+              <span className={styles.hour}>8 am – 5 pm</span>
+            </p>
+            <p className={styles.hoursRow}>
+              <span className={styles.day}>Thursday:</span>
+              <span className={styles.hour}>8 am – 5 pm</span>
+            </p>
+            <p className={styles.hoursRow}>
+              <span className={styles.day}>Friday:</span>
+              <span className={styles.hour}>8 am – 5 pm</span>
+            </p>
+            <p className={styles.hoursRow}>
+              <span className={styles.day}>Saturday:</span>
+              <span className={styles.hour}>Closed</span>
+            </p>
+            <p className={styles.hoursRow}>
+              <span className={styles.day}>Sunday:</span>
+              <span className={styles.hour}>Closed</span>
+            </p>
+            <div className={styles.locationColumn}>
+              <p className={styles.title}>Location</p>
+              <p className={styles.location}>
+                Based in Beverly Hills, California, Genevie Health offers
+                personalized genetic consulting via our secure Telehealth
+                platform. Due to state licensure regulations, remote
+                consultations are available to clients located in select U.S.
+                states at the time of their appointment.
+              </p>
+            </div>
+          </div>
         </div>
         {isMobile && (
           <Link href={ROUTES.HOME}>

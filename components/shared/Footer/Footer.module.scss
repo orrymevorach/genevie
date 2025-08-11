@@ -57,6 +57,33 @@
   cursor: auto;
 }
 
+.hoursRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  @include mixins.fontSecondary;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.day {
+  margin-right: 20px;
+}
+
+.hour {
+  min-width: 80px;
+}
+
+.locationColumn {
+  margin-top: 20px;
+}
+
+.location {
+  font-size: 13px;
+  @include mixins.fontSecondary;
+  margin-top: 10px;
+}
+
 .bottomRow {
   display: flex;
   align-items: center;
