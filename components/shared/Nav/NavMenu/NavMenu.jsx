@@ -29,7 +29,7 @@ export default function NavMenu({
 
   const { isMobile } = useWindowSize();
 
-  const Element = isMobile ? motion.li : 'li';
+  const Element = !isMobile ? motion.li : 'li';
 
   return (
     <>
