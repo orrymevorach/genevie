@@ -161,5 +161,34 @@ export default function Form({
           ))}
         </div>
       );
+    case 'date':
+      return (
+        <div
+          className={clsx(
+            styles.formFieldContainer,
+            styles.datePicker,
+            inputContainerClassNames
+          )}
+        >
+          <Label label={label} id={id} required={required} />
+          <input
+            type="date"
+            id={id}
+            value={value}
+            onChange={e => handleChange(e.target.value)}
+            onBlur={handleBlur}
+            onAnimationStart={handleAnimationStart}
+            className={clsx(styles.input, styles.dateInput, inputClassNames)}
+            required={required}
+          />
+          {showCheckMark && (
+            <FontAwesomeIcon
+              icon={faCheckCircle}
+              className={clsx(styles.check)}
+              color="#499048"
+            />
+          )}
+        </div>
+      );
   }
 }

@@ -22,6 +22,7 @@ export default function SubmissionForm({
   inputClassNames = '',
   labelClassNames = '',
   inputContainerClassNames = '',
+  loaderClassNames = {},
   buttonClassNames = '',
   heading,
   text,
@@ -36,7 +37,7 @@ export default function SubmissionForm({
     return (
       <div className={styles.container}>
         <Heading heading={heading} text={text} />
-        <Loader classNames={styles.loader} isDotted />
+        <Loader classNames={clsx(styles.loader, loaderClassNames)} isDotted />
       </div>
     );
 

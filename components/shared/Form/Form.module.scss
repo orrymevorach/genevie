@@ -112,6 +112,20 @@ label.inputLabel {
   position: relative;
 }
 
+.datePicker {
+  label {
+    margin-bottom: 10px;
+  }
+  input {
+    border: 1px solid black;
+    border-radius: 0;
+    padding: 7px;
+  }
+  .check {
+    top: 5px;
+  }
+}
+
 @media screen and (max-width: variables.$mobile) {
   .container {
     width: 100%;
