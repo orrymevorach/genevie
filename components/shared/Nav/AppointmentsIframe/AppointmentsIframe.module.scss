@@ -1,37 +1,63 @@
 @use '@mixins' as mixins;
 @use '@variables' as variables;
 
-.iframeContainer {
+.container {
   position: fixed;
-  top: 0;
-  left: 0;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  top: 0;
+  left: 0;
   z-index: 300;
-}
-
-.iframe {
-  z-index: 3;
 }
 
 .overlay {
   animation: fadeIn linear 0.3s forwards;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.3);
   height: 100vh;
   width: 100vw;
   z-index: 1;
 }
 
-.closeButtonContainer {
-  width: 1150px;
+.iframeContainer {
+  top: 0;
+  width: 1100px;
   position: relative;
-  z-index: 1;
+  z-index: 301;
+}
+
+.textContainer {
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  p {
+    @include mixins.fontSecondary;
+  }
+  .bold {
+    @include mixins.fontSecondaryBold;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.iframe {
+  z-index: 302 !important;
+}
+
+.closeButton {
+  position: absolute;
+  z-index: 304;
+  right: -25px;
+  top: 0;
 }
 
 @keyframes fadeIn {
@@ -40,5 +66,11 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: variables.$tablet) {
+  .iframeContainer {
+    width: 90%;
   }
 }
