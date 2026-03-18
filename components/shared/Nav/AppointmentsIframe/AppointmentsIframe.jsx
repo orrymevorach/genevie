@@ -20,7 +20,7 @@ export default function AppointmentsIframe({ setShowIframe }) {
         ) : (
           <>
             <iframe
-              src="https://secure.gethealthie.com/appointments/embed_appt?dietitian_id=7113289&provider_ids=%5B7113289%5D&appt_type_ids=%5B443516,445794,443517,445796,443518%5D"
+              src="https://secure.gethealthie.com/appointments/embed_appt?dietitian_id=7113289&provider_ids=%5B7113289%5D&appt_type_ids=%5B443516,445794,443517,445796,443518,484998,488438,517251%5D&primary_color=4A9625"
               style={{
                 width: '100%',
                 minHeight: '600px',
